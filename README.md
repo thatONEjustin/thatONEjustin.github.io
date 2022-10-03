@@ -1,0 +1,1 @@
+Just my base github site and blog to detail some programming stuff I've picked up over the years

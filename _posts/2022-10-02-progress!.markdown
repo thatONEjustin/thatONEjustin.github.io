@@ -23,6 +23,8 @@ Awesome, finally getting a local setup going and something that I can push and s
 
 So jekyll's validator sees the @ as an illegal character. using `x-on:` seems to be the ticket. 
 
+
 Tailwind implementation currently is just the CDN playground with no overrides passed to the js. I want to understand the minima/jekyll .scss better before proceeding with that (esp so I can shrink the tailwind output with jit mode if possible). Looks like jekyll will always process the css as sass? so it might just be possible to pass a tailwind.config.js 
+
 
 Not sure, and I want to clean this up even more if possible. 
