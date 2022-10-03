@@ -8,19 +8,21 @@ Awesome, finally getting a local setup going and something that I can push and s
 
 -----
 <div x-data="{ 
-  isData: false,
+  isData: true,
   clickMe() {
     this.isData = ! this.isData;
     alert(`isData is now: ${this.isData}`)
   }, 
-  }" class="flex flex-column">
+  }" class="flex flex-col items-start">
 
-  <button x-on:click="clickMe"></button>
-  <button @click="clickMe"></button>
-
-  <h1 x-html="`isData ${isData}`"></h1>
+  <button class="px-4 py-2 border rounded border-black my-2" x-bind:class="isData && 'text-blue-600'" x-on:click="clickMe" x-text="`Click Me to change isData: ${isData}`"></button>
+  <button class="px-4 py-2 border rounded border-black my-2" x-bind:class="isData && 'text-blue-600'" @:click="clickMe" x-text="`Click Me to change isData: ${isData}`"></button>
 
 </div>
 ----- 
 
-So jekyll's validator sees the @ as an illegal character. using `x-on:` seems to be the ticket
+So jekyll's validator sees the @ as an illegal character. using `x-on:` seems to be the ticket. 
+
+Tailwind implementation currently is just the CDN playground with no overrides passed to the js. I want to understand the minima/jekyll .scss better before proceeding with that (esp so I can shrink the tailwind output with jit mode if possible). Looks like jekyll will always process the css as sass? so it might just be possible to pass a tailwind.config.js 
+
+Not sure, and I want to clean this up even more if possible. 
