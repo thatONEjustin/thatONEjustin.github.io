@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Progress!"
+date:   2022-10-02 23:03 -0500
+categories: jekyll update
+---
+Awesome, finally getting a local setup going and something that I can push and see some updates on githubs end. 
+
+-----
+<div x-data="{ 
+  isData: false,
+  clickMe() {
+    this.isData = ! this.isData;
+    alert(`isData is now: ${this.isData}`)
+  }, 
+  }" class="flex flex-column">
+
+  <button x-on:click="clickMe"></button>
+  <button @click="clickMe"></button>
+
+  <h1 x-html="`isData ${isData}`"></h1>
+
+</div>
+----- 
+
+So jekyll's validator sees the @ as an illegal character. using `x-on:` seems to be the ticket
