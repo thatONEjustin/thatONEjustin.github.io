@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "tailwind today? + extras"
-date:   2022-10-02 23:03 -0500
+date:   2022-10-03 23:03 -0500
 categories: jekyll update
 ---
 
