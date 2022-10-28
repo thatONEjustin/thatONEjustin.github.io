@@ -16,8 +16,12 @@ Awesome, finally getting a local setup going and something that I can push and s
   }" class="flex flex-col items-start">
 
   <button class="px-4 py-2 border rounded border-black my-2" x-bind:class="isData && 'text-blue-600'" x-on:click="clickMe" x-text="`Click Me to change isData: ${isData}`"></button>
-  <button class="px-4 py-2 border rounded border-black my-2" x-bind:class="isData && 'text-blue-600'" @:click="clickMe" x-text="`Click Me to change isData: ${isData}`"></button>
 
+  ```html
+
+  # this doesn't work
+  <button class="px-4 py-2 border rounded border-black my-2" x-bind:class="isData && 'text-blue-600'" @:click="clickMe" x-text="back ticks mess this up"></button>
+  ```
 </div>
 ----- 
 
