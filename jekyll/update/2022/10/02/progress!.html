@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Progress! | Minimal theme</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Progress!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Awesome, finally getting a local setup going and something that I can push and see some updates on githubs end." />
+<meta property="og:description" content="Awesome, finally getting a local setup going and something that I can push and see some updates on githubs end." />
+<meta property="og:site_name" content="Minimal theme" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-02T18:03:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Progress!" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-02T18:03:00+00:00","datePublished":"2022-10-02T18:03:00+00:00","description":"Awesome, finally getting a local setup going and something that I can push and see some updates on githubs end.","headline":"Progress!","mainEntityOfPage":{"@type":"WebPage","@id":"/jekyll/update/2022/10/02/progress!.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"/assets/img/logo.png"}},"url":"/jekyll/update/2022/10/02/progress!.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="/">Minimal theme</a></h1>
+
+        
+          <img src="/assets/img/logo.png" alt="Logo" />
+        
+
+        <p>Minimal is a theme for GitHub Pages.</p>
+
+        
+
+        
+
+        
+        <ul class="downloads">
+          <li><a href="">Download <strong>ZIP File</strong></a></li>
+          <li><a href="">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="">View On <strong>GitHub</strong></a></li>
+        </ul>
+        
+      </header>
+      <section>
+
+      <small>2 October 2022</small>
+<h1>Progress!</h1>
+
+<p class="view">by </p>
+
+<p>Awesome, finally getting a local setup going and something that I can push and see some updates on githubs end.</p>
+
+<hr />
+<div x-data="{ 
+  isData: true,
+  clickMe() {
+    this.isData = ! this.isData;
+    alert(`isData is now: ${this.isData}`)
+  }, 
+  }" class="flex flex-col items-start">
+
+  <button class="px-4 py-2 border rounded border-black my-2" x-bind:class="isData &amp;&amp; 'text-blue-600'" x-on:click="clickMe" x-text="`Click Me to change isData: ${isData}`"></button>
+  &lt;button class="px-4 py-2 border rounded border-black my-2" x-bind:class="isData &amp;&amp; 'text-blue-600'" @:click="clickMe" x-text="`Click Me to change isData: ${isData}`"&gt;&lt;/button&gt;
+
+</div>
+<hr />
+
+<p>So jekyll’s validator sees the @ as an illegal character. using <code class="language-plaintext highlighter-rouge">x-on:</code> seems to be the ticket.</p>
+
+<p>Tailwind implementation currently is just the CDN playground with no overrides passed to the js. I want to understand the minima/jekyll .scss better before proceeding with that (esp so I can shrink the tailwind output with jit mode if possible). Looks like jekyll will always process the css as sass? so it might just be possible to pass a tailwind.config.js</p>
+
+<p>Not sure, and I want to clean this up even more if possible.</p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+
+      </section>
+      <footer>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>
