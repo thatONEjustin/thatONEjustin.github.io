@@ -1,8 +1,0 @@
----
-layout: post
-title:  "deploy"
-date:   2022-10-03 13:03 -0500
-categories: jekyll update
----
-
-Okay testing out the deploy for the live site. 

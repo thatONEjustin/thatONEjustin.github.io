@@ -1,5 +1,17 @@
 title: trying to keep it simple
-logo: /assets/img/logo.png
+
 description: powered by the minimal theme for GitHub Pages
 google_analytics:
-theme: jekyll-theme-minimal
+
+sass: 
+  load_paths:
+    - node_modules
+    - ../node_modules/
+
+include: ["node_modules/tailwindcss"]
+
+plugins:
+  - jekyll-postcss
+
+gems:
+  - jekyll-seo-tag
