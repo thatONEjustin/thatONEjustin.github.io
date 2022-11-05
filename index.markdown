@@ -3,7 +3,6 @@ layout: default
 ---
 
 {%- if site.posts.size > 0 -%}
-
   <h2>{{ page.list_title | default: "Okay here we go! " }}</h2>
 
   <ul class="post-list">
