@@ -1,0 +1,30 @@
+{
+  "name": "thatonejustin.github.io",
+  "version": "1.0.0",
+  "description": "another one",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thatONEjustin/thatONEjustin.github.io.git"
+  },
+  "author": "justin p",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thatONEjustin/thatONEjustin.github.io/issues"
+  },
+  "homepage": "https://github.com/thatONEjustin/thatONEjustin.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "next": "^13.0.2",
+    "postcss": "^8.4.18",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.2.2"
+  }
+}
