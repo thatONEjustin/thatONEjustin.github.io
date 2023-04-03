@@ -1,3 +1,3 @@
-# Going to change it up
+# Lol
 
-jekyll is too restrictive to what I want to do, even if jekyll is super simple.
+Changing it up one more time, just going to focus on doing a generic install and actually just doing content.
