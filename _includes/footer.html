@@ -1,0 +1,17 @@
+<footer class="Footer">
+    <ul class="Footer-tech">
+        <li class="mr-3">
+            hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+        </li>
+        <li class="pl-2 mr-2 border-l">
+            made with:
+        </li>
+        {% for tech in site.data.madeWith %}
+        <li class="mr-1">
+            <a href="{{ tech.url }}">
+                {{ tech.name }}{% if forloop.index != forloop.length %},{% endif %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</footer>

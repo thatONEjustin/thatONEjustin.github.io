@@ -11,7 +11,7 @@
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 ::before,
@@ -34,7 +34,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 4 */
+  font-family: Ubuntu; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
 }
@@ -470,36 +470,184 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.container {
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.mr-3 {
+  margin-right: 0.75rem;
+}
+.border-l {
+  border-left-width: 1px;
+}
+.p-4 {
+  padding: 1rem;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+h1 {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+h2 {
+  font-family: "Delicious Handrawn", serif;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+@media (min-width: 640px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    height: calc(100vh - 40px);
+  }
+}
+
+header, section.Content {
+  width: 100%;
+  max-height: calc(100vh - 40px);
+  height: 100%;
+}
+@media (min-width: 1024px) {
+  header, section.Content {
+    width: 50%;
+  }
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+footer {
+  height: 40px;
   width: 100%;
 }
-@media (min-width: 640px) {
 
-  .container {
-    max-width: 640px;
+/* main {
+    @apply
+        h-full
+        grid
+        grid-cols-2
+        auto-rows-auto;
+    grid-template-areas: 
+        "header section"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
+} */
+section.Content {
+  grid-area: content;
+}
+
+footer.Footer {
+  grid-area: footer;
+}
+
+header {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+  --tw-gradient-from: #064e3b var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(6 78 59 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #022c22 var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
+}
+header h1 {
+  display: flex;
+  flex-direction: column;
+  font-family: "Delicious Handrawn", serif;
+  font-size: 4.5rem;
+  line-height: 1;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(245 158 11 / var(--tw-text-opacity));
+  text-shadow: 2px 2px 0px #000;
+}
+header h1 > a.home {
+  padding-left: 3rem;
+}
+@media (min-width: 640px) {
+  header h1 > a.home {
+    padding-left: 0.75rem;
   }
 }
 @media (min-width: 768px) {
-
-  .container {
-    max-width: 768px;
+  header h1 > a.home {
+    padding-left: 3.5rem;
   }
 }
 @media (min-width: 1024px) {
-
-  .container {
-    max-width: 1024px;
+  header h1 > a.home {
+    padding-left: 7rem;
   }
 }
-@media (min-width: 1280px) {
-
-  .container {
-    max-width: 1280px;
-  }
+header .tagline {
+  margin-top: 1rem;
+  margin-left: auto;
+  padding-right: 1rem;
+  text-align: right;
+  font-family: Ubuntu;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(252 211 77 / var(--tw-text-opacity));
 }
-@media (min-width: 1536px) {
 
-  .container {
-    max-width: 1536px;
-  }
+.Footer {
+  width: 100%;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(2 44 34 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 44 34 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.Footer-tech {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+}
+.Footer-tech li {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.Footer-tech li a {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-style: italic;
+}
+.Footer-tech li, .Footer-tech li a {
+  --tw-text-opacity: 1;
+  color: rgb(245 158 11 / var(--tw-text-opacity));
+}
+
+.HomeBlog {
+  margin-top: 1rem;
+  border-top-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(2 44 34 / var(--tw-border-opacity));
+  padding-top: 0.5rem;
 }

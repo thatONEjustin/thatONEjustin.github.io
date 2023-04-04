@@ -1,0 +1,46 @@
+header {
+    @apply
+        bg-gradient-to-br
+        from-green-900
+        to-green-950;
+
+    $header-shadow-size: 2px;
+
+    h1 {
+        @apply
+            flex
+            flex-col
+            text-7xl
+            font-serif
+            font-semibold
+            text-yellow-500;
+        text-shadow: $header-shadow-size $header-shadow-size 0px $black;
+
+        > a.home {
+            @apply pl-12;
+
+            @screen sm {
+                @apply pl-3;
+            }
+
+            @screen md {
+                @apply pl-14;
+            }
+
+            @screen lg {
+                @apply pl-28;
+            }
+        }
+    }
+
+    .tagline {
+        @apply
+            text-lg
+            mt-4
+            ml-auto
+            pr-4
+            font-sans
+            text-right
+            text-yellow-300;
+    }
+}

@@ -1,0 +1,67 @@
+body {
+    @apply
+        h-full
+        w-full
+        min-h-screen
+        overflow-x-hidden;
+}
+
+main {
+    @screen sm {
+        
+    @apply
+        flex
+        flex-row;
+        height: calc(100vh - 40px);
+        
+    }
+}
+
+header, section.Content {
+    @apply  w-full;
+
+    max-height: calc(100vh - 40px);
+    @apply h-full;
+
+    @screen lg {
+        @apply 
+            w-1/2;
+    }
+}
+
+header {
+    @apply
+        flex
+        flex-col
+        items-start
+        justify-center;
+}
+
+footer {
+    @apply 
+        w-full
+        h-[40px];
+}
+
+/* main {
+    @apply
+        h-full
+        grid
+        grid-cols-2
+        auto-rows-auto;
+    grid-template-areas: 
+        "header section"
+        "footer footer";
+}
+
+header {
+    grid-area: header;
+} */
+
+section.Content {
+    grid-area: content;
+}
+
+footer.Footer {
+    grid-area: footer;
+}

@@ -1,7 +1,7 @@
 let mix = require('laravel-mix');
 
-const tailwind_source = '_tailwind/tailwind.scss';
-const tailwind_dist = 'assets/css/tailwind.scss';
+const tailwind_source = '_tailwind/style.scss';
+const tailwind_dist = 'assets/css/';
 
 const tailwind = require('tailwindcss');
 
@@ -17,7 +17,7 @@ mix.sass(
 // Sourcemaps
 // mix.sourceMaps(true, 'source-map');
 
-/* mix.browserSync({
+mix.browserSync({
     proxy: 'https://127.0.0.1:4000/',
     files: [
         './*.markdown', 
@@ -25,4 +25,4 @@ mix.sass(
         './_layouts/*.markdown',
         './_includes/*.markdown',
     ]
-}); */
+});

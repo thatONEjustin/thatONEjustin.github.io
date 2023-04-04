@@ -1,0 +1,8 @@
+- name: jekyll
+  url: https://jekyllrb.com/
+
+- name: tailwindcss
+  url: https://tailwindcss.com/
+
+- name: alpinejs
+  url: https://alpinejs.dev/
