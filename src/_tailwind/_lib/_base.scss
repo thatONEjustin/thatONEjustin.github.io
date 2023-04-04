@@ -18,10 +18,13 @@ main {
 }
 
 header, section.Content {
-    @apply  w-full;
 
-    max-height: calc(100vh - 40px);
-    @apply h-full;
+    @screen sm {
+        @apply  w-full;
+
+        max-height: calc(100vh - 40px);
+        @apply h-full;
+    }
 
     @screen lg {
         @apply 

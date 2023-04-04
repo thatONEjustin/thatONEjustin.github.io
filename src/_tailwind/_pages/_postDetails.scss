@@ -1,5 +1,11 @@
 $headings: h2, h3, h4, h5;
 .PostDetails { 
+    @apply pb-5;
+
+    @screen sm {
+        @apply pb-0;
+    }
+
     p {
         @each $heading in $headings {
             & + #{$heading} {

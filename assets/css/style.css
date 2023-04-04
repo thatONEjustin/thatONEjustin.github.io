@@ -489,12 +489,12 @@ video {
 .w-full {
   width: 100%;
 }
-.max-w-xl {
-  max-width: 36rem;
-}
 .max-w-fit {
   max-width: -moz-fit-content;
   max-width: fit-content;
+}
+.max-w-xl {
+  max-width: 36rem;
 }
 .flex-row {
   flex-direction: row;
@@ -579,12 +579,11 @@ body {
     flex-direction: row;
     height: calc(100vh - 40px);
   }
-}
-
-header, section.Content {
-  width: 100%;
-  max-height: calc(100vh - 40px);
-  height: 100%;
+  header, section.Content {
+    width: 100%;
+    max-height: calc(100vh - 40px);
+    height: 100%;
+  }
 }
 @media (min-width: 1024px) {
   header, section.Content {
@@ -744,6 +743,14 @@ header .tagline {
   margin-bottom: 0px;
 }
 
+.PostDetails {
+  padding-bottom: 1.25rem;
+}
+@media (min-width: 640px) {
+  .PostDetails {
+    padding-bottom: 0px;
+  }
+}
 .PostDetails p + h2 {
   margin-top: 2rem;
 }
