@@ -5,6 +5,12 @@
         <a href="{{ "/" | absolute_url }}" class="home font-nabla">justin<span class="font-serif">, a dev</span></a>
     </h1>
 
-    <p class="xl:w-8/12 mx-auto max-w-xl tagline">{{ site.description | default: site.github.project_tagline }}</p>
-
-  </header>
+    <!-- 
+    <p 
+        x-data="introText"
+        class="tagline splt">
+        {{ site.description | default: site.github.project_tagline }}
+    </p> 
+    -->
+    <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
+</header>

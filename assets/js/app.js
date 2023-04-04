@@ -4480,18 +4480,18 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var spltjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! spltjs */ "./node_modules/spltjs/splt.esm.js");
-/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
+/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
+/* harmony import */ var _modules_introText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/introText */ "./src/_scripts/modules/introText.js");
 /* harmony import */ var _modules_backButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/backButton */ "./src/_scripts/modules/backButton.js");
 
 
 
-window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
+window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 document.addEventListener("alpine:init", () => {
-  (0,spltjs__WEBPACK_IMPORTED_MODULE_0__["default"])({});
-  alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("introText", _modules_introText__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_2__["default"]);
 });
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
+alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
 
 /***/ }),
@@ -4507,17 +4507,105 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ backButton)
 /* harmony export */ });
 /* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
+/* harmony import */ var spltjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! spltjs */ "./node_modules/spltjs/splt.esm.js");
+var __async = (__this, __arguments, generator) => {
+  return new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var rejected = (value) => {
+      try {
+        step(generator.throw(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
+};
+
 
 function backButton() {
   return {
+    init() {
+      (0,spltjs__WEBPACK_IMPORTED_MODULE_1__["default"])({});
+    },
     over() {
-      (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
-        targets: `.${this.$el.className} .char`,
-        translateY: [0, -15, 0],
-        direction: "linear",
-        loop: false,
-        delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(25),
-        easing: "easeInOutCirc"
+      return __async(this, null, function* () {
+        (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+          targets: [".back svg", `.${this.$el.className} .char`],
+          translateY: [0, -15, 0],
+          direction: "linear",
+          loop: false,
+          delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(25),
+          easing: "easeInOutCirc"
+        });
+      });
+    }
+  };
+}
+
+
+/***/ }),
+
+/***/ "./src/_scripts/modules/introText.js":
+/*!*******************************************!*\
+  !*** ./src/_scripts/modules/introText.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ introText)
+/* harmony export */ });
+/* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
+/* harmony import */ var spltjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! spltjs */ "./node_modules/spltjs/splt.esm.js");
+var __async = (__this, __arguments, generator) => {
+  return new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var rejected = (value) => {
+      try {
+        step(generator.throw(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
+};
+
+
+function introText() {
+  return {
+    get length() {
+    },
+    init() {
+      return __async(this, null, function* () {
+        yield this.$nextTick();
+        (0,spltjs__WEBPACK_IMPORTED_MODULE_1__["default"])({
+          // reveal: true
+        });
+        (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+          targets: `.tagline .char`,
+          scale: [1, 1.3, 1],
+          opacity: [0, 1],
+          direction: "alternate",
+          loop: false,
+          steps: 72,
+          delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(15)
+        });
       });
     }
   };

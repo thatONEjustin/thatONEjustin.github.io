@@ -513,21 +513,12 @@ video {
 .flex {
   display: flex;
 }
-.w-full {
-  width: 100%;
-}
 .max-w-fit {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
 .max-w-xl {
   max-width: 36rem;
-}
-.flex-row {
-  flex-direction: row;
-}
-.items-center {
-  align-items: center;
 }
 .justify-between {
   justify-content: space-between;
@@ -689,15 +680,22 @@ header h1 > a.home {
 }
 header .tagline {
   z-index: 40;
+  margin-right: auto;
   margin-top: 2.5rem;
   margin-left: auto;
-  padding-left: 8rem;
+  max-width: 36rem;
+  padding-left: 9rem;
   text-align: right;
   font-family: Ubuntu, sans-serif;
   font-size: 1.125rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity));
+}
+@media (min-width: 1280px) {
+  header .tagline {
+    width: 75%;
+  }
 }
 header:after {
   position: absolute;
@@ -799,10 +797,6 @@ header:after {
 
   .xl\:w-10\/12 {
     width: 83.333333%;
-  }
-
-  .xl\:w-8\/12 {
-    width: 66.666667%;
   }
 }
 
