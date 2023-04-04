@@ -21,3 +21,8 @@ h3 {
 h4 {
     @apply text-2xl;
 }
+
+p.small {
+    @apply
+        text-xs;
+}

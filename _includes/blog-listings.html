@@ -3,7 +3,7 @@
     <a href="{{ post.url }}">
         <div class="flex flex-row w-full justify-between items-center">
             <h4>{{ post.title }}</h4>
-            <small>{{ post.date| date: "%B %d, %Y"  }}</small>
+            <p class="small">{{ post.date| date: "%B %d, %Y"  }}</p>
         </div>
         <p class="snippet">{{ post.summary }}</p>
     </a>
