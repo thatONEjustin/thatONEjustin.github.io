@@ -5,7 +5,7 @@ layout: default
   <h1 class="font-sans">{{ page.title }}</h1>
   <div class="flex flex-row justify-between">
     <p>{{ page.date | date: "%-d %B %Y" }}</p>
-    <h5 class="view">by {{ page.author | default: site.author }}</h5>
+    <p class="author">by {{ page.author | default: site.author }}</p>
   </div>
   {% if page.tags %}
   <small>tags: <em>{{ page.tags | join: "</em>, <em>" }}</em></small>

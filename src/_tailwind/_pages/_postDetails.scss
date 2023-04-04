@@ -1,5 +1,10 @@
+$headings: h2, h3, h4, h5;
 .PostDetails { 
-    p + h2 {
-        @apply mt-4;
+    p {
+        @each $heading in $headings {
+            & + #{$heading} {
+                @apply mt-8;
+            }
+        }
     }
 }
