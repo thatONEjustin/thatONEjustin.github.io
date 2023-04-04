@@ -12,14 +12,16 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            'sans': ['Ubuntu'],
-            'serif': ['"Delicious Handrawn"', 'serif']
+            'sans': ['Ubuntu', 'sans-serif'],
+            'serif': ['"Delicious Handrawn"', 'serif'],
+            'nabla': ['Nabla', '"Delicious Handrawn"', 'sans-serif']
         },
         colors: {
             black: colors.black,
             white: colors.white,
             green: colors.emerald,
-            yellow: colors.amber
+            yellow: colors.amber,
+            grey: colors.slate
         }
     },
     plugins: [],

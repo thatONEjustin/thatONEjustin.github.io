@@ -1,0 +1,21 @@
+.HomeBlog {
+    @apply 
+        mt-4
+        pt-2 
+        border-t 
+        border-green-950;
+
+    article {
+        @apply
+            mt-2
+            mb-8
+            pb-2
+            border-b
+            border-grey-500
+            border-dotted;
+        
+        &:last-child {
+            @apply mb-0;
+        }
+    }
+}

@@ -46,10 +46,10 @@ plugins:
 #
 exclude:
   - node_modules/
+  - src/
   - tailwind.config.js
   - webpack.mix.js
   - postcss.confiig.js
-  - _tailwind/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

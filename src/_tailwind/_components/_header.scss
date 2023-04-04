@@ -11,15 +11,15 @@ header {
             flex
             flex-col
             text-7xl
-            font-serif
-            font-semibold
-            text-yellow-500;
+            font-medium
+            text-yellow-500
+            w-full;
         text-shadow: $header-shadow-size $header-shadow-size 0px $black;
 
         > a.home {
-            @apply pl-12;
+            @apply text-right;
 
-            @screen sm {
+            /* @screen sm {
                 @apply pl-3;
             }
 
@@ -29,7 +29,7 @@ header {
 
             @screen lg {
                 @apply pl-28;
-            }
+            } */
         }
     }
 

@@ -34,7 +34,7 @@ html {
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: Ubuntu; /* 4 */
+  font-family: Ubuntu, sans-serif; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
 }
@@ -470,6 +470,10 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -479,38 +483,85 @@ video {
 .mr-3 {
   margin-right: 0.75rem;
 }
+.flex {
+  display: flex;
+}
+.w-full {
+  width: 100%;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.flex-row {
+  flex-direction: row;
+}
+.items-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
 .border-l {
   border-left-width: 1px;
 }
 .p-4 {
   padding: 1rem;
 }
+.p-5 {
+  padding: 1.25rem;
+}
 .pl-2 {
   padding-left: 0.5rem;
+}
+.font-nabla {
+  font-family: Nabla, "Delicious Handrawn", sans-serif;
+}
+.font-sans {
+  font-family: Ubuntu, sans-serif;
+}
+.font-serif {
+  font-family: "Delicious Handrawn", serif;
 }
 .text-9xl {
   font-size: 8rem;
   line-height: 1;
 }
+h1, h2 {
+  font-family: "Delicious Handrawn", serif;
+}
+
+h3, h4 {
+  font-family: Ubuntu, sans-serif;
+}
+
 h1 {
   font-size: 3rem;
   line-height: 1;
 }
 
 h2 {
-  font-family: "Delicious Handrawn", serif;
-  font-size: 3.75rem;
-  line-height: 1;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 body {
   height: 100%;
-  min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
 }
-
 @media (min-width: 640px) {
+  body {
+    overflow: hidden;
+  }
   main {
     display: flex;
     flex-direction: row;
@@ -536,7 +587,19 @@ header {
   justify-content: center;
 }
 
+section.Content {
+  padding-bottom: 2.5rem;
+}
+@media (min-width: 640px) {
+  section.Content {
+    overflow: hidden;
+    overflow-y: auto;
+    padding-bottom: 1rem;
+  }
+}
+
 footer {
+  z-index: 50;
   height: 40px;
   width: 100%;
 }
@@ -574,39 +637,35 @@ header {
 }
 header h1 {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  font-family: "Delicious Handrawn", serif;
   font-size: 4.5rem;
   line-height: 1;
-  font-weight: 600;
+  font-weight: 500;
   --tw-text-opacity: 1;
   color: rgb(245 158 11 / var(--tw-text-opacity));
   text-shadow: 2px 2px 0px #000;
 }
 header h1 > a.home {
-  padding-left: 3rem;
-}
-@media (min-width: 640px) {
-  header h1 > a.home {
-    padding-left: 0.75rem;
+  text-align: right;
+  /* @screen sm {
+      @apply pl-3;
   }
-}
-@media (min-width: 768px) {
-  header h1 > a.home {
-    padding-left: 3.5rem;
+
+  @screen md {
+      @apply pl-14;
   }
-}
-@media (min-width: 1024px) {
-  header h1 > a.home {
-    padding-left: 7rem;
-  }
+
+  @screen lg {
+      @apply pl-28;
+  } */
 }
 header .tagline {
   margin-top: 1rem;
   margin-left: auto;
   padding-right: 1rem;
   text-align: right;
-  font-family: Ubuntu;
+  font-family: Ubuntu, sans-serif;
   font-size: 1.125rem;
   line-height: 1.75rem;
   --tw-text-opacity: 1;
@@ -614,6 +673,9 @@ header .tagline {
 }
 
 .Footer {
+  position: fixed;
+  bottom: 0px;
+  margin-top: auto;
   width: 100%;
   border-top-width: 1px;
   --tw-border-opacity: 1;
@@ -624,6 +686,12 @@ header .tagline {
   padding-right: 1rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+@media (min-width: 640px) {
+  .Footer {
+    position: relative;
+    bottom: unset;
+  }
 }
 .Footer-tech {
   display: flex;
@@ -651,3 +719,28 @@ header .tagline {
   border-color: rgb(2 44 34 / var(--tw-border-opacity));
   padding-top: 0.5rem;
 }
+.HomeBlog article {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom-width: 1px;
+  border-style: dotted;
+  --tw-border-opacity: 1;
+  border-color: rgb(100 116 139 / var(--tw-border-opacity));
+  padding-bottom: 0.5rem;
+}
+.HomeBlog article:last-child {
+  margin-bottom: 0px;
+}
+
+.PostDetails p + h2 {
+  margin-top: 1rem;
+}
+
+@media (min-width: 1280px) {
+
+  .xl\:w-9\/12 {
+    width: 75%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map*/

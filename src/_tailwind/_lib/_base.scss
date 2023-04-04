@@ -1,19 +1,19 @@
 body {
     @apply
         h-full
-        w-full
-        min-h-screen
-        overflow-x-hidden;
+        w-full;
+
+    @screen sm {
+        @apply overflow-hidden;
+    }
 }
 
 main {
     @screen sm {
-        
-    @apply
-        flex
-        flex-row;
-        height: calc(100vh - 40px);
-        
+        @apply
+            flex
+            flex-row;
+            height: calc(100vh - 40px);
     }
 }
 
@@ -37,10 +37,23 @@ header {
         justify-center;
 }
 
+section.Content {
+    @apply
+        pb-10;
+
+    @screen sm {
+        @apply 
+            pb-4
+            overflow-hidden
+            overflow-y-auto;
+    }
+}
+
 footer {
     @apply 
         w-full
-        h-[40px];
+        h-[40px]
+        z-50;
 }
 
 /* main {

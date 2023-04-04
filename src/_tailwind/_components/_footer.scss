@@ -5,8 +5,17 @@
         py-3
         bg-green-950
         border-t
-        border-green-950;
-    
+        border-green-950
+        mt-auto
+        fixed
+        bottom-0;
+
+    @screen sm {
+        @apply 
+            relative
+            bottom-[unset];
+    }
+
     &-tech {
         @apply 
             flex 
