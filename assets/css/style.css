@@ -507,11 +507,17 @@ video {
 .mr-2 {
   margin-right: 0.5rem;
 }
+.mt-8 {
+  margin-top: 2rem;
+}
 .flex {
   display: flex;
 }
 .w-full {
   width: 100%;
+}
+.w-\[50px\] {
+  width: 50px;
 }
 .max-w-fit {
   max-width: -moz-fit-content;
@@ -760,7 +766,6 @@ header:after {
   color: rgb(245 158 11 / var(--tw-text-opacity));
 }
 .HomeBlog {
-  margin-top: 1rem;
   border-top-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(2 44 34 / var(--tw-border-opacity));
