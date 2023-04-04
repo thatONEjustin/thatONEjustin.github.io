@@ -1,17 +1,19 @@
 <footer class="Footer">
     <ul class="Footer-tech">
-        <li class="mr-3">
-            hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+        <li class="pr-3 border-r border-yellow-500">
+            <span class="font-semibold">hosted on</span> <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
         </li>
-        <li class="pl-2 mr-2 border-l">
-            made with:
-        </li>
+        <!-- <li class="pl-2 mr-2 border-l"></li> -->
         {% for tech in site.data.madeWith %}
-        <li class="mr-1">
-            <a href="{{ tech.url }}">
+        <li class="mr-1{% if forloop.index == 1 %} pl-3{% endif %}">
+            {% if forloop.index == 1 %}
+            <span class="font-semibold">made with:</span>
+            {% endif %}
+            <a href="{{ tech.url }}" target="_blank">
                 {{ tech.name }}{% if forloop.index != forloop.length %},{% endif %}
             </a>
         </li>
         {% endfor %}
     </ul>
+    <p class="text-yellow-500 small"><span class="font-semibold">copyright</span> {{ "now" | date: "%Y" }}</p>
 </footer>

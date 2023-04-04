@@ -1,5 +1,8 @@
 .Footer {
     @apply
+        flex
+        items-center
+        justify-between
         w-full 
         px-4 
         py-3
@@ -19,8 +22,7 @@
     &-tech {
         @apply 
             flex 
-            flex-row 
-            w-full;
+            flex-row;
 
         li {
             @apply

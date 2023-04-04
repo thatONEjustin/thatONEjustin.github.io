@@ -58,26 +58,3 @@ footer {
         h-[40px]
         z-50;
 }
-
-/* main {
-    @apply
-        h-full
-        grid
-        grid-cols-2
-        auto-rows-auto;
-    grid-template-areas: 
-        "header section"
-        "footer footer";
-}
-
-header {
-    grid-area: header;
-} */
-
-section.Content {
-    grid-area: content;
-}
-
-footer.Footer {
-    grid-area: footer;
-}

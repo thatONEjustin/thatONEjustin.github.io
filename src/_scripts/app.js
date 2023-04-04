@@ -1,10 +1,13 @@
-console.log(`It's a new dawn it's a new day`)
+import splt from 'spltjs';
+import Alpine from 'alpinejs';
 
-// splt({})
-// anime({
-//   targets: '.char',
-//   translateY: [0, 40],
-//   direction: 'alternate',
-//   loop: true,
-//   delay: anime.stagger(50),
-// });
+import backButton from './modules/backButton';
+
+splt({})
+
+window.Alpine = Alpine
+
+document.addEventListener('alpine:init', () => {
+    Alpine.data('backButton', backButton)
+    Alpine.start()
+})

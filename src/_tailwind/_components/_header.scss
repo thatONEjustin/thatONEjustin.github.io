@@ -4,7 +4,7 @@ header {
         from-green-900
         to-green-950;
 
-    $header-shadow-size: 2px;
+    $header-shadow-size: 4px;
 
     h1 {
         @apply
@@ -14,6 +14,7 @@ header {
             font-medium
             text-yellow-500
             w-full;
+
         text-shadow: $header-shadow-size $header-shadow-size 0px $black;
 
         > a.home {

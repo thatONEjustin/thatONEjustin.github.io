@@ -1,0 +1,26 @@
+@layer components {
+    .back {
+        @apply
+            relative
+            flex
+            py-4
+            w-fit
+            max-w-fit;
+            
+        svg {
+            @apply transition-all;
+        }
+
+        > span {
+            @apply transition-colors;
+        }
+
+        &:hover {
+            svg {
+                fill: $yellow-600;
+            }
+
+            @apply text-yellow-600;
+        }
+    }
+}
