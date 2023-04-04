@@ -2,9 +2,8 @@ header {
     @apply
         bg-gradient-to-br
         from-green-900
-        to-green-950;
-
-    $header-shadow-size: 4px;
+        to-green-950
+        relative;
 
     h1 {
         @apply
@@ -13,35 +12,48 @@ header {
             text-7xl
             font-medium
             text-yellow-500
-            w-full;
+            w-full
+            z-50;
 
+        $header-shadow-size: 4px;
         text-shadow: $header-shadow-size $header-shadow-size 0px $black;
 
         > a.home {
             @apply text-right;
-
-            /* @screen sm {
-                @apply pl-3;
-            }
-
-            @screen md {
-                @apply pl-14;
-            }
-
-            @screen lg {
-                @apply pl-28;
-            } */
         }
     }
 
     .tagline {
         @apply
             text-lg
-            mt-4
+            mt-10
             ml-auto
             pr-4
             font-sans
             text-right
-            text-yellow-300;
+            text-yellow-300
+            z-40
+            
+            w-2/3;
+
+        @screen xl {
+            @apply w-1/2;
+        }
+    }
+
+    &:after {
+        @apply
+            absolute
+            w-full
+            h-full
+            top-0
+            left-0;
+
+        content: ' ';
+
+        background-size: 20px 20px;
+        background-image:
+            linear-gradient(to right, rgba($yellow-100, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba($yellow-100, 0.05) 1px, transparent 1px);
     }
 }

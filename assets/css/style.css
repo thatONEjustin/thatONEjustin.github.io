@@ -660,6 +660,7 @@ footer {
 }
 
 header {
+  position: relative;
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
   --tw-gradient-from: #064e3b var(--tw-gradient-from-position);
   --tw-gradient-from-position:  ;
@@ -669,6 +670,7 @@ header {
   --tw-gradient-to-position:  ;
 }
 header h1 {
+  z-index: 50;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -681,21 +683,12 @@ header h1 {
 }
 header h1 > a.home {
   text-align: right;
-  /* @screen sm {
-      @apply pl-3;
-  }
-
-  @screen md {
-      @apply pl-14;
-  }
-
-  @screen lg {
-      @apply pl-28;
-  } */
 }
 header .tagline {
-  margin-top: 1rem;
+  z-index: 40;
+  margin-top: 2.5rem;
   margin-left: auto;
+  width: 66.666667%;
   padding-right: 1rem;
   text-align: right;
   font-family: Ubuntu, sans-serif;
@@ -703,6 +696,21 @@ header .tagline {
   line-height: 1.75rem;
   --tw-text-opacity: 1;
   color: rgb(252 211 77 / var(--tw-text-opacity));
+}
+@media (min-width: 1280px) {
+  header .tagline {
+    width: 50%;
+  }
+}
+header:after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  content: " ";
+  background-size: 20px 20px;
+  background-image: linear-gradient(to right, rgba(254, 243, 199, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(254, 243, 199, 0.05) 1px, transparent 1px);
 }
 
 .Footer {
@@ -716,8 +724,13 @@ header .tagline {
   border-top-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgb(2 44 34 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 44 34 / var(--tw-bg-opacity));
+  background-image: linear-gradient(to top right, var(--tw-gradient-stops));
+  --tw-gradient-from: #022c22 var(--tw-gradient-from-position);
+  --tw-gradient-from-position:  ;
+  --tw-gradient-to: rgb(2 44 34 / 0)  var(--tw-gradient-from-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: #064e3b var(--tw-gradient-to-position);
+  --tw-gradient-to-position:  ;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.75rem;
@@ -788,8 +801,8 @@ header .tagline {
 }
 @media (min-width: 1280px) {
 
-  .xl\:w-9\/12 {
-    width: 75%;
+  .xl\:w-10\/12 {
+    width: 83.333333%;
   }
 }
 

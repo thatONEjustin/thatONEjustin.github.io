@@ -4486,12 +4486,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-(0,spltjs__WEBPACK_IMPORTED_MODULE_0__["default"])({});
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
 document.addEventListener("alpine:init", () => {
+  (0,spltjs__WEBPACK_IMPORTED_MODULE_0__["default"])({});
   alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_2__["default"]);
-  alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
 });
+alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
 
 
 /***/ }),

@@ -17,6 +17,7 @@ module.exports = {
             'nabla': ['Nabla', '"Delicious Handrawn"', 'sans-serif']
         },
         colors: {
+            transparent: 'transparent',
             black: colors.black,
             white: colors.white,
             green: colors.emerald,
