@@ -50,6 +50,7 @@ exclude:
   - tailwind.config.js
   - webpack.mix.js
   - postcss.confiig.js
+  - .obsidian/
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

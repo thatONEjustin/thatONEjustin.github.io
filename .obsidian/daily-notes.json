@@ -2,5 +2,5 @@
   "folder": "_posts",
   "autorun": false,
   "format": "YYYY-MM-DD-",
-  "template": "src/_obsidian/blog-post"
+  "template": "src/_obsidian/blog-post.markdown"
 }

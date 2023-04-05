@@ -1,1 +1,8 @@
-{}
+{
+  "alwaysUpdateLinks": true,
+  "showLineNumber": true,
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "node_modules/"
+  ]
+}

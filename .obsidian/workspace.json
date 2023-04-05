@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "e51d698c48397ba5",
+        "id": "4aa288db11dadf4c",
         "type": "tabs",
         "children": [
           {
-            "id": "19e46eb23085b941",
+            "id": "8e908e244808548c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "src/_obsidian/blog-post.md",
+                "file": "node_modules/@colors/colors/README.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 247.5
   },
   "right": {
     "id": "1663611c3fcbee61",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "src/_obsidian/blog-post.md",
+                "file": "node_modules/@colors/colors/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "src/_obsidian/blog-post.md",
+                "file": "node_modules/@colors/colors/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "src/_obsidian/blog-post.md"
+                "file": "node_modules/@colors/colors/README.md"
               }
             }
           }
@@ -147,19 +147,33 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "19e46eb23085b941",
+  "active": "905538738288893b",
   "lastOpenFiles": [
+    "main.js",
+    "node_modules/@babel/compat-data/README.md",
+    "_posts/2023-04-04-okay-getting-a-workflow-going.markdown.md",
+    "_includes/_components/blog-listings.html",
+    "_includes/_components/back-button.html",
+    "_includes/_components",
+    "_includes/footer.html",
+    "_includes/header.html",
+    "_includes/head-custom.html",
+    "_includes/head-custom-google-analytics.html",
+    "_includes",
+    "_layouts/post.html",
+    "_layouts/default.html",
+    "src/_obsidian/blog-post.markdown.md",
+    "_posts/2023-04-04-okay-getting-a-workflow-going.md",
+    "assets/img/markdown-template.png",
+    "assets/img/daily-note-settings.png",
+    "_posts/2023-04-04-hrm-more.markdown.md",
+    "Untitled.md",
+    "_posts/2023-04-04-updating-this-should-work.markdown.md",
+    "_posts/Untitled.md",
     "_posts/2023-04-04-okay-getting-a-workflow-and-getting-inspiration.markdown.md",
     "_posts/2023-04-04.md",
-    "src/_obsidian/blog-post.md",
-    "_posts/2023-04-03-back-to-jekyll.markdown",
-    "_site/2023/04/04/okay-getting-a-workflow-and-getting-inspiration.markdown.html",
-    "_site/2023/04/04",
-    "src/_obsidian",
     "2023-04-04.md",
-    "_obsidian",
     "_posts/2023-04-04-more-progress-what-to-talk-about.markdown.md",
-    "_posts/2023-04-02-woo-were-live-now.markdown",
     "README.md",
     "_site/2023-04-04.md"
   ]
