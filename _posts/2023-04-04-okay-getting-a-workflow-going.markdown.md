@@ -52,3 +52,8 @@ What's great is that Obsidian also uses mustache rendering and pairs some useful
 #### The following HR line is to note when I stopped typing this on my desktop
 ---
 
+Okay, so I had to take a short break in order to clear my head and test out one feature set before finishing this post. I needed to test what GitHub for iPad did, which unfortunately is just a tracking app. There's actions I could trigger and probably some administrative stuff but unfortunately I can't do a push from my iPad itself. 
+
+Time to see how the Obsidian sync works
+
+---

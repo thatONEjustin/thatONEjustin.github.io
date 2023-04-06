@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "node_modules/@colors/colors/README.md",
+                "file": "_posts/2023-04-04-okay-getting-a-workflow-going.markdown.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "node_modules/@colors/colors/README.md",
+                "file": "_posts/2023-04-04-okay-getting-a-workflow-going.markdown.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "node_modules/@colors/colors/README.md",
+                "file": "_posts/2023-04-04-okay-getting-a-workflow-going.markdown.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "node_modules/@colors/colors/README.md"
+                "file": "_posts/2023-04-04-okay-getting-a-workflow-going.markdown.md"
               }
             }
           }
@@ -147,8 +147,9 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "905538738288893b",
+  "active": "8e908e244808548c",
   "lastOpenFiles": [
+    "node_modules/@colors/colors/README.md",
     "main.js",
     "node_modules/@babel/compat-data/README.md",
     "_posts/2023-04-04-okay-getting-a-workflow-going.markdown.md",
@@ -161,7 +162,6 @@
     "_includes/head-custom-google-analytics.html",
     "_includes",
     "_layouts/post.html",
-    "_layouts/default.html",
     "src/_obsidian/blog-post.markdown.md",
     "_posts/2023-04-04-okay-getting-a-workflow-going.md",
     "assets/img/markdown-template.png",
