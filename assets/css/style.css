@@ -513,12 +513,21 @@ video {
 .flex {
   display: flex;
 }
+.w-1\/2 {
+  width: 50%;
+}
+.w-full {
+  width: 100%;
+}
 .max-w-fit {
   max-width: -moz-fit-content;
   max-width: fit-content;
 }
 .max-w-xl {
   max-width: 36rem;
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 .justify-between {
   justify-content: space-between;
@@ -551,11 +560,11 @@ video {
 .pr-3 {
   padding-right: 0.75rem;
 }
+.text-right {
+  text-align: right;
+}
 .font-nabla {
   font-family: Nabla, "Delicious Handrawn", sans-serif;
-}
-.font-sans {
-  font-family: Ubuntu, sans-serif;
 }
 .font-serif {
   font-family: "Delicious Handrawn", serif;
@@ -566,6 +575,9 @@ video {
 }
 .font-semibold {
   font-weight: 600;
+}
+.lowercase {
+  text-transform: lowercase;
 }
 .text-yellow-500 {
   --tw-text-opacity: 1;
@@ -602,6 +614,30 @@ h4 {
 p.small {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+
+section.Content h1 {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+section.Content--dark h1 {
+  background: linear-gradient(0, #f59e0b, 95%, #fde68a);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+section.Content--dark h2 {
+  --tw-text-opacity: 1;
+  color: rgb(245 158 11 / var(--tw-text-opacity));
+}
+section.Content--dark h3, section.Content--dark h4 {
+  --tw-text-opacity: 1;
+  color: rgb(253 230 138 / var(--tw-text-opacity));
+}
+section.Content--dark p {
+  --tw-text-opacity: 1;
+  color: rgb(254 243 199 / var(--tw-text-opacity));
 }
 
 body {
@@ -645,6 +681,10 @@ section.Content {
     overflow-y: auto;
     padding-bottom: 1rem;
   }
+}
+section.Content.Content--dark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 33 29 / var(--tw-bg-opacity));
 }
 
 footer {
@@ -781,6 +821,28 @@ header:after {
     padding-bottom: 0px;
   }
 }
+.PostDetails-info {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 0.375rem;
+  border-style: dashed;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.1;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-blend-mode: lighten;
+}
+.PostDetails-tags {
+  width: 100%;
+}
+p.PostDetails-tags {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 .PostDetails p + h2 {
   margin-top: 2rem;
 }
@@ -792,6 +854,18 @@ header:after {
 }
 .PostDetails p + h5 {
   margin-top: 2rem;
+}
+.PostDetails h2 + p {
+  margin-top: 0.5rem;
+}
+.PostDetails h3 + p {
+  margin-top: 0.5rem;
+}
+.PostDetails h4 + p {
+  margin-top: 0.5rem;
+}
+.PostDetails h5 + p {
+  margin-top: 0.5rem;
 }
 @media (min-width: 1280px) {
 

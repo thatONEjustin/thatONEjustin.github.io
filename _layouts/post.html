@@ -1,16 +1,16 @@
 ---
 layout: default
 ---
-<article class="PostDetails">
-  <h1 class="font-sans">{{ page.title }}</h1>
-  <div class="flex justify-between max-w-fit">
-    <p>{{ page.date | date: "%-d %B %Y" }}</p>
-    <p class="author pl-8">by {{ page.author | default: site.author }}</p>
+<article class="PostDetails lowercase">
+  <h1>{{ page.title }}</h1>
+  <div class="PostDetails-info flex flex-wrap justify-between max-w-fit">
+    <p class="w-1/2">{{ page.date | date: "%-d %B %Y" }}</p>
+    <p class="author pl-8 w-1/2 text-right">by {{ page.author | default: site.author }}</p>
+    {% if page.tags %}
+    <p class="PostDetails-tags">tags: <em>{{ page.tags | join: "</em>, <em>" }}</em></p>
+    {% endif %}
+  
   </div>
-  {% if page.tags %}
-  <p class="small">tags: <em>{{ page.tags | join: "</em>, <em>" }}</em></p>
-  {% endif %}
-
   {{ content }}
 
   {% include _components/back-button.html %}

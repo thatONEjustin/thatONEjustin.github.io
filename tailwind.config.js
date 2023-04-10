@@ -19,11 +19,12 @@ module.exports = {
         fontFamily: {
             'sans': ['Ubuntu', 'sans-serif'],
             'serif': ['"Delicious Handrawn"', 'serif'],
-            'nabla': ['Nabla', '"Delicious Handrawn"', 'sans-serif']
+            'nabla': ['Nabla', '"Delicious Handrawn"', 'sans-serif'],
+            'caveat': ['Caveat', 'serif']
         },
         colors: {
             transparent: 'transparent',
-            black: colors.black,
+            black: '#0c211d',
             white: colors.white,
             green: colors.emerald,
             yellow: colors.amber,

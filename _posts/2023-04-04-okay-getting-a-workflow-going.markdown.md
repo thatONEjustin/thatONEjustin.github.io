@@ -6,7 +6,7 @@ date:   2023-04-04 18:04:10 -0500
 tags: obsidian jekyll gh-pages
 summary: So I ran into two types of issues, existential and physical. In both cases I solved the issue by doubling up on tools to use, its better than it sounds. 
 ---
-## I was trying to figure out "what do I even need to write about" (the existential problem)
+### I was trying to figure out "what do I even need to write about" (the existential problem)
 And then I ran into an issue... 
 
 ### The physical problem
@@ -28,13 +28,14 @@ VS Code can generate templated systems, but for the most part it's almost prefer
 
 **Obsidian** solves the first two bullet points out of the box with their **Core** plugin family.
 
-Here's a look at my `Daily Note` plugin settings:
-![[daily-note-settings.png]]
+Here's a look at my `Daily Note` plugin settings
+![[/assets/img/daily-note-settings.png]]
 
 This plugin adds a button to the side bar (and hot key) for creating a new file in a folder location I designate. 
 
-I can also assign a `template` to the file generated that gives me a boilerplate to work with:
-![[markdown-template.png]]
+I can also assign a `template` to the file generated that gives me a boilerplate to work with
+![[/assets/img/markdown-template.png]]
+
 ```markdown
 ---
 layout: post
@@ -45,6 +46,7 @@ tags: obsidian
 summary: lorem ipsum.
 ---
 ```
+
 %%Accordion the above%%
 
 What's great is that Obsidian also uses mustache rendering and pairs some useful date/time tools that get applied when creating a file. Most notably solving bulletpoint 2 of **how** I want to write for my blog.

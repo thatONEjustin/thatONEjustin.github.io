@@ -18,7 +18,6 @@ main {
 }
 
 header, section.Content {
-
     @screen sm {
         @apply  w-full;
 
@@ -40,15 +39,22 @@ header {
         justify-center;
 }
 
-section.Content {
-    @apply
-        pb-10;
-
-    @screen sm {
-        @apply 
-            pb-4
-            overflow-hidden
-            overflow-y-auto;
+section {
+    &.Content {
+        @apply
+            pb-10;
+    
+        @screen sm {
+            @apply 
+                pb-4
+                overflow-hidden
+                overflow-y-auto;
+        }
+        
+        &.Content--dark {
+            @apply
+                bg-black;
+        }
     }
 }
 
