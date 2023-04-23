@@ -4,7 +4,7 @@ author: justin
 title:  "Simple Alpine Theme Selector"
 date:   2023-04-22 23:04:05 -0500
 tags: obsidian
-summary: lorem ipsum.
+summary: Okay so I've learned some things about Jekyll front matter, and properlly formatted posts. But this is about a theme selector.
 ---
 ## Okay so instead of 1 color scheme, I built a theme selector
 
