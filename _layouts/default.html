@@ -20,12 +20,14 @@
     <![endif]-->
     {% include head-custom.html %}
   </head>
-  <body>
+  <body x-data="Themes">
 
     <main>
       {% include header.html %}
       
-      <section class="Content Content--dark Content--neon Content--bubbles p-5">
+      <section 
+        class="Content Content--bubbles p-5"
+        :class="baseThemeClass">
 
         {{ content }}
 

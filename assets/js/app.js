@@ -4481,15 +4481,18 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-/* harmony import */ var _modules_introText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/introText */ "./src/_scripts/modules/introText.js");
-/* harmony import */ var _modules_backButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/backButton */ "./src/_scripts/modules/backButton.js");
+/* harmony import */ var _modules_themes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/themes */ "./src/_scripts/modules/themes.js");
+/* harmony import */ var _modules_introText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/introText */ "./src/_scripts/modules/introText.js");
+/* harmony import */ var _modules_backButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/backButton */ "./src/_scripts/modules/backButton.js");
+
 
 
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 document.addEventListener("alpine:init", () => {
-  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("introText", _modules_introText__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("Themes", _modules_themes__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("introText", _modules_introText__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_3__["default"]);
 });
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
@@ -4607,6 +4610,41 @@ function introText() {
           delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(15)
         });
       });
+    }
+  };
+}
+
+
+/***/ }),
+
+/***/ "./src/_scripts/modules/themes.js":
+/*!****************************************!*\
+  !*** ./src/_scripts/modules/themes.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ themes)
+/* harmony export */ });
+function themes() {
+  return {
+    themeChoices: ["default", "neon"],
+    current: "default",
+    choose(choice) {
+      this.current = choice;
+    },
+    baseThemeClass() {
+      return {
+        "Content--dark": this.current == "default",
+        "Content--dark Content--neon": this.current == "neon"
+      };
+    },
+    choicePreview(choice) {
+      return {
+        "bg-yellow-500": choice == "default",
+        "bg-red-500": choice == "neon"
+      };
     }
   };
 }

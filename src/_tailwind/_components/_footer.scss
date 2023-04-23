@@ -13,12 +13,20 @@
         border-blue-950
         mt-auto
         fixed
-        bottom-0;
+        bottom-0
+        flex-col
+        h-[80px];
 
     @screen sm {
         @apply 
             relative
             bottom-[unset];
+    }
+
+    @screen lg {
+        @apply
+            flex-row
+            h-[40px];
     }
 
     &-tech {
@@ -41,5 +49,14 @@
             @apply
                 text-yellow-500;
         }
+    }
+
+    &-meta {
+        @apply
+            flex
+            flex-row
+            justify-between
+            items-center
+            w-min;
     }
 }

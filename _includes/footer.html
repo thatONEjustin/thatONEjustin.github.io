@@ -15,5 +15,19 @@
         </li>
         {% endfor %}
     </ul>
-    <p class="text-yellow-500 small"><span class="font-semibold">copyright</span> {{ "now" | date: "%Y" }}</p>
+    <div class="Footer-meta">
+        <ul class="ThemeSelector">
+            <li class="ThemeSelector-label">theme: </li>
+            <template x-for="choice in themeChoices">
+            <li>
+                <a
+                    @click.prevent="choose(choice)"
+                    :data-theme="`${choice}`"
+                    class="ThemeSelector-choice"
+                    :class="choicePreview(choice)"></a>
+            </li>
+            </template>
+        </ul>
+        <p class="text-yellow-500 small flex"><span class="font-semibold pr-1">copyright</span> {{ "now" | date: "%Y" }}</p>
+    </div>
 </footer>

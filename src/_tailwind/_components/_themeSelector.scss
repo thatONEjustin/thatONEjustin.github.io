@@ -1,0 +1,36 @@
+.ThemeSelector {
+    @apply
+        flex
+        flex-row
+        items-center
+        mr-8;
+
+    li {
+        @apply
+            mr-1
+            cursor-pointer;
+    }
+
+    &-choice {
+        @apply
+            w-[16px] 
+            h-[16px]
+            block
+            border-2
+            border-black
+            transition-all
+            ease-linear;
+
+        &:hover {
+            @apply
+                border-0;
+        }
+    }
+
+    &-label {
+        @apply
+            text-yellow-500
+            font-bold
+            text-sm;
+    }
+}

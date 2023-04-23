@@ -28,8 +28,12 @@
         items-center
         justify-center
         top-1/2
-        relative
-        -translate-y-2/4;
+        relative;
+
+    @screen lg {
+        @apply
+            -translate-y-2/4;
+    }
 
     &-title {
         @apply
