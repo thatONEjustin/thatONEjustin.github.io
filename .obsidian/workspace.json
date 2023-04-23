@@ -139,14 +139,15 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "8e908e244808548c",
+  "active": "905538738288893b",
   "lastOpenFiles": [
+    "src/_obsidian/blog-post.markdown.md",
+    "_posts/2023-04-23-.md",
     "_site/2023/04/22/okay-okay-okay.html",
     "_site/2023/04/22",
     "_site/2023/04/04/okay-getting-a-workflow-going.html",
     "_posts/2023-04-22-okay-okay-okay.markdown.md",
     "_posts/2023-04-22-okay-okay-okay.markdown",
-    "src/_obsidian/blog-post.markdown.md",
     "_posts/2023-04-04-okay-getting-a-workflow-going.markdown",
     "_posts/2023-04-04-okay-getting-a-workflow-going.markdown.md",
     "_posts/2023-04-03-back-to-jekyll.markdown",
@@ -156,7 +157,6 @@
     "_includes/_components/blog-listings.html",
     "_includes/_components/back-button.html",
     "_includes/_components",
-    "_includes/footer.html",
     "assets/img/markdown-template.png",
     "assets/img/daily-note-settings.png",
     "_posts/2023-04-04-hrm-more.markdown.md",
