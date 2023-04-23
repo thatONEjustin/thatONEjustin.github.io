@@ -1,7 +1,7 @@
 ---
 layout: post
 author: justin
-title:  Okay getting a workflow going and getting inspiration
+title:  "Okay getting a workflow going and getting inspiration"
 date:   2023-04-04 18:04:10 -0500
 tags: obsidian jekyll gh-pages
 summary: So I ran into two types of issues, existential and physical. In both cases I solved the issue by doubling up on tools to use, its better than it sounds. 
