@@ -1,0 +1,9 @@
+
+@layer components {
+    .bg-yellow-gradient {
+        background: linear-gradient(0, $yellow-500, 95%, $yellow-200);
+    }
+    .bg-red-gradient {
+        background: linear-gradient(0, $red-500, 5%, $red-400);
+    }
+}

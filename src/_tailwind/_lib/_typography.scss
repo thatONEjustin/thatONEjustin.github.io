@@ -27,11 +27,12 @@ p.small {
         text-xs;
 }
 
+
+
 @layer components {
     .emphasis-gradient {
         @apply
-            bg-clip-text
-            bg-yellow-gradient;
+            bg-clip-text;
 
         -webkit-text-fill-color: transparent;
     }
@@ -44,24 +45,53 @@ section.Content {
     }
 }
 
-section.Content--dark {
-    h1 {
-        @apply
-            emphasis-gradient;
-    }
+section {
+    &.Content {
+        &--dark {
+            h1 {
+                @apply
+                    emphasis-gradient
+                    bg-yellow-gradient;
+            }
+        
+            h2 {
+                @apply
+                    text-yellow-500;
+            }
+        
+            h3, h4 {
+                @apply
+                    text-yellow-200;
+            }
+        
+            p {
+                @apply
+                    text-yellow-100;
+            }
+        }
 
-    h2 {
-        @apply
-            text-yellow-500;
-    }
+        &--neon {
+            h1 {
+                @apply
+                    emphasis-gradient
+                    bg-red-gradient;
+            }
 
-    h3, h4 {
-        @apply
-            text-yellow-200;
-    }
+            h2 {
+                @apply
+                    emphasis-gradient
+                    bg-red-gradient;
+            }
 
-    p {
-        @apply
-            text-yellow-100;
-    }
+            h3, h4 {
+                @apply
+                    text-yellow-200;
+            }
+
+            p {
+                @apply
+                    text-yellow-100;
+            }
+        }
+    }    
 }

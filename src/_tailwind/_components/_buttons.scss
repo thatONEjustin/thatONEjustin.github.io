@@ -46,7 +46,8 @@
                 h-full
                 top-0
                 left-[-125%]
-                absolute;
+                absolute
+                pointer-events-none;
 
             transform: skew(45deg);
             transition: left var(--transition-duration) var(--transition-easing);
@@ -59,6 +60,13 @@
                 @apply
                     left-[125%];
             }
+        }
+    }
+
+    .Content--neon {
+        .cta {
+            @apply
+                bg-red-500;
         }
     }
 }

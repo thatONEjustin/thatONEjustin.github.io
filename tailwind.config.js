@@ -24,11 +24,13 @@ module.exports = {
         },
         colors: {
             transparent: 'transparent',
-            black: '#0c211d',
+            black: '#0a0a0a',
             white: colors.white,
             green: colors.emerald,
             yellow: colors.amber,
-            grey: colors.slate
+            grey: colors.slate,
+            blue: colors.cyan,
+            red: colors.pink
         }
     },
     plugins: [],
