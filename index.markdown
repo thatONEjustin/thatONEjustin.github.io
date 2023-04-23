@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-## Welcome!
-Okay, I went a little too ham on building but hey, progress is progress. 
-
-<div class="HomeBlog mt-8">
-    {% include _components/blog-listings.html %}
+<div class="HomeContent">
+    <h2 class="HomeContent-title">So what do you need?</h2>
+    <div class="HomeContent-cta">
+        <a href="/assets/resume.pdf" target="_blank" class="cta">My Resume</a>
+        <h4>or</h4>
+        <a href="/blog" class="cta">A blog</a>
+    </div>
 </div>

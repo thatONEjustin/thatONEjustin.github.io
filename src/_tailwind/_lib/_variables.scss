@@ -38,3 +38,9 @@ $green-700: #047857;
 $green-800: #065f46;
 $green-900: #064e3b;
 $green-950: #022c22;
+
+@layer components {
+    .bg-yellow-gradient {
+        background: linear-gradient(0, $yellow-500, 95%, $yellow-200);
+    }
+}

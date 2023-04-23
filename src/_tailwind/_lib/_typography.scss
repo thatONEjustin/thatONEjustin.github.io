@@ -27,6 +27,16 @@ p.small {
         text-xs;
 }
 
+@layer components {
+    .emphasis-gradient {
+        @apply
+            bg-clip-text
+            bg-yellow-gradient;
+
+        -webkit-text-fill-color: transparent;
+    }
+}
+
 section.Content {
     h1 {
         @apply
@@ -36,10 +46,8 @@ section.Content {
 
 section.Content--dark {
     h1 {
-        background: linear-gradient(0, $yellow-500, 95%, $yellow-200);
-        background-clip: text;
-        // text-fill-color: transparent;
-        -webkit-text-fill-color: transparent;
+        @apply
+            emphasis-gradient;
     }
 
     h2 {

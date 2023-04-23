@@ -23,4 +23,42 @@
             @apply text-yellow-600;
         }
     }
+
+    .cta {
+        --transition-duration: 500ms;
+        --transition-easing: ease-out;
+        
+        @apply
+            py-3
+            px-5
+            bg-yellow-200
+            text-black
+            rounded-md
+            relative
+            overflow-hidden;
+
+        &:before {
+            content: '';
+            @apply
+                bg-white
+                bg-opacity-25
+                w-3/5
+                h-full
+                top-0
+                left-[-125%]
+                absolute;
+
+            transform: skew(45deg);
+            transition: left var(--transition-duration) var(--transition-easing);
+
+        }
+        
+        &:hover {
+            
+            &::before {
+                @apply
+                    left-[125%];
+            }
+        }
+    }
 }

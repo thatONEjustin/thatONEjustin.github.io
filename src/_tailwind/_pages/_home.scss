@@ -18,3 +18,35 @@
         }
     }
 }
+
+.HomeContent {
+    @apply 
+        container 
+        mx-auto 
+        flex 
+        flex-col 
+        items-center
+        justify-center
+        top-1/2
+        relative
+        -translate-y-2/4;
+
+    &-title {
+        @apply
+            text-center
+            emphasis-gradient
+            pb-4;
+    }
+
+    &-cta {
+        @apply 
+            flex 
+            flex-row 
+            items-center 
+            justify-center;
+
+        > h4 {
+           @apply mx-5; 
+        }
+    }
+}

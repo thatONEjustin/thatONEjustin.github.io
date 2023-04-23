@@ -21,6 +21,7 @@ mix.sass(
         postCss: [ tailwind ]
     });
 
+mix.copy('src/_assets', 'assets/');
 // Sourcemaps
 mix.sourceMaps(true, 'source-map');
 
