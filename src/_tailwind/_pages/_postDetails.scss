@@ -1,9 +1,30 @@
-$headings: h2, h3, h4, h5;
+$headings: h2, h3, h4, h5, h6;
 .PostDetails { 
     @apply pb-5;
 
     @screen sm {
         @apply pb-0;
+    }
+
+    p {
+        @each $heading in $headings {
+            & + #{$heading} {
+                @apply mt-8;
+            }
+        }
+
+        + p {
+            @apply
+                mt-8;
+        }
+    }
+
+    @each $heading in $headings {
+        #{$heading} {
+            & + p {
+                @apply mt-2;
+            }
+        }
     }
 
     &-info {
@@ -17,6 +38,10 @@ $headings: h2, h3, h4, h5;
             border-dashed
             border-white
             my-3;
+
+        p, p + p {
+            @apply my-0;
+        }
     }
 
     &-tags {
@@ -25,19 +50,412 @@ $headings: h2, h3, h4, h5;
             w-full;
     }
 
-    p {
-        @each $heading in $headings {
-            & + #{$heading} {
-                @apply mt-8;
+    .highlighter-rouge {
+        pre {
+            @apply
+                p-4
+                bg-grey-800
+                text-yellow-300;
+        }
+
+        .highlight {
+            .cm {
+                @apply
+                    text-grey-400
+                    italic;
+            }
+    
+            .cp {
+                @apply
+                    text-grey-500
+                    font-bold;
+            }
+    
+            .c1 {
+                @apply
+                    text-grey-400
+                    italic;
+            }
+    
+            .cs {
+                @apply
+                    text-grey-500
+                    font-bold
+                    italic;
+            }
+    
+            .c,
+            .cd {
+                @apply
+                    text-grey-400
+                    italic;
+            }
+    
+            .err {
+                @apply
+                    text-red-700;
+                // color: #a61717;
+                // background-color: #e3d2d2;
+            }
+    
+            .gd {
+                @apply
+                    text-black
+                    bg-grey-200;
+                // color: #000000;
+                // background-color: #ffdddd;
+            }
+    
+            .ge {
+                @apply
+                    text-black
+                    italic;
+                // color: #000000;
+                // font-style: italic;
+            }
+    
+            .gr {
+                @apply
+                    text-red-800;
+                // color: #aa0000;
+            }
+    
+            .gh {
+                @apply
+                    text-grey-500;
+                // color: #999999;
+            }
+    
+            .gi {
+                @apply
+                    text-black
+                    bg-grey-200;
+                // color: #000000;
+                // background-color: #ddffdd;
+            }
+    
+            .go {
+                @apply
+                    text-grey-700;
+                // color: #888888;
+            }
+    
+            .gp {
+                @apply
+                    text-grey-800;
+                // color: #555555;
+            }
+    
+            .gs {
+                @apply
+                    font-bold;
+            }
+    
+            .gu {
+                @apply
+                    text-grey-400;
+                // color: #aaaaaa;
+            }
+    
+            .gt {
+                @apply
+                    text-red-700;
+                // color: #aa0000;
+            }
+    
+            .kc {
+                @apply
+                    text-black
+                    font-bold;
+                // color: #000000;
+                // font-weight: bold;
+            }
+    
+            .kn {
+                @apply
+                    text-black
+                    font-bold;
+                // color: #000000;
+                // font-weight: bold;
+            }
+    
+            .kp {
+                @apply
+                    text-black
+                    font-bold;
+                // color: #000000;
+                // font-weight: bold;
+            }
+    
+            .kr {
+                @apply
+                    text-black
+                    font-bold;
+                // color: #000000;
+                // font-weight: bold;
+            }
+    
+            .kt {
+                
+                @apply
+                    text-grey-700
+                    font-bold;
+                // color: #445588;
+                // font-weight: bold;
+            }
+    
+            .k,
+            .kv {
+                @apply
+                    text-blue-700
+                    font-bold;
+            }
+
+            .kd {
+                @apply
+                    text-blue-700
+                    font-bold;
+            }
+    
+            .mf {
+                @apply
+                    text-green-700;
+                // color: #009999;
+            }
+    
+            .mh {
+                @apply
+                    text-green-700;
+                // color: #009999;
+            }
+    
+            .il {
+                @apply
+                    text-green-700;
+                // color: #009999;
+            }
+    
+            .mi {
+                @apply
+                    text-green-700;
+                // color: #009999;
+            }
+    
+            .mo {
+                @apply
+                    text-green-700;
+                // color: #009999;
+            }
+    
+            .m,
+            .mb,
+            .mx {
+                @apply
+                    text-green-700;
+                // color: #009999;
+            }
+    
+            .sb {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .sc {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .sd {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .s2 {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .se {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .sh {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .si {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .sx {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .sr {
+                @apply
+                    text-green-500;
+                // color: #009926;
+            }
+    
+            .s1 {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .ss {
+                
+                @apply
+                    text-red-900;
+                // color: #990073;
+            }
+    
+            .s {
+                @apply
+                    text-red-700;
+                // color: #d14;
+            }
+    
+            .na {
+                @apply
+                    text-green-700;
+                // color: #008080;
+            }
+    
+            .bp {
+                @apply
+                    text-grey-400;
+                // color: #999999;
+            }
+    
+            .nb {
+                @apply
+                    text-blue-600;
+                // color: #0086B3;
+            }
+    
+            .nc {
+                @apply
+                    text-blue-600
+                    font-bold;
+                // color: #445588;
+                // font-weight: bold;
+            }
+    
+            .no {
+                @apply
+                    text-blue-600;
+                // color: #008080;
+            }
+    
+            .nd {
+                @apply
+                    text-blue-600
+                    font-bold;
+                // color: #3c5d5d;
+                // font-weight: bold;
+            }
+    
+            .ni {
+                @apply
+                    text-red-800
+                    font-bold;
+                // color: #990000;
+                // font-weight: bold;
+            }
+    
+            .ne {
+                @apply
+                    text-red-900
+                    font-bold;
+                // color: #990000;
+                // font-weight: bold;
+            }
+    
+            .nf {
+                @apply
+                    text-green-500
+                    font-bold;
+                // color: #990000;
+                // font-weight: bold;
+            }
+    
+            .nl {
+                @apply
+                    text-green-500
+                    font-bold;
+                // color: #990000;
+                // font-weight: bold;
+            }
+    
+            .nn {
+                @apply
+                    text-grey-700;
+                // color: #555555;
+            }
+    
+            .nt {
+                // color: #000080;
+                @apply
+                    text-blue-700;
+            }
+    
+            .vc {
+                @apply
+                    text-blue-700;
+                // color: #008080;
+            }
+    
+            .vg {
+                @apply
+                    text-blue-700;
+                // color: #008080;
+            }
+    
+            .vi {
+                @apply
+                    text-blue-700;
+                // color: #008080;
+            }
+    
+            .nv {
+                @apply
+                    text-blue-700;
+                // color: #008080;
+            }
+    
+            .ow {
+                @apply
+                    text-black
+                    font-bold;
+            }
+    
+            .o {
+                @apply
+                    text-blue-500
+                    font-bold;
+            }
+    
+            .w {
+                color: #bbbbbb;
             }
         }
-    }
 
-    @each $heading in $headings {
-        #{$heading} {
-            & + p {
-                @apply mt-2;
-            }
+        + p {
+            @apply 
+                mt-6;
         }
     }
 }

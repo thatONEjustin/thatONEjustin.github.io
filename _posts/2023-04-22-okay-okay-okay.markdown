@@ -14,21 +14,28 @@ here's some HTML:
 ```html
 <body x-data="Themes">
 	<main>
+		{% raw %}
 		{% include header.html %} <!-- this is jekyll/liquid -->
+		{% endraw %}
 		<section
 			class="Content Content--bubbles p-5"
 			:class="baseThemeClass">
+			{% raw %}
 			{{ content }} <!-- this is jekyll/liquid -->
+			{% endraw %}
 		</section>
 	</main>
-	
+	{% raw %}
 	{% include footer.html %} <!-- this is jekyll/liquid -->
-	
+
 	<script defer src="{{ "/assets/js/app.js" | relative_url }}"></script>
+	{% endraw %}
 </body>
 ```
 
-```
+inside footer.html: 
+```html
+{% raw %}
 <ul class="ThemeSelector">
 	<li class="ThemeSelector-label">theme: </li>
 
@@ -42,11 +49,13 @@ here's some HTML:
 	</li>
 	</template>
 </ul>
+{% endraw %}
 ```
 
 Here's some alpine:
 ```js
-export default function themes() {
+{% raw %}
+export default function Themes() {
     return {
         themeChoices: ['default', 'neon'],
         current: 'default',
@@ -70,10 +79,12 @@ export default function themes() {
         }
     }
 }
+{% endraw %}
 ```
 
-CSS (using tailwind 2):
+CSS (using tailwind/@latest):
 ```css
+{% raw %}
 .ThemeSelector {
     @apply
         flex
@@ -110,4 +121,5 @@ CSS (using tailwind 2):
             text-sm;
     }
 }
+{% endraw %}
 ```

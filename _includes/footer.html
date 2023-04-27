@@ -5,7 +5,7 @@
         </li>
         <!-- <li class="pl-2 mr-2 border-l"></li> -->
         {% for tech in site.data.madeWith %}
-        <li class="mr-1{% if forloop.index == 1 %} pl-3{% endif %}">
+        <li class="mr-1 {% if forloop.index == 1 %}pl-3{% endif %}">
             {% if forloop.index == 1 %}
             <span class="font-semibold">made with:</span>
             {% endif %}
@@ -17,14 +17,14 @@
     </ul>
     <div class="Footer-meta">
         <ul class="ThemeSelector">
-            <li class="ThemeSelector-label">theme: </li>
-            <template x-for="choice in themeChoices">
+            <li class="ThemeSelector-label">palette: </li>
+            <template x-for="choice in palettes">
             <li>
                 <a
-                    @click.prevent="choose(choice)"
-                    :data-theme="`${choice}`"
                     class="ThemeSelector-choice"
-                    :class="choicePreview(choice)"></a>
+                    @click.prevent.debounce="choose(choice.name)"
+                    :data-theme="`${choice.name}`"
+                    :class="choicePreview(choice.name)"></a>
             </li>
             </template>
         </ul>
