@@ -37,6 +37,7 @@ I can also assign a `template` to the file generated that gives me a boilerplate
 ![[/assets/img/markdown-template.png]]
 
 ```markdown
+{% raw %}
 ---
 layout: post
 author: justin
@@ -45,9 +46,8 @@ date:   {{date:YYYY-MM-DD HH:MM:SS}} -0500
 tags: obsidian
 summary: lorem ipsum.
 ---
+{% endraw %}
 ```
-
-%%Accordion the above%%
 
 What's great is that Obsidian also uses mustache rendering and pairs some useful date/time tools that get applied when creating a file. Most notably solving bulletpoint 2 of **how** I want to write for my blog.
 

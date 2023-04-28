@@ -6,6 +6,22 @@ $headings: h2, h3, h4, h5, h6;
         @apply pb-0;
     }
 
+    ul {
+        @apply list-disc
+            ml-4
+            py-2;
+
+        li {
+            @apply text-yellow-200
+                pl-2;
+
+            > ul {
+                @apply list-disc
+                    py-0;
+            }
+        }
+    }
+
     p {
         @each $heading in $headings {
             & + #{$heading} {
