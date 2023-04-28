@@ -4659,7 +4659,7 @@ function themes() {
       if (!choice) {
         return;
       }
-      return this.palettes.find((bg) => bg.name == choice).preview;
+      return `${this.palettes.find((bg) => bg.name == choice).preview} ${choice == this.current ? "active" : ""}`;
     }
   };
 }

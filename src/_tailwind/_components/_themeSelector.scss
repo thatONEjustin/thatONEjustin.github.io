@@ -16,14 +16,14 @@
             w-[16px] 
             h-[16px]
             block
-            border-2
+            border-0
             border-black
             transition-all
             ease-linear;
 
-        &:hover {
+        &:hover, &.active {
             @apply
-                border-0;
+                border-2;
         }
     }
 
