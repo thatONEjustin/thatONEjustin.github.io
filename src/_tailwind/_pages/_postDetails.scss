@@ -67,12 +67,11 @@ $headings: h2, h3, h4, h5, h6;
     }
 
     .highlighter-rouge {
-        pre {
-            @apply
-                p-4
-                bg-grey-800
-                text-yellow-300;
-        }
+        @apply
+            overflow-x-scroll
+            p-4
+            bg-grey-800
+            text-yellow-300;
 
         .highlight {
             .cm {

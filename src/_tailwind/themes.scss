@@ -84,3 +84,24 @@ section {
         }
     }
 }
+
+header {
+    &.Content {
+        &--light {
+            @apply
+                from-green-600
+                to-green-800;
+
+        }
+    }
+}
+
+footer {
+    &.Content {
+        &--light {
+            @apply
+                from-green-950
+                to-green-900;
+        }
+    }
+}

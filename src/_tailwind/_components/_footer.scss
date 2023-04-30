@@ -1,4 +1,4 @@
-.Footer {
+footer {
     @apply
         flex
         items-center
@@ -29,34 +29,36 @@
             h-[40px];
     }
 
-    &-tech {
-        @apply 
-            flex 
-            flex-row;
-
-        li {
-            @apply
-                text-xs;
-
-            a {
+    .Footer {
+        &-tech {
+            @apply 
+                flex 
+                flex-row;
+    
+            li {
                 @apply
-                    text-xs
-                    italic;
+                    text-xs;
+    
+                a {
+                    @apply
+                        text-xs
+                        italic;
+                }
+            }
+    
+            li, li a {
+                @apply
+                    text-yellow-500;
             }
         }
 
-        li, li a {
+        &-meta {
             @apply
-                text-yellow-500;
+                flex
+                flex-row
+                justify-between
+                items-center
+                w-min;
         }
-    }
-
-    &-meta {
-        @apply
-            flex
-            flex-row
-            justify-between
-            items-center
-            w-min;
     }
 }
