@@ -27,7 +27,6 @@ mix.sass(
 mix.copyWatched(
     'src/_assets', 
     'assets/',
-    { base: 'src/_assets' }
 );
 // Sourcemaps
 mix.sourceMaps(true, 'source-map');

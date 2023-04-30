@@ -58,7 +58,10 @@ section {
             }
         }
 
-        &--light {
+        &--green {
+            @apply
+                bg-yellow-100;
+                
             .PostDetails {
                 &-info {
                     @apply
@@ -87,21 +90,49 @@ section {
 
 header {
     &.Content {
-        &--light {
+        &--green {
             @apply
                 from-green-600
                 to-green-800;
 
+        }
+
+        &--neon {
+            @apply
+                from-grey-700
+                to-grey-800;
+
+            h1 {
+                @apply
+                    text-red-600;
+            }
+
+            .tagline {
+                @apply
+                    text-red-600;
+            }
+
+            &:after {
+                background-image:
+                    linear-gradient(to right, rgba($red-500, 0.15) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba($red-500, 0.15) 1px, transparent 1px);
+            }
         }
     }
 }
 
 footer {
     &.Content {
-        &--light {
+        &--green {
             @apply
                 from-green-950
                 to-green-900;
+        }
+
+        &--neon {
+            @apply
+                from-grey-900
+                to-grey-950;
         }
     }
 }

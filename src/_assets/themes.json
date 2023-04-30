@@ -10,8 +10,8 @@
         "preview": "bg-red-500"
     },
     {
-        "name": "light",
-        "container": "Content--light",
-        "preview": "bg-white"
+        "name": "green",
+        "container": "Content--green",
+        "preview": "bg-yellow-100"
     }
 ]

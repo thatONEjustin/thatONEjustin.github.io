@@ -4694,13 +4694,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ themes)
 /* harmony export */ });
-/* harmony import */ var _assets_themes_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../assets/themes.json */ "./assets/themes.json");
-
+var __async = (__this, __arguments, generator) => {
+  return new Promise((resolve, reject) => {
+    var fulfilled = (value) => {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var rejected = (value) => {
+      try {
+        step(generator.throw(value));
+      } catch (e) {
+        reject(e);
+      }
+    };
+    var step = (x) => x.done ? resolve(x.value) : Promise.resolve(x.value).then(fulfilled, rejected);
+    step((generator = generator.apply(__this, __arguments)).next());
+  });
+};
 function themes() {
   return {
+    paletteData: [],
     get palettes() {
-      return _assets_themes_json__WEBPACK_IMPORTED_MODULE_0__;
+      return this.paletteData;
     },
+    getThemes() {
+      return __async(this, null, function* () {
+        const response = yield fetch("/assets/themes.json");
+        yield response.json().then((data) => {
+          this.paletteData = data;
+        }).catch((error) => console.error(error));
+      });
+    },
+    /* old: [
+        {
+            name: "default",
+            container: "Content--dark",
+            preview: "bg-yellow-500"
+        },
+        {
+            name: "neon",
+            container: "Content--dark Content--neon",
+            preview: "bg-red-500"
+        },
+        {
+            name: "light",
+            container: "Content--light",
+            preview: "bg-white"
+        }
+    ], */
     current: this.$persist("default"),
     choose(choice) {
       if (this.current != choice) {
@@ -4708,13 +4752,19 @@ function themes() {
       }
     },
     baseThemeClass() {
+      if (!this.palettes.length)
+        return;
       return this.palettes.find((container) => container.name == this.current).container;
     },
     choicePreview(choice) {
-      if (!choice) {
+      if (!choice)
         return;
-      }
       return `${this.palettes.find((bg) => bg.name == choice).preview} ${choice == this.current ? "active" : ""}`;
+    },
+    init() {
+      return __async(this, null, function* () {
+        yield this.getThemes();
+      });
     }
   };
 }
@@ -4745,16 +4795,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ splt)
 /* harmony export */ });
 function splt({target:e=".splt",reveal:t=!1}){let l=[];const n=document.querySelectorAll(e);for(let e=0;e<n.length;e++){n[e].setAttribute("id","i"+[e+1]),l.push(n[e].innerHTML);const i=n[e].innerHTML.split("");for(let l=0;l<i.length;l++){const r=document.createElement("span");if(n[e].appendChild(r),r.setAttribute("id","c"+[l+1])," "==i[l])r.classList.add("whtSpc");else{r.classList.add("char");const e=document.querySelectorAll(".char");for(let t=0;t<e.length;t++)e[t].style.display="inline-block",e[t].style.overflow="hidden",e[t].style.verticalAlign="top"}if(1==t){const e=document.createElement("span");e.innerHTML=i[l],r.appendChild(e),e.setAttribute("id","r"),e.classList.add("reveal");const t=document.querySelectorAll(".reveal");for(let e=0;e<t.length;e++)t[e].style.display="inherit",t[e].style.overflow="inherit",t[e].style.verticalAlign="inherit"}else r.innerHTML=i[l]}n[e].removeChild(n[e].childNodes[0])}splt.revert=(()=>{for(let e=0;e<n.length;e++)n[e].removeAttribute("id"),n[e].innerHTML=l[e]})}
-
-/***/ }),
-
-/***/ "./assets/themes.json":
-/*!****************************!*\
-  !*** ./assets/themes.json ***!
-  \****************************/
-/***/ ((module) => {
-
-module.exports = JSON.parse('[{"name":"default","container":"Content--dark","preview":"bg-yellow-500"},{"name":"neon","container":"Content--dark Content--neon","preview":"bg-red-500"},{"name":"light","container":"Content--light","preview":"bg-white"}]');
 
 /***/ })
 
