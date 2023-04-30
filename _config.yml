@@ -49,8 +49,10 @@ exclude:
   - src/
   - tailwind.config.js
   - webpack.mix.js
-  - postcss.confiig.js
+  - postcss.config.js
   - .obsidian/
+  - package.json
+  - package-lock.json
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

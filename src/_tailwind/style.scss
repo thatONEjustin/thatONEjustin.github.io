@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 @import '_lib/variables';
-@import '_lib/xtras';
+@import '_lib/buttons';
 @import '_lib/typography';
-@import '_lib/base';
+@import '_lib/baseLayout';
 
 @import '_components/themeSelector';
 @import '_components/header';
 @import '_components/footer';
-@import '_components/buttons';
 
 @import '_pages/home';
 @import '_pages/postDetails';
+
+@import '_lib/xtras';
+@import 'themes';

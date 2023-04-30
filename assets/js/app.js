@@ -2,6 +2,70 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@alpinejs/persist/dist/module.esm.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/@alpinejs/persist/dist/module.esm.js ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ module_default)
+/* harmony export */ });
+// packages/persist/src/index.js
+function src_default(Alpine) {
+  let persist = () => {
+    let alias;
+    let storage = localStorage;
+    return Alpine.interceptor((initialValue, getter, setter, path, key) => {
+      let lookup = alias || `_x_${path}`;
+      let initial = storageHas(lookup, storage) ? storageGet(lookup, storage) : initialValue;
+      setter(initial);
+      Alpine.effect(() => {
+        let value = getter();
+        storageSet(lookup, value, storage);
+        setter(value);
+      });
+      return initial;
+    }, (func) => {
+      func.as = (key) => {
+        alias = key;
+        return func;
+      }, func.using = (target) => {
+        storage = target;
+        return func;
+      };
+    });
+  };
+  Object.defineProperty(Alpine, "$persist", { get: () => persist() });
+  Alpine.magic("persist", persist);
+  Alpine.persist = (key, { get, set }, storage = localStorage) => {
+    let initial = storageHas(key, storage) ? storageGet(key, storage) : get();
+    set(initial);
+    Alpine.effect(() => {
+      let value = get();
+      storageSet(key, value, storage);
+      set(value);
+    });
+  };
+}
+function storageHas(key, storage) {
+  return storage.getItem(key) !== null;
+}
+function storageGet(key, storage) {
+  return JSON.parse(storage.getItem(key, storage));
+}
+function storageSet(key, value, storage) {
+  storage.setItem(key, JSON.stringify(value));
+}
+
+// packages/persist/builds/module.js
+var module_default = src_default;
+
+
+
+/***/ }),
+
 /***/ "./node_modules/alpinejs/dist/module.esm.js":
 /*!**************************************************!*\
   !*** ./node_modules/alpinejs/dist/module.esm.js ***!
@@ -4481,18 +4545,21 @@ anime.random = function (min, max) { return Math.floor(Math.random() * (max - mi
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-/* harmony import */ var _modules_themes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/themes */ "./src/_scripts/modules/themes.js");
-/* harmony import */ var _modules_introText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/introText */ "./src/_scripts/modules/introText.js");
-/* harmony import */ var _modules_backButton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/backButton */ "./src/_scripts/modules/backButton.js");
+/* harmony import */ var _alpinejs_persist__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @alpinejs/persist */ "./node_modules/@alpinejs/persist/dist/module.esm.js");
+/* harmony import */ var _modules_themes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/themes */ "./src/_scripts/modules/themes.js");
+/* harmony import */ var _modules_introText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/introText */ "./src/_scripts/modules/introText.js");
+/* harmony import */ var _modules_backButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/backButton */ "./src/_scripts/modules/backButton.js");
+
 
 
 
 
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
+alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].plugin(_alpinejs_persist__WEBPACK_IMPORTED_MODULE_1__["default"]);
 document.addEventListener("alpine:init", () => {
-  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("Themes", _modules_themes__WEBPACK_IMPORTED_MODULE_1__["default"]);
-  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("introText", _modules_introText__WEBPACK_IMPORTED_MODULE_2__["default"]);
-  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("Themes", _modules_themes__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("introText", _modules_introText__WEBPACK_IMPORTED_MODULE_3__["default"]);
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_4__["default"]);
 });
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 
@@ -4627,26 +4694,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ themes)
 /* harmony export */ });
+/* harmony import */ var _assets_themes_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../assets/themes.json */ "./assets/themes.json");
+
 function themes() {
   return {
-    palettes: [
-      {
-        name: "default",
-        container: "Content--dark",
-        preview: "bg-yellow-500"
-      },
-      {
-        name: "neon",
-        container: "Content--dark Content--neon",
-        preview: "bg-red-500"
-      },
-      {
-        name: "light",
-        container: "Content--light",
-        preview: "bg-white"
-      }
-    ],
-    current: "default",
+    get palettes() {
+      return _assets_themes_json__WEBPACK_IMPORTED_MODULE_0__;
+    },
+    current: this.$persist("default"),
     choose(choice) {
       if (this.current != choice) {
         this.current = choice;
@@ -4690,6 +4745,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ splt)
 /* harmony export */ });
 function splt({target:e=".splt",reveal:t=!1}){let l=[];const n=document.querySelectorAll(e);for(let e=0;e<n.length;e++){n[e].setAttribute("id","i"+[e+1]),l.push(n[e].innerHTML);const i=n[e].innerHTML.split("");for(let l=0;l<i.length;l++){const r=document.createElement("span");if(n[e].appendChild(r),r.setAttribute("id","c"+[l+1])," "==i[l])r.classList.add("whtSpc");else{r.classList.add("char");const e=document.querySelectorAll(".char");for(let t=0;t<e.length;t++)e[t].style.display="inline-block",e[t].style.overflow="hidden",e[t].style.verticalAlign="top"}if(1==t){const e=document.createElement("span");e.innerHTML=i[l],r.appendChild(e),e.setAttribute("id","r"),e.classList.add("reveal");const t=document.querySelectorAll(".reveal");for(let e=0;e<t.length;e++)t[e].style.display="inherit",t[e].style.overflow="inherit",t[e].style.verticalAlign="inherit"}else r.innerHTML=i[l]}n[e].removeChild(n[e].childNodes[0])}splt.revert=(()=>{for(let e=0;e<n.length;e++)n[e].removeAttribute("id"),n[e].innerHTML=l[e]})}
+
+/***/ }),
+
+/***/ "./assets/themes.json":
+/*!****************************!*\
+  !*** ./assets/themes.json ***!
+  \****************************/
+/***/ ((module) => {
+
+module.exports = JSON.parse('[{"name":"default","container":"Content--dark","preview":"bg-yellow-500"},{"name":"neon","container":"Content--dark Content--neon","preview":"bg-red-500"},{"name":"light","container":"Content--light","preview":"bg-white"}]');
 
 /***/ })
 

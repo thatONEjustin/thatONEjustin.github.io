@@ -35,7 +35,7 @@
     </main>
 
     {% include footer.html %}
-    
+    <script module>window.siteUrl = `{{ site.url }}`;</script>
     <script defer src="{{ "/assets/js/app.js" | relative_url }}"></script>
   </body>
 </html>

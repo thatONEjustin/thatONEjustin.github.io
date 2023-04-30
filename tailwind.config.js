@@ -6,6 +6,7 @@ module.exports = {
     content: [
         "!**node_modules/**",
         "!**_site/**/*",
+        "!./assets/themes.json",
 
         "./_includes/*.html",
         "./_layouts/*.html",

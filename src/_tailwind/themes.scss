@@ -1,0 +1,86 @@
+section {
+    &.Content {
+        &--dark {
+            h1, h2 {
+                @apply
+                    emphasis-gradient
+                    bg-yellow-gradient;
+            }
+            
+            h3, h4 {
+                @apply
+                    text-yellow-200;
+            }
+        
+            p {
+                @apply
+                    text-yellow-100;
+            }
+
+            .back {
+                @apply
+                    text-yellow-500;
+
+                svg {
+                    fill: $yellow-600;
+                }
+            }
+        }
+
+        &--neon {
+            h1, h2 {
+                @apply
+                    emphasis-gradient
+                    bg-red-gradient;
+            }
+
+            h3, h4 {
+                @apply
+                    text-yellow-200;
+            }
+
+            p {
+                @apply
+                    text-yellow-100;
+            }
+
+            .cta {
+                @apply bg-red-500;
+            }
+
+            .back {
+                @apply
+                    text-red-500;
+                    
+                svg {
+                    fill: $red-600;
+                }
+            }
+        }
+
+        &--light {
+            .PostDetails {
+                &-info {
+                    @apply
+                        bg-grey-900;
+            
+                    p {
+                        @apply text-grey-400;
+                    }
+                }
+            }
+        }
+    }    
+}
+
+section {
+    &.Content {
+        &--dark {
+            h1, h2 {
+                @apply bg-clip-text;
+            
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+}

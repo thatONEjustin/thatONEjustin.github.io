@@ -1,5 +1,8 @@
 let mix = require('laravel-mix');
 
+// copyWatched
+require('laravel-mix-copy-watched')
+
 // Javascript
 const javascript_source = 'src/_scripts/app.js';
 const javascript_dist = 'assets/js/';
@@ -21,11 +24,15 @@ mix.sass(
         postCss: [ tailwind ]
     });
 
-mix.copy('src/_assets', 'assets/');
+mix.copyWatched(
+    'src/_assets', 
+    'assets/',
+    { base: 'src/_assets' }
+);
 // Sourcemaps
 mix.sourceMaps(true, 'source-map');
 
-mix.browserSync({
+/* mix.browserSync({
     proxy: 'https://127.0.0.1:4000/',
     files: [
         './*.markdown', 
@@ -33,4 +40,4 @@ mix.browserSync({
         './_layouts/*.markdown',
         './_includes/*.markdown',
     ]
-});
+}); */
