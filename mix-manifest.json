@@ -1,6 +1,10 @@
 {
     "/assets/js/app.js": "/assets/js/app.js",
     "/assets/css/style.css": "/assets/css/style.css",
+    "/assets/img/back.svg": "/assets/img/back.svg",
+    "/assets/img/daily-note-settings.png": "/assets/img/daily-note-settings.png",
+    "/assets/img/justin.png": "/assets/img/justin.png",
+    "/assets/img/markdown-template.png": "/assets/img/markdown-template.png",
     "/assets/resume.pdf": "/assets/resume.pdf",
     "/assets/themes.json": "/assets/themes.json"
 }

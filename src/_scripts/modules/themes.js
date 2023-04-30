@@ -42,12 +42,16 @@ export default function themes() {
         },
 
         baseThemeClass() {
-            if(!this.palettes.length) return;
+            if(!this.palettes.length) return '';
             return this.palettes.find(container => container.name == this.current).container;
         },
 
         choicePreview(choice) {
-            if(!choice) return;
+            if(!choice && !this.palettes) return '';
+
+            if(!choice && this.palettes) {
+                return `${this.palettes.find(bg => bg.name == choice).preview}`
+            };
             
             return `${this.palettes.find(bg => bg.name == choice).preview} ${choice == this.current ? 'active' : ''}`;
         },

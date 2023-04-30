@@ -4549,6 +4549,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_themes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/themes */ "./src/_scripts/modules/themes.js");
 /* harmony import */ var _modules_introText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/introText */ "./src/_scripts/modules/introText.js");
 /* harmony import */ var _modules_backButton__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/backButton */ "./src/_scripts/modules/backButton.js");
+/* harmony import */ var _modules_header__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/header */ "./src/_scripts/modules/header.js");
+
 
 
 
@@ -4557,6 +4559,7 @@ __webpack_require__.r(__webpack_exports__);
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].plugin(_alpinejs_persist__WEBPACK_IMPORTED_MODULE_1__["default"]);
 document.addEventListener("alpine:init", () => {
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("Header", _modules_header__WEBPACK_IMPORTED_MODULE_5__["default"]);
   alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("Themes", _modules_themes__WEBPACK_IMPORTED_MODULE_2__["default"]);
   alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("introText", _modules_introText__WEBPACK_IMPORTED_MODULE_3__["default"]);
   alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("backButton", _modules_backButton__WEBPACK_IMPORTED_MODULE_4__["default"]);
@@ -4615,6 +4618,39 @@ function backButton() {
           delay: animejs__WEBPACK_IMPORTED_MODULE_0__["default"].stagger(25),
           easing: "easeInOutCirc"
         });
+      });
+    }
+  };
+}
+
+
+/***/ }),
+
+/***/ "./src/_scripts/modules/header.js":
+/*!****************************************!*\
+  !*** ./src/_scripts/modules/header.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Header)
+/* harmony export */ });
+/* harmony import */ var animejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! animejs */ "./node_modules/animejs/lib/anime.es.js");
+/* harmony import */ var spltjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! spltjs */ "./node_modules/spltjs/splt.esm.js");
+
+
+function Header() {
+  return {
+    init() {
+    },
+    trackMouse(event) {
+      (0,animejs__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        targets: ["h1 span.text-9xl"],
+        translateY: [event.clientY / 100],
+        translateX: [event.clientX / 50],
+        direction: "linear",
+        easing: "easeInOutCirc"
       });
     }
   };
@@ -4753,12 +4789,16 @@ function themes() {
     },
     baseThemeClass() {
       if (!this.palettes.length)
-        return;
+        return "";
       return this.palettes.find((container) => container.name == this.current).container;
     },
     choicePreview(choice) {
-      if (!choice)
-        return;
+      if (!choice && !this.palettes)
+        return "";
+      if (!choice && this.palettes) {
+        return `${this.palettes.find((bg) => bg.name == choice).preview}`;
+      }
+      ;
       return `${this.palettes.find((bg) => bg.name == choice).preview} ${choice == this.current ? "active" : ""}`;
     },
     init() {

@@ -18,6 +18,9 @@ main {
 }
 
 header, section.Content {
+    @apply
+        transition-all;
+
     @screen sm {
         @apply  w-full;
 
@@ -107,7 +110,7 @@ section {
                     bottom: -75%;
                     width: var(--bubble-radius);
                     height: var(--bubble-radius);
-                    border-radius: 50%;
+                    // border-radius: 50%;
                     animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
 
                     &::before {
@@ -116,13 +119,29 @@ section {
                             top-0
                             left-0
                             w-full
-                            h-full
-                            bg-yellow-300
-                            bg-opacity-5;
+                            h-full;
+                        background-image: url($dist + 'justin.png');
+                        background-size: contain;
+                        opacity: 0.25;
+
+                        filter: grayscale(100%);
+                            // bg-yellow-300
                         content: '';
+                        // content: url($dist + 'justin.png');
                         
                         border-radius: inherit;
                         animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+                    }
+
+                    &::after {
+                        @apply
+                            absolute
+                            top-0
+                            left-0
+                            w-full
+                            h-full;
+
+                        content: '';
                     }
 
                     @for $i from 0 through $bubble-count {

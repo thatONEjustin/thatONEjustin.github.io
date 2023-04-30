@@ -25,9 +25,21 @@ mix.sass(
     });
 
 mix.copyWatched(
-    'src/_assets', 
-    'assets/',
+    'src/_assets/img',
+    'assets/img'
 );
+
+mix.copyWatched(
+    'src/_assets/*.pdf',
+    'assets'
+);
+
+mix.copyWatched(
+    'src/_assets/*.json',
+    'assets'
+);
+
+
 // Sourcemaps
 mix.sourceMaps(true, 'source-map');
 
