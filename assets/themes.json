@@ -2,7 +2,7 @@
     {
         "name": "default",
         "container": "Content--dark",
-        "preview": "bg-yellow-500"
+        "preview": "bg-blue-500"
     },
     {
         "name": "neon",

@@ -8,21 +8,20 @@ const javascript_source = 'src/_scripts/app.js';
 const javascript_dist = 'assets/js/';
 require('laravel-mix-esbuild');
 mix.js(javascript_source, javascript_dist)
-    .esbuild();
+    .esbuild()
+    .sourceMaps(true, 'source-map');
 
 // CSS
 const tailwind_source = 'src/_tailwind/style.scss';
 const tailwind_dist = 'assets/css/';
 
 const tailwind = require('tailwindcss');
-mix.sass(
-        `${tailwind_source}`,
-        `${tailwind_dist}`
-    )
+mix.sass(tailwind_source, tailwind_dist)
     .options({
         processCssUrls: false,
         postCss: [ tailwind ]
-    });
+    })
+    .sourceMaps(true, 'source-map');
 
 mix.copyWatched(
     'src/_assets/img',
@@ -40,8 +39,6 @@ mix.copyWatched(
 );
 
 
-// Sourcemaps
-mix.sourceMaps(true, 'source-map');
 
 /* mix.browserSync({
     proxy: 'https://127.0.0.1:4000/',
