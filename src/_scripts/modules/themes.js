@@ -36,7 +36,8 @@ export default function themes() {
         current: this.$persist('default'),
         
         choose(choice) {
-            if(this.current != choice) {
+            if(this.current != choice) 
+            {
                 this.current = choice;
             }
         },
@@ -49,9 +50,10 @@ export default function themes() {
         choicePreview(choice) {
             if(!choice && !this.palettes) return '';
 
-            if(!choice && this.palettes) {
+            if(!choice && this.palettes) 
+            {
                 return `${this.palettes.find(bg => bg.name == choice).preview}`
-            };
+            }
             
             return `${this.palettes.find(bg => bg.name == choice).preview} ${choice == this.current ? 'active' : ''}`;
         },

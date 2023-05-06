@@ -13,4 +13,8 @@
 
         -webkit-text-fill-color: transparent;
     }
+
+    [x-cloak] {
+        @apply hidden;
+    }
 }
