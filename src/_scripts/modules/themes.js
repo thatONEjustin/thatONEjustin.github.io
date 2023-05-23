@@ -7,8 +7,8 @@ export default function themes() {
         },
 
         async getThemes() {
-            const response = await fetch('/assets/themes.json')
-            await response.json()
+            await fetch('/assets/themes.json')
+                .then(data => data.json())
                 .then(data => { 
                     this.paletteData = data; 
                 })
@@ -59,7 +59,7 @@ export default function themes() {
         },
 
         async init() {
-            await this.getThemes();
+            this.getThemes();
         }
     }
 }

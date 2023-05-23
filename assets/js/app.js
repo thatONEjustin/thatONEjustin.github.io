@@ -4758,8 +4758,7 @@ function themes() {
     },
     getThemes() {
       return __async(this, null, function* () {
-        const response = yield fetch("/assets/themes.json");
-        yield response.json().then((data) => {
+        yield fetch("/assets/themes.json").then((data) => data.json()).then((data) => {
           this.paletteData = data;
         }).catch((error) => console.error(error));
       });
@@ -4798,12 +4797,11 @@ function themes() {
       if (!choice && this.palettes) {
         return `${this.palettes.find((bg) => bg.name == choice).preview}`;
       }
-      ;
       return `${this.palettes.find((bg) => bg.name == choice).preview} ${choice == this.current ? "active" : ""}`;
     },
     init() {
       return __async(this, null, function* () {
-        yield this.getThemes();
+        this.getThemes();
       });
     }
   };
