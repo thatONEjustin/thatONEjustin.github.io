@@ -6,7 +6,7 @@
   }
 
   .about-timeframe {
-    @apply fancy-border pb-1 mb-3 text-pink;
+    @apply fancy-border pb-1 mb-3 mt-12 text-pink;
     @apply flex flex-row items-center justify-between;
   }
 }

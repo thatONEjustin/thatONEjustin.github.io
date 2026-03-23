@@ -55,7 +55,6 @@ import 'swiper/css/navigation';
     <div class="swiper-wrapper w-full">
       {skill_categories.map((skillset) => (  
       <SwiperSlide id=`${skillset}` class="w-full">
-        <!-- <h3 class="text-orange pb-1 my-2 border-b border-orange">{skillset}</h3>  -->
         {skills_data.filter(skill => skill.categories.find((item) => item === skillset)).map(( displaySkill:Skill ) => (
           <SkillBar skill={displaySkill} />
         ))}
