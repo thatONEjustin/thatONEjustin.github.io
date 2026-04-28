@@ -1,12 +1,4 @@
 /*
- * NOTE: External libraries
- */
-@import url('https://fonts.cdnfonts.com/css/belanosima');
-/*@import url('https://www.nerdfonts.com/assets/css/webfont.css');*/
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-
-/*
  * NOTE: local fonts
  */
 @import 'fonts/fonts.css';
@@ -16,14 +8,3 @@
  * NOTE: tailwind base finally figured out
  */
 @import 'tailwind/tailwind.css';
-
-/*
- * NOTE:  components go here 
- */
-@import 'components/skills-list.css';
-
-/*
- * NOTE: pages/sections 
- */
-@import 'pages/about.css';
-@import 'pages/home.css';

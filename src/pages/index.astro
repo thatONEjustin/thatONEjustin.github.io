@@ -2,85 +2,27 @@
 import { Image } from "astro:assets"
 
 import BaseLayout from "@layouts/base.astro";
-import PillButton from "@components/pill-button.astro";
-import NerdfontIcon from "@components/nerdfont-icon.astro";
-import SocialMediaList from "@components/social-media-list.astro";
-import SkillsLists from "@components/skills/list.astro";
 
+import NerdfontIcon from "@components/nerdfont-icon.astro";
 import resume from "/resume.pdf"
 import me from "@img/me.jpeg"
 ---
-
 <BaseLayout>
-  <section id="intro" class="py-10 relative border-b border-b-purple border-opacity-10 overflow-hidden">
-    <div class="justin-container">
-      <h2 class="text-6xl text-center text-cyan py-12">Let's work <span class="text-green">together!</span></h1>
-
-      <div class="flex flex-col md:flex-row z-20 py-8 items-center">
+<section class="relative bg-darker-700">
+    <div class="container flex flex-col md:flex-row z-20 py-8 items-center mx-auto">
         <div class="order-2 md:order-1">
             <h2 class="text-green border-b border-green lg:mb-2">about me</h2>
             <p class="text-dark-600 text-3xl leading-relaxed">I am a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /><span class="text-cyan">web development,</span> <NerdfontIcon classes="text-cyan" icon="nf-dev-terminal"/> <span class="text-cyan">tooling,</span> <NerdfontIcon classes="text-cyan" icon="nf-md-git"/> <span class="text-cyan">CI/CD,</span><br/>and <NerdfontIcon classes="text-cyan" icon="nf-md-remote_desktop" /> <span class="text-cyan">server administration</span>.</p>
                         <p class="text-dark-600 text-3xl leading-relaxed"><span class="font-semibold fancy-border fancy-text">I do my best work</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
-          <p class="text-dark-200 text-xl leading-relaxed mt-3">
-              i use <NerdfontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-2 text-cyan">rch</span>btw.
-          </p>
+            <p class="text-dark-200 text-xl leading-relaxed mt-3">
+                i use <NerdfontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-2 text-cyan">rch</span>btw.
+            </p>
         </div>
 
-        <Image src={me} alt="Hi! I'm Justin Paelmo!" class="order-1 z-40 md:order-2 mx-auto md:mx-unset h-full w-auto rounded-full max-w-xs mb-8 md:mb-0 md:ml-12 border border-yellow"/>
-      </div>
-
-      <div class="flex flex-row gap-x-3 pt-8 justify-center text-xl">
-        <PillButton class="text-3xl green" url="/resume.pdf" target="_blank">
-          <NerdfontIcon icon="nf-md-file_document" /> resume
-        </PillButton>
-      </div>
+        <Image
+            src={me}
+            alt="Hi! I'm Justin Paelmo!"
+            class="order-1 z-40 md:order-2 mx-auto md:mx-unset h-full w-auto rounded-full max-w-2xl mb-8 md:mb-0 md:ml-12 border border-yellow"/>
     </div>
-
-  </section>
-
-  <section id="about-me">
-    <div class="justin-container">
-      <h2 class="text-green text-center max-w-fit mx-auto border-b border-green lg:mb-2">work history</h2>
-
-      <div class="about-timeframe">
-        <h3 class="text-pink">2009 - 2016</h3>
-        <h3><a class="text-cyan no-underline" href="https://advantageservices.net" target="_blank">AdvantageServices</a></h3>
-      </div>
-
-      <p>I started professional web development in 2009 back in the SFTP, jQuery, and early PHP days. I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
-      <p>During this time I had already picked up working in a lot of LEGACY web technologies. My first few frameworks were Wordpress and Drupal respectively. Eventually I really got a taste of backend UI development through a combination of ColdFusion/ActionScript and XML parsing.</p>
-      <p>I built control panel UI/UX frameworks for every use case in several global scale niche hiring firms <a href={resume}>(ask me about it!)</a>.</p>
-
-      <div class="about-timeframe mt-8">
-        <h3 class="text-pink">2016 - 2026</h3>
-        <h3><a class="text-cyan no-underline" href="https://wojodesign.com" target="_blank">WojoDesign</a></h3>
-      </div>
-
-      <p>This was a big move for me both in going from Florida to Chicago, and finally moving towards more modern tech stacks in web development.</p>
-      <p>I wrote my first JS to mobile application for a client, that involved allowing users to purchase native in-app subscriptions for both the apple AppStore and google's Play Store.</p>
-      <p>About 2016 - 2018 was a lot of me learning tools like yarn, npm, node, liquid/handlebars. I also started delving into more backend CMS development.</p>
-      <p>This was also the time period where I really leaned into more systems administration and automation workflows.</p>
-      <p>From 2018 onwards I put a bigger focus on deepening my relationship with programming and web development.</p>
-      <p>I continue to build and/or integrate user management systems and login front ends. I also developed a few internal plugins for the Craft CMS platform.</p>
-      <p>I've been incorporating more and more workflows that involve CI/CD practices for code deployment and environment management.</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <div class="justin-container">
-      <h2 class="text-center text-yellow">skillset</h2>
-      <SkillsLists />
-    </div>
-  </section>
-
-  <section id="social" class="bg-dark-700 mix-blend-multiply py-8">
-    <div class="justin-container flex flex-col items-center justify-center">
-      <h2 class="text-darker-50">social media</h2>
-      <SocialMediaList />
-    </div>
-  </section>
-
+</section>
 </BaseLayout>
-
-<style>
-</style>

@@ -7,35 +7,28 @@ import "@css/main.css";
 import Header from "@layouts/header.astro";
 import Footer from "@layouts/footer.astro";
 
-import GoTop from '@components/go-top.astro';
-
 const { title = 'justin, a dev' } = Astro.props
 ---
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+    <head>
+        <meta charset="utf-8" />
 
-    <link rel="icon" type="image/svg+xml" href={favicon} />
+        <link rel="icon" type="image/svg+xml" href={favicon} />
 
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
 
-    <title>{title} | astro'd out</title>
+        <title>{title} | astro'd out</title>
 
-    <ViewTransitions />
-  </head>
-
-  <body>
-    <span id="top"></span>
-    <Header />
-
-    <main transition:animate="slide">
-      <slot />
-    </main>
-
-    <GoTop />
-
-    <Footer />
-  </body>
+        <ViewTransitions />
+    </head>
+    <body>
+        <span id="top"></span>
+        <Header />
+        <main transition:animate="slide">
+            <slot />
+        </main>
+        <Footer />
+    </body>
 </html>

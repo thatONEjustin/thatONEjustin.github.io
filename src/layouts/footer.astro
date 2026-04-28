@@ -1,6 +1,29 @@
 ---
 import moment from "moment";
-import { tech_stacks } from '@js/data/tech_stacks'
+const tech_stacks = [
+  {
+    tagline: "built from",
+    url: "https://astro.build/",
+    label: "astro",
+    icon: "nf-custom-astro",
+    text_color: "text-pink"
+  },
+  {
+    tagline: "styled with",
+    url: "https://tailwindcss.com/",
+    label: "tailwindcss",
+    icon: "nf-md-tailwind",
+    text_color: "text-cyan"
+  },
+  {
+    tagline: "hosted on",
+    url: "https://pages.github.com/",
+    label: "GitHub Pages",
+    icon: "nf-cod-github_action",
+    text_color: "text-light"
+  },
+];
+
 ---
 
 <footer class="bg-darker-800 mt-8 lg:mt-0 relative lg:fixed lg:top-full lg:-translate-y-full w-full py-2 lg:py-0">
