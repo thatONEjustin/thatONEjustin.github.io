@@ -1,4 +1,5 @@
 ---
+export const prerender = true
 import { truncateWords } from '@shahid19/stringjs'
 import { getData, blogDate } from '@js/helpers'
 
@@ -8,7 +9,7 @@ const blog_posts = await data.data
 
 <section class="bg-darker-900 py-10">
     <div class="container mx-auto grid grid-cols-3">
-        {blog_posts.map((post: any) => 
+        {await blog_posts.map((post: any) => 
         <article class="p-4 rounded border-darker-800 border">
             <h3 class="w-full border-b border-b-darker-800 pb-2 mb-4">{post.Title}</h3>
             <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(post.publishedAt)}</em></h6>
