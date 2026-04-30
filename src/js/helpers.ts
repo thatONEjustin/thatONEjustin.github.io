@@ -1,6 +1,6 @@
+// import { getSecret } from 'astro:env/server'
 const API_URL = import.meta.env.PUBLIC_API_URL;
 const BEARER_TOKEN = `Bearer ${import.meta.env.PUBLIC_API_TOKEN}`
-
 
 export async function getData(endpoint: string) {
     // console.log(API_URL)

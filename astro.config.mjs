@@ -11,7 +11,6 @@ export default defineConfig({
     },
     prefetch: true,
     site: 'https://justinlikescode.netlify.app',
-
     integrations: [
         mdx(),
     ],
