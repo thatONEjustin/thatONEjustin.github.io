@@ -1,6 +1,6 @@
 @layer base {
     body {
-        @apply bg-darker-600;
+        @apply bg-black;
     }
 
     h1,

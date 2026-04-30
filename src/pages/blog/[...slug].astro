@@ -1,36 +1,43 @@
 ---
+/*
+ * NOTE: This is the SSR way to do things
+ */
 export const prerender = false
-//
+
 import { getData, blogDate } from '@js/helpers'
-//
 import BaseLayout from "@layouts/base.astro"
-//
+
 const { slug } = Astro.params
-//
+
 const data = await getData(`blog-posts?filters[slug][$eq]=${slug}`)
-//
 const post = await data.data[0]
-//
+
 const { Title, publishedAt, Content } = post
-//
-// console.log(post)
+
+const test_data = await getData('blog-posts')
 
 /*
  * NOTE: this is the SSG way to do things (full jam stack)
+    export const prerender = true
 
-const { Title, publishedAt, Content } = Astro.props
-export async function getStaticPaths() {
-    const all_posts_data = await getData('blog-posts')
-    const blog_posts = all_posts_data.data
+    import { getData, blogDate } from '@js/helpers'
+    import BaseLayout from "@layouts/base.astro"
 
-    return blog_posts.map(({ slug, Title, publishedAt, Content }) => {
-        return {
-            params: { slug },
-            props: { Title, publishedAt, Content },
-        };
-    });
-}
-*/
+    export async function getStaticPaths() {
+        const all_posts_data = await getData('blog-posts')
+        const blog_posts = all_posts_data.data
+
+        return blog_posts.map(({ slug, Title, publishedAt, Content }: any) => {
+            return {
+                params: { slug },
+                props: { Title, publishedAt, Content },
+            };
+        });
+    }
+
+    const { slug } = Astro.params
+    const { Title, publishedAt, Content } = Astro.props
+ */
 ---
 <BaseLayout>
     <section class="bg-darker min-h-screen">
