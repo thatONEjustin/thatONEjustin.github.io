@@ -4,15 +4,11 @@ import mdx from "@astrojs/mdx";
 import netlify from '@astrojs/netlify';
 import tailwindcss from '@tailwindcss/vite';
 
-import dracula from 'tailwind-dracula'
-// import dracula from './src/js/dracula';
-
-// console.log(dracula);
-
 // https://astro.build/config
 export default defineConfig({
+    output: 'server',
     prefetch: true,
-    site: 'https://thatonejustin.github.io',
+    site: 'https://justinlikescode.netlify.app',
 
     integrations: [
         mdx(),
@@ -22,8 +18,7 @@ export default defineConfig({
 
     vite: {
         plugins: [
-            tailwindcss({
-            }),
+            tailwindcss(),
         ]
     }
 });

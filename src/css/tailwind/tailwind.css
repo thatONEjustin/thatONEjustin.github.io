@@ -5,67 +5,67 @@
     --font-nf-symbols: Symbols Nerd Font;
 
     --color-transparent: transparent;
-    --color-black:'#0e0d11';
+    --color-black: '#0e0d11';
 
     --spacing-unset: "unset";
 }
 
 @layer base {
-  body {
-    @apply bg-black;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    /* @apply text-darker-300 font-bold; */
-    @apply font-bold;
-  }
-
-  h1 {
-    @apply text-6xl;
-  }
-
-  h2 {
-    /* @apply text-4xl pb-4 text-darker-200; */
-    @apply text-4xl pb-4;
-  }
-
-  h3 {
-    /* @apply text-2xl text-darker-500; */
-    @apply text-2xl;
-  }
-
-  p {
-    /* @apply text-darker-100; */
-
-    + p {
-      @apply my-8;
-
-      &:last-of-type {
-        @apply mb-0;
-      }
+    body {
+        @apply bg-black;
     }
-  }
 
-  a {
-    @apply text-purple-500 underline underline-offset-[6px];
-    @apply underline underline-offset-[6px];
-    @apply decoration-dashed;
-  }
-
-  section {
-    + section {
-      @apply py-20;
-
-      &:last-of-type {
-        @apply mb-8;
-      }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        /* @apply text-darker-300 font-bold; */
+        @apply font-bold;
     }
-  }
+
+    h1 {
+        @apply text-6xl;
+    }
+
+    h2 {
+        /* @apply text-4xl pb-4 text-darker-200; */
+        @apply text-4xl pb-4;
+    }
+
+    h3 {
+        /* @apply text-2xl text-darker-500; */
+        @apply text-2xl;
+    }
+
+    p {
+        /* @apply text-darker-100; */
+
+        +p {
+            @apply my-8;
+
+            &:last-of-type {
+                @apply mb-0;
+            }
+        }
+    }
+
+    a {
+        @apply text-purple-500 underline underline-offset-[6px];
+        @apply underline underline-offset-[6px];
+        @apply decoration-dashed;
+    }
+
+    section {
+        +section {
+            @apply py-20;
+
+            &:last-of-type {
+                @apply mb-8;
+            }
+        }
+    }
 }
 
 @import './layers/components.css';

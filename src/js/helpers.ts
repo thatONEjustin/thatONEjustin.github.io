@@ -3,7 +3,7 @@ const BEARER_TOKEN = `Bearer ${import.meta.env.SECRET_API_TOKEN}`
 
 
 export async function getData(endpoint: string) {
-    console.log(API_URL)
+    // console.log(API_URL)
     return await
         fetch(`${API_URL}/api/${endpoint}`, {
             method: "GET",
