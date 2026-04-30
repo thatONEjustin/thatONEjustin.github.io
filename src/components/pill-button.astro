@@ -6,7 +6,9 @@ const { url:href = "#", target, class:className  } = Astro.props;
   <slot>Button Text</slot>
 </a>
 
-<style lang="postcss">
+<style>
+    @import "tailwindcss/theme" theme(reference);
+    @plugin "tailwind-dracula";
 a {
   @apply relative;
   @apply px-8 py-4 text-center text-darker font-bold transition-all;
@@ -93,7 +95,7 @@ a {
   }
 
   &.purple {
-    @apply text-purple;
+    @apply text-purple-500;
 
     &:after {
       @apply bg-purple;

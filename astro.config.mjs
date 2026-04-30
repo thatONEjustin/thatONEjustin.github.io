@@ -1,10 +1,13 @@
 import { defineConfig } from 'astro/config';
 
-// import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 import netlify from '@astrojs/netlify';
 import tailwindcss from '@tailwindcss/vite';
-// import alpinejs from "@astrojs/alpinejs";
+
+import dracula from 'tailwind-dracula'
+// import dracula from './src/js/dracula';
+
+// console.log(dracula);
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,14 +16,14 @@ export default defineConfig({
 
     integrations: [
         mdx(),
-        // alpinejs({
-        //   entrypoint: '/src/js/alpine'
-        // }),
     ],
 
     adapter: netlify(),
 
     vite: {
-        plugins: [tailwindcss()]
+        plugins: [
+            tailwindcss({
+            }),
+        ]
     }
 });

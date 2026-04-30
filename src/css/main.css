@@ -1,10 +1,29 @@
 /*
  * NOTE: local fonts
  */
-@import 'fonts/fonts.css';
-@import 'fonts/nf-icons.css';
+@import './fonts/fonts.css';
+@import './fonts/nf-icons.css';
 
-/*
- * NOTE: tailwind base finally figured out
+
+@import 'tailwindcss';
+@plugin 'tailwind-dracula';
+
+@source "../../src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}";
+/* @plugin '../js/dracula.ts'; */
+
+@theme {
+    --font-nf-symbols: Symbols Nerd Font;
+
+    /* --color-transparent: transparent; */
+    /* --color-black:'#0e0d11'; */
+
+    --spacing-unset: "unset";
+}
+
+/* BUG: the following is actually broken.
+ * for some reason at least, the file separation
+ * causes the colors to fail to import.
+ * @plugin 'tailwind-dracula';
+ *  
+ * @import "./tailwind/tailwind.css";
  */
-@import 'tailwind/tailwind.css';
