@@ -2,14 +2,14 @@
     @apply relative;
 
     &:after {
-      @apply absolute h-[2px] w-full bg-gradient-to-r from-pink-500 to-cyan-500 bottom-0 left-0;
+      @apply absolute h-[2px] w-full bg-gradient-to-r from-pink to-cyan bottom-0 left-0;
       /*@apply opacity-30;*/
       content: ' ';
     }
 }
 
 @utility fancy-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-cyan-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink to-cyan;
 }
 
 @utility justin-container {

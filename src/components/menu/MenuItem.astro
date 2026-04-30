@@ -57,8 +57,7 @@ document.addEventListener('astro:page-load', () => {
 </li>
 
 <style>
-    @import "tailwindcss/theme" theme(reference);
-    @plugin "tailwind-dracula";
+    @reference "../css/main.css";
 li {
   /* @apply border-r-[1px] border-darker pr-3 mr-3 last:mr-0; */
   @apply border-r-[1px] border-black pr-3 mr-3 last:mr-0;
@@ -75,7 +74,7 @@ li {
     }
 
     &:hover {
-      @apply text-cyan-500;
+      @apply text-cyan;
 
       &::after {
         @apply w-full;
@@ -83,7 +82,7 @@ li {
     }
 
     &.active {
-      @apply text-green-500;
+      @apply text-green;
 
       &::after {
         @apply bg-green-500 w-full;
