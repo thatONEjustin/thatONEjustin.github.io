@@ -6,9 +6,12 @@ export const prerender = false
 
 const { slug } = Astro.params
 
-const data = getData(`blog-posts?filters[slug][$eq]=${slug}`)
+const data = await getData(`blog-posts?filters[slug][$eq]=${slug}`)
 
-console.log(data)
+const post = data.data
+
+const { Title, publishedAt, Content } = post
+
 /*
  * NOTE: this is the SSG way to do things (full jam stack)
 
@@ -31,6 +34,7 @@ export async function getStaticPaths() {
         <div class="container mx-auto">
             <h1>{Title}</h1>
             <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
+            {Content}
         </div>
     </section>
 </BaseLayout>
