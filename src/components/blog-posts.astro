@@ -1,0 +1,25 @@
+---
+import { truncateWords } from '@shahid19/stringjs'
+import { getData, blogDate } from '@js/helpers'
+const data = await getData('blog-posts')
+
+const blog_posts = await data.data
+
+console.log(blog_posts[0], blog_posts[0].slug)
+
+
+---
+<section>
+    <div class="container mx-auto grid grid-cols-3">
+        {blog_posts.map((item: any) => 
+        <article class="p-4 rounded border-darker-800 border">
+            <h3 class="w-full border-b border-b-darker-800 pb-2 mb-4">{item.Title}</h3>
+            <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(item.publishedAt)}</em></h6>
+            <p class="mb-4">{truncateWords(item.Content, 15)}</p>
+            <a href=`/blog/${item.slug}` class="read-more flex-end">read more</a>
+        </article>
+        )}
+    </div>
+</section>
+
+

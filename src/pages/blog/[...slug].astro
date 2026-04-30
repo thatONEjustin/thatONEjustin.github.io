@@ -1,0 +1,36 @@
+---
+import { getData, blogDate } from '@js/helpers'
+
+import BaseLayout from "@layouts/base.astro"
+export const prerender = false
+
+const { slug } = Astro.params
+
+const data = getData(`blog-posts?filters[slug][$eq]=${slug}`)
+
+console.log(data)
+/*
+ * NOTE: this is the SSG way to do things (full jam stack)
+
+const { slug, Title, publishedAt, Content } = Astro.props
+export async function getStaticPaths() {
+    const all_posts_data = await getData('blog-posts')
+    const blog_posts = all_posts_data.data
+
+    return blog_posts.map(({ slug, Title, publishedAt, Content }) => {
+        return {
+            params: { slug },
+            props: { Title, publishedAt, Content },
+        };
+    });
+}
+*/
+---
+<BaseLayout>
+    <section>
+        <div class="container mx-auto">
+            <h1>{Title}</h1>
+            <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
+        </div>
+    </section>
+</BaseLayout>

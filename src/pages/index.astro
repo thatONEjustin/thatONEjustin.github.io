@@ -6,23 +6,27 @@ import BaseLayout from "@layouts/base.astro";
 import NerdfontIcon from "@components/nerdfont-icon.astro";
 import resume from "/resume.pdf"
 import me from "@img/me.jpeg"
+
+import BlogPosts from "@components/blog-posts.astro";
 ---
 <BaseLayout>
-<section class="relative bg-darker-700">
-    <div class="container flex flex-col md:flex-row z-20 py-8 items-center mx-auto">
-        <div class="order-2 md:order-1">
-            <h2 class="text-green border-b border-green lg:mb-2">about me</h2>
-            <p class="text-dark-600 text-3xl leading-relaxed">I am a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /><span class="text-cyan">web development,</span> <NerdfontIcon classes="text-cyan" icon="nf-dev-terminal"/> <span class="text-cyan">tooling,</span> <NerdfontIcon classes="text-cyan" icon="nf-md-git"/> <span class="text-cyan">CI/CD,</span><br/>and <NerdfontIcon classes="text-cyan" icon="nf-md-remote_desktop" /> <span class="text-cyan">server administration</span>.</p>
-                        <p class="text-dark-600 text-3xl leading-relaxed"><span class="font-semibold fancy-border fancy-text">I do my best work</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
-            <p class="text-dark-200 text-xl leading-relaxed mt-3">
-                i use <NerdfontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-2 text-cyan">rch</span>btw.
-            </p>
-        </div>
+    <section class="relative bg-darker-700">
+        <div class="container flex flex-col md:flex-row z-20 py-8 items-center mx-auto">
+            <div class="order-2 md:order-1">
+                <h2 class="text-green border-b border-green lg:mb-2">about me</h2>
+                <p class="text-dark-600 text-3xl leading-relaxed">I am a huge nerd about <NerdfontIcon classes="text-cyan" icon="nf-md-web" /><span class="text-cyan">web development,</span> <NerdfontIcon classes="text-cyan" icon="nf-dev-terminal"/> <span class="text-cyan">tooling,</span> <NerdfontIcon classes="text-cyan" icon="nf-md-git"/> <span class="text-cyan">CI/CD,</span><br/>and <NerdfontIcon classes="text-cyan" icon="nf-md-remote_desktop" /> <span class="text-cyan">server administration</span>.</p>
+                            <p class="text-dark-600 text-3xl leading-relaxed"><span class="font-semibold fancy-border fancy-text">I do my best work</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
+                <p class="text-dark-200 text-xl leading-relaxed mt-3">
+                    i use <NerdfontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-2 text-cyan">rch</span>btw.
+                </p>
+            </div>
 
-        <Image
-            src={me}
-            alt="Hi! I'm Justin Paelmo!"
-            class="order-1 z-40 md:order-2 mx-auto md:mx-unset h-full w-auto rounded-full max-w-2xl mb-8 md:mb-0 md:ml-12 border border-yellow"/>
-    </div>
-</section>
+            <Image
+                src={me}
+                alt="Hi! I'm Justin Paelmo!"
+                class="order-1 z-40 md:order-2 mx-auto md:mx-unset h-full w-auto rounded-full max-w-2xl mb-8 md:mb-0 md:ml-12 border border-yellow"/>
+        </div>
+    </section>
+
+    <BlogPosts />
 </BaseLayout>

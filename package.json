@@ -1,34 +1,36 @@
 {
-  "name": "personal-website",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@alpinejs/intersect": "^3.14.1",
-    "@astrojs/alpinejs": "^0.4.0",
-    "@astrojs/db": "^0.14.1",
-    "@astrojs/mdx": "^3.1.7",
-    "@astrojs/svelte": "^5.7.1",
-    "@astrojs/tailwind": "^5.1.1",
-    "@types/alpinejs": "^3.13.10",
-    "alpinejs": "^3.14.1",
-    "astro": "^4.15.9",
-    "caniuse-lite": "^1.0.30001642",
-    "marked": "^11.1.1",
-    "moment": "^2.30.1",
-    "momentjs": "^2.0.0",
-    "svelte": "^4.0.5",
-    "swiper": "^11.0.5",
-    "tailwind-dracula": "^1.1.0",
-    "tailwindcss": "^3.3.3"
-  },
-  "devDependencies": {
-    "@types/alpinejs__intersect": "^3.13.4"
-  }
+    "name": "personal-website",
+    "type": "module",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@alpinejs/intersect": "^3.14.1",
+        "@astrojs/alpinejs": "^0.5.0",
+        "@astrojs/db": "^0.21.0",
+        "@astrojs/mdx": "^5.0.4",
+        "@astrojs/netlify": "^7.0.8",
+        "@astrojs/svelte": "^8.1.0",
+        "@shahid19/stringjs": "^1.0.0",
+        "@tailwindcss/vite": "^4.2.4",
+        "@types/alpinejs": "^3.13.10",
+        "alpinejs": "^3.14.1",
+        "astro": "^6.1.10",
+        "caniuse-lite": "^1.0.30001642",
+        "marked": "^11.1.1",
+        "moment": "^2.30.1",
+        "momentjs": "^2.0.0",
+        "svelte": "^5.43.6",
+        "swiper": "^11.0.5",
+        "tailwind-dracula": "^1.1.0",
+        "tailwindcss": "^4.2.4"
+    },
+    "devDependencies": {
+        "@types/alpinejs__intersect": "^3.13.4"
+    }
 }
