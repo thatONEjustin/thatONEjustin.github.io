@@ -1,5 +1,5 @@
-const API_URL = import.meta.env.SECRET_API_URL;
-const BEARER_TOKEN = `Bearer ${import.meta.env.SECRET_API_TOKEN}`
+const API_URL = import.meta.env.PUBLIC_API_URL;
+const BEARER_TOKEN = `Bearer ${import.meta.env.PUBLIC_API_TOKEN}`
 
 
 export async function getData(endpoint: string) {
