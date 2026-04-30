@@ -1,24 +1,25 @@
 ---
-export const prerender = false
-
+// export const prerender = false
+//
 import { getData, blogDate } from '@js/helpers'
-
+//
 import BaseLayout from "@layouts/base.astro"
-
+//
 const { slug } = Astro.params
-
+//
 const data = await getData(`blog-posts?filters[slug][$eq]=${slug}`)
-
-const post = await data.data[0]
-
-const { Title, publishedAt, Content } = post
-
-console.log(post)
+//
+// const post = await data.data[0]
+//
+// const { Title, publishedAt, Content } = post
+//
+// console.log(post)
 
 /*
  * NOTE: this is the SSG way to do things (full jam stack)
+*/
 
-const { slug, Title, publishedAt, Content } = Astro.props
+const { Title, publishedAt, Content } = Astro.props
 export async function getStaticPaths() {
     const all_posts_data = await getData('blog-posts')
     const blog_posts = all_posts_data.data
@@ -30,10 +31,9 @@ export async function getStaticPaths() {
         };
     });
 }
-*/
 ---
 <BaseLayout>
-    <section class="bg-darker-900">
+    <section class="bg-darker min-h-screen">
         <div class="container mx-auto">
             <h1>{Title}</h1>
             <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>

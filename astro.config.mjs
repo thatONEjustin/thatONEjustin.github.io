@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 import mdx from "@astrojs/mdx";
 import netlify from '@astrojs/netlify';
@@ -6,7 +6,10 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-    output: 'server',
+    image: {
+        service: passthroughImageService()
+    },
+    output: 'static',
     prefetch: true,
     site: 'https://justinlikescode.netlify.app',
 
@@ -14,7 +17,7 @@ export default defineConfig({
         mdx(),
     ],
 
-    adapter: netlify(),
+    // adapter: netlify(),
 
     vite: {
         plugins: [

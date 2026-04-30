@@ -1,17 +1,10 @@
 ---
-export const prerender = false
-
-import BaseLayout from '@layouts/base.astro'
-
 import { truncateWords } from '@shahid19/stringjs'
 import { getData, blogDate } from '@js/helpers'
 const data = await getData('blog-posts')
 
 const blog_posts = await data.data
-
-console.log(blog_posts)
 ---
-<BaseLayout>
 
 <section>
     <div class="container mx-auto grid grid-cols-3">
@@ -25,6 +18,3 @@ console.log(blog_posts)
         )}
     </div>
 </section>
-
-
-</BaseLayout>
