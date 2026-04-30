@@ -25,6 +25,8 @@
         "marked": "^11.1.1",
         "moment": "^2.30.1",
         "momentjs": "^2.0.0",
+        "node-gyp": "^12.3.0",
+        "sharp": "^0.34.5",
         "svelte": "^5.43.6",
         "swiper": "^11.0.5",
         "tailwind-dracula": "^1.1.0",
