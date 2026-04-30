@@ -4,10 +4,6 @@ import { getData, blogDate } from '@js/helpers'
 const data = await getData('blog-posts')
 
 const blog_posts = await data.data
-
-console.log(blog_posts[0], blog_posts[0].slug)
-
-
 ---
 <section>
     <div class="container mx-auto grid grid-cols-3">
