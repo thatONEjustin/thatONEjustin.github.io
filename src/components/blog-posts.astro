@@ -8,10 +8,48 @@ const data = await getData('blog-posts')
 const blog_posts = await data.data
 ---
 
-<section class="bg-darker-900 py-10">
-    <div class="container mx-auto grid grid-cols-3 gap-x-32">
-        {blog_posts.map((post: any) => 
+<section class="blog-posts">
+    <div class="blog-posts-container">
+        {await blog_posts.map((post: any) =>
             <BlogCard data={post} />
         )}
     </div>
 </section>
+
+<style>
+@reference '@css/main.css';
+
+.blog-posts {
+    /* @apply bg-darker-900 py-10; */
+    @apply py-10;
+    @apply relative overflow-hidden;
+
+    .blog-posts-container {
+        @apply relative container mx-auto grid grid-cols-3 gap-x-32 z-30;
+    }
+
+    &:before {
+        @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+        @apply pointer-events-none;
+        @apply opacity-30;
+
+        content: ' ';
+        background: var(--color-black);
+        background: radial-gradient(circle,var(--color-darker-600),var(--color-black));
+
+        @apply z-10;
+    }
+
+    &:after {
+        @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+        /* @apply opacity-15; */
+        @apply hidden;
+        content: ' ';
+
+        @apply z-20;
+
+        background-size: cover;
+        background-image: url('../img/cosmic.jpg');
+    }
+}
+</style>

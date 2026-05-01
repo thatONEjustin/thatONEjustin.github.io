@@ -42,7 +42,7 @@ const { Title, publishedAt, Content } = post
 ---
 <BaseLayout>
     <section class="bg-darker min-h-screen">
-        <div class="container mx-auto">
+        <div class="container mx-auto py-24">
             <h1>{Title}</h1>
             <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
             <Fragment set:html={marked.parse(Content)} />

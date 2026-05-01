@@ -1,7 +1,7 @@
 ---
 import { blogDate } from '@js/helpers'
 import { truncateWords } from '@shahid19/stringjs'
-import { marked } from 'marked';
+import { marked } from 'marked'
 
 const { data } = Astro.props
 
@@ -12,8 +12,8 @@ async function preview(text: string, truncate:number = 0) {
         text = truncateWords(text, truncate)
     }
 
-    const marked_down_text = await marked.parse(text);
-    const cleaned_text = marked_down_text.replace(/<\/?[^>]+(>|$)/g, "");
+    const marked_down_text = await marked.parse(text)
+    const cleaned_text = marked_down_text.replace(/<\/?[^>]+(>|$)/g, "")
 
     return cleaned_text
 }
@@ -21,10 +21,10 @@ async function preview(text: string, truncate:number = 0) {
 
 <article class="blog-post-card">
     <a href=`/blog/${slug}` class="no-underline">
-        <h3 class="w-full text-buffy-800 border-b border-b-darker-800 pb-2 mb-4" set:html={preview(Title, 7)}></h3>
-        <h6 class="text-darker-400 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
+        <h3 class="title" set:html={preview(Title, 7)}></h3>
+        <h6 class="date"><em>published: {blogDate(publishedAt)}</em></h6>
 
-        <p class="mb-4 text-darker-900" set:html={preview(Content, 15)}></p>
+        <p class="preview" set:html={preview(Content, 15)}></p>
         <span class="read-more">read more</span>
     </a>
 </article>
@@ -35,6 +35,18 @@ async function preview(text: string, truncate:number = 0) {
 .blog-post-card {
     @apply p-4 rounded border-darker-800 border;
     @apply bg-darker-50;
+
+    .title {
+        @apply w-full text-buffy-800 border-b border-b-darker-800 pb-2 mb-4
+    }
+
+    .date {
+        @apply text-darker-400 text-xs;
+    }
+
+    .preview {
+        @apply mb-4 text-darker-900;
+    }
 }
 </style>
 

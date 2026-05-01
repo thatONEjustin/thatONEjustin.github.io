@@ -1,125 +1,123 @@
 ---
-const { url:href = "#", target, class:className  } = Astro.props;
+const { url:href = "#", target, class:className  } = Astro.props
 ---
 
 <a class={className} {href} {target}>
-  <slot>Button Text</slot>
+    <slot>Button Text</slot>
 </a>
 
 <style>
 @reference '@css/main.css';
 
-  @keyframes grow-in {
+@keyframes grow-in {
     from {
         height: 2px;
     }
     to {
-      /* @apply h-full rounded-md; */
         height: 100%;
         border-radius: var(--radius-md);
     }
-  }
+}
 
-
-  @keyframes grow-out {
+@keyframes grow-out {
     from {
         height: 100%;
     }
     to {
         height: var(2px);
     }
-  }
+}
 
 a {
-  @apply relative;
-  @apply px-8 py-4 text-center text-darker font-bold transition-all;
-  @apply min-w-35;
-  @apply no-underline;
-
-  &:after {
-    @apply absolute bottom-0 left-0 w-full h-0.5 transition-all;
-    @apply -z-10;
-    transform-origin: bottom center;
-    content: ' ';
-
-    animation: grow-out 175ms ease-out forwards;
-  }
-
-
-  &:hover {
-    @apply rounded-lg;
+    @apply relative flex items-center;
+    @apply px-8 py-4 text-center text-darker font-bold transition-all;
+    @apply min-w-35 max-w-min w-full;
+    @apply no-underline;
 
     &:after {
-      animation: grow-in 175ms ease-in forwards;
-    }
-  }
+        @apply absolute bottom-0 left-0 w-full h-0.5 transition-all;
+        @apply -z-10;
+        transform-origin: bottom center;
+        content: ' ';
 
-  &.default {
-    @apply text-darker;
+        animation: grow-out 175ms ease-out forwards;
+    }
+
 
     &:hover {
-      @apply border-transparent text-light bg-darker;
-    }
-  }
+        @apply rounded-lg;
 
-  &.green {
-    @apply text-green;
-
-    &:after {
-      @apply bg-green;
+        &:after {
+        animation: grow-in 175ms ease-in forwards;
+        }
     }
 
-    &:hover {
-      @apply text-darker;
-    }
-  }
+    &.default {
+        @apply text-darker;
 
-  &.cyan {
-    @apply text-cyan;
-
-    &:after {
-      @apply bg-cyan;
+        &:hover {
+        @apply border-transparent text-light bg-darker;
+        }
     }
 
-    &:hover {
-      @apply text-darker bg-cyan;
-    }
-  }
+    &.green {
+        @apply text-green;
 
-  &.pink {
-    @apply text-pink;
+        &:after {
+        @apply bg-green;
+        }
 
-    &:after {
-      @apply bg-pink;
-    }
-
-    &:hover {
-      @apply text-darker bg-pink;
-    }
-  }
-
-  &.purple {
-    @apply text-purple;
-
-    &:after {
-      @apply bg-purple;
+        &:hover {
+        @apply text-darker;
+        }
     }
 
-    &:hover {
-      @apply text-darker bg-purple;
-    }
-  }
+    &.cyan {
+        @apply text-cyan;
 
-  &.yellow {
-    @apply text-yellow;
+        &:after {
+        @apply bg-cyan;
+        }
 
-    &:after {
-      @apply bg-yellow;
+        &:hover {
+        @apply text-darker bg-cyan;
+        }
     }
 
-    &:hover {
-      @apply text-darker bg-yellow;
+    &.pink {
+        @apply text-pink;
+
+        &:after {
+        @apply bg-pink;
+        }
+
+        &:hover {
+        @apply text-darker bg-pink;
+        }
     }
-  }
+
+    &.purple {
+        @apply text-purple;
+
+        &:after {
+        @apply bg-purple;
+        }
+
+        &:hover {
+        @apply text-darker bg-purple;
+        }
+    }
+
+    &.yellow {
+        @apply text-yellow;
+
+        &:after {
+        @apply bg-yellow;
+        }
+
+        &:hover {
+        @apply text-darker bg-yellow;
+        }
+    }
 }
 </style>
