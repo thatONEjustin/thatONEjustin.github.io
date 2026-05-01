@@ -18,10 +18,13 @@
     @apply w-full;
     @apply relative;
 
-    /* @variant md { */
-    /* } */
-
     @variant xl {
       @apply max-w-4xl px-0;
     }
+}
+
+@utility read-more {
+    @apply text-purple underline underline-offset-[6px];
+    @apply underline underline-offset-[6px];
+    @apply decoration-dashed;
 }

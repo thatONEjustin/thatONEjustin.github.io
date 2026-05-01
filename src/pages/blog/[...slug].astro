@@ -16,9 +16,9 @@ const post = await data.data[0]
 const { Title, publishedAt, Content } = post
 
 // const test_data = await getData('blog-posts')
-
 /*
  * NOTE: this is the SSG way to do things (full jam stack)
+ * BUG: it is also broken for some reason but this is prior to BlogCard component
     export const prerender = true
 
     import { getData, blogDate } from '@js/helpers'
@@ -42,7 +42,7 @@ const { Title, publishedAt, Content } = post
 ---
 <BaseLayout>
     <section class="bg-darker min-h-screen">
-        <div class="container mx-auto py-24">
+        <div class="container mx-auto">
             <h1>{Title}</h1>
             <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
             <Fragment set:html={marked.parse(Content)} />

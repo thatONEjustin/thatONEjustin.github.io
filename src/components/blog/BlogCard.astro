@@ -34,10 +34,12 @@ async function preview(text: string, truncate:number = 0) {
 
 .blog-post-card {
     @apply p-4 rounded border-darker-800 border;
-    @apply bg-darker-50;
+    @apply bg-dark-50/5;
+    /* @apply bg-vanHelsing-600; */
 
     .title {
-        @apply w-full text-buffy-800 border-b border-b-darker-800 pb-2 mb-4
+        @apply w-full border-b border-b-darker-800 pb-2 mb-4;
+        @apply text-vanHelsing-500 text-xl;
     }
 
     .date {
@@ -45,7 +47,7 @@ async function preview(text: string, truncate:number = 0) {
     }
 
     .preview {
-        @apply mb-4 text-darker-900;
+        @apply mb-4 text-vanHelsing-100;
     }
 }
 </style>
