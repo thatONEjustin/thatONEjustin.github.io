@@ -27,7 +27,7 @@
     p {
         @apply text-darker-100;
 
-        +p {
+        + p {
             @apply my-8;
 
             &:last-of-type {
@@ -43,7 +43,7 @@
     }
 
     section {
-        +section {
+        + section {
             @apply py-20;
 
             &:last-of-type {

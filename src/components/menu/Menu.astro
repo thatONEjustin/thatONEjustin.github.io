@@ -1,14 +1,15 @@
 ---
-import type { MenuItem as MenuItemType } from "@js/data/menu";
+// import type { MenuItem as MenuItemType } from "@js/data/menu";
+//
 import MenuItem from "@components/menu/MenuItem.astro";
 
-import _ToggleMode from "@components/toggleMode.astro";
+// import _ToggleMode from "@components/toggleMode.astro";
 
 const { items } = Astro.props;
 ---
 
 <ul class="flex flex-row items-start py-4 md:py-0">
-  {items.map((item: MenuItemType) => <MenuItem {item} />)}
+  {items.map((item: any) => <MenuItem {item} />)}
 
   <!--
   <li>

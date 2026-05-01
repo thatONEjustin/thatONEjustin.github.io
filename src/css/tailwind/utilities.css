@@ -2,14 +2,14 @@
     @apply relative;
 
     &:after {
-      @apply absolute h-[2px] w-full bg-gradient-to-r from-pink to-cyan bottom-0 left-0;
+      @apply absolute h-0.5 w-full bg-linear-to-r from-pink to-cyan bottom-0 left-0;
       /*@apply opacity-30;*/
       content: ' ';
     }
 }
 
 @utility fancy-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink to-cyan;
+    @apply bg-clip-text text-transparent bg-linear-to-r from-pink to-cyan;
 }
 
 @utility justin-container {
@@ -18,10 +18,10 @@
     @apply w-full;
     @apply relative;
 
-    @screen md {
-    }
+    /* @variant md { */
+    /* } */
 
-    @screen xl {
+    @variant xl {
       @apply max-w-4xl px-0;
     }
 }

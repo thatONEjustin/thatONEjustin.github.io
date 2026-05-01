@@ -3,6 +3,7 @@ import { Image } from "astro:assets"
 
 import BaseLayout from "@layouts/base.astro";
 
+import PillButton from "@components/pill-button.astro";
 import NerdfontIcon from "@components/nerdfont-icon.astro";
 
 // import resume from "/resume.pdf"
@@ -20,6 +21,9 @@ import BlogPosts from "@components/blog-posts.astro";
                 <p class="text-dark-200 text-xl leading-relaxed mt-3">
                     i use <NerdfontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-2 text-cyan">rch</span>btw.
                 </p>
+                <PillButton class="text-3xl green" url="/resume.pdf" target="_blank">
+                    <NerdfontIcon icon="nf-md-file_document" /> resume
+                </PillButton>
             </div>
 
             <Image

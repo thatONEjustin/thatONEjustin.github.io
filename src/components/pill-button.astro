@@ -7,16 +7,37 @@ const { url:href = "#", target, class:className  } = Astro.props;
 </a>
 
 <style>
-    @import "tailwindcss/theme" theme(reference);
-    @plugin "tailwind-dracula";
+@reference '@css/main.css';
+
+  @keyframes grow-in {
+    from {
+        height: 2px;
+    }
+    to {
+      /* @apply h-full rounded-md; */
+        height: 100%;
+        border-radius: var(--radius-md);
+    }
+  }
+
+
+  @keyframes grow-out {
+    from {
+        height: 100%;
+    }
+    to {
+        height: var(2px);
+    }
+  }
+
 a {
   @apply relative;
   @apply px-8 py-4 text-center text-darker font-bold transition-all;
-  @apply min-w-[140px];
+  @apply min-w-35;
   @apply no-underline;
 
   &:after {
-    @apply absolute bottom-0 left-0 w-full h-[2px] transition-all;
+    @apply absolute bottom-0 left-0 w-full h-0.5 transition-all;
     @apply -z-10;
     transform-origin: bottom center;
     content: ' ';
@@ -24,23 +45,6 @@ a {
     animation: grow-out 175ms ease-out forwards;
   }
 
-  @keyframes grow-in {
-    from {
-      @apply h-[2px];
-    }
-    to {
-      @apply h-full rounded-md;
-    }
-  }
-
-  @keyframes grow-out {
-    from {
-      @apply h-full;
-    }
-    to {
-      @apply h-[2px];
-    }
-  }
 
   &:hover {
     @apply rounded-lg;

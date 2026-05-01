@@ -1,10 +1,11 @@
-/*
- * NOTE: local fonts
- */
-@import './fonts/fonts.css';
-@import './fonts/nf-icons.css';
 
 /*
  * NOTE: tailwind orgainzation!
  */ 
 @import './tailwind/tailwind.css';
+
+/*
+ * NOTE: local fonts
+ */
+@import './fonts/fonts.css';
+@import './fonts/nf-icons.css';
