@@ -33,26 +33,28 @@ async function preview(text: string, truncate:number = 0) {
 @reference '@css/main.css';
 
 .blog-post-card {
-    @apply p-4 rounded border-darker-800 border;
+    @apply p-4 rounded-md border-darker-800 border;
     @apply bg-dark-50/5;
     @apply relative overflow-hidden;
 
-    @apply transition-all ease-in-out duration-500;
+    @apply transition-all ease-in-out duration-400;
     @apply origin-center scale-100;
     
     &:after {
         @apply absolute w-64 h-128 right-full top-1/2 -translate-1/2;
-        @apply transition-all ease-in-out duration-300;
+        @apply transition-all ease-in-out duration-500;
         @apply bg-linear-to-r from-transparent via-white/10 to-transparent;
+        @apply blur-lg;
         @apply rotate-33;
         content: ' ';
     }
 
     @variant hover {
-        @apply scale-125;
+        @apply scale-115;
 
         &:after {
             @apply -right-full;
+            /* @apply right-1/2; */
         }
     }
 
