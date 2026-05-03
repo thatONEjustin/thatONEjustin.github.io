@@ -2,51 +2,54 @@
 /*
  * NOTE: This is the SSR way to do things
  */
-export const prerender = false
+// export const prerender = false
+//
+// import { marked } from 'marked';
+// import { getData, blogDate } from '@js/helpers'
+// import BaseLayout from "@layouts/base.astro"
+//
+// const { slug } = Astro.params
+//
+// const data = await getData(`blog-posts?filters[slug][$eq]=${slug}`)
+// const post = await data.json()
+//
+// const { Title, publishedAt, Content } = await post.data[0]
+
+/*
+ * FIXED: SSG was causing problems but I'm going to assume its two things:
+ * 1. moving to the astro patterns for their fetch() implementation/real world
+ * 2. the server is awake and not causing problems
+ */
+export const prerender = true
 
 import { marked } from 'marked';
 import { getData, blogDate } from '@js/helpers'
 import BaseLayout from "@layouts/base.astro"
 
+export async function getStaticPaths() {
+    const data = await getData('blog-posts').then(r => r.json())
+
+    const posts = data.data.map(({slug, Title, publishedAt, Content}: any) => {
+        console.log(slug)
+        return {
+            params: { slug },
+
+            props: { Title, publishedAt, Content },
+        }
+    })
+
+    return posts
+}
+
 const { slug } = Astro.params
-
-const data = await getData(`blog-posts?filters[slug][$eq]=${slug}`)
-const post = await data.json()
-
-const { Title, publishedAt, Content } = post
-
-// const test_data = await getData('blog-posts')
-/*
- * NOTE: this is the SSG way to do things (full jam stack)
- * BUG: it is also broken for some reason but this is prior to BlogCard component
-    export const prerender = true
-
-    import { getData, blogDate } from '@js/helpers'
-    import BaseLayout from "@layouts/base.astro"
-
-    export async function getStaticPaths() {
-        const all_posts_data = await getData('blog-posts')
-        const blog_posts = all_posts_data.data
-
-        return blog_posts.map(({ slug, Title, publishedAt, Content }: any) => {
-            return {
-                params: { slug },
-                props: { Title, publishedAt, Content },
-            };
-        });
-    }
-
-    const { slug } = Astro.params
-    const { Title, publishedAt, Content } = Astro.props
- */
-// Basic usage with direct Strapi Content API fetch
+const { Title, publishedAt, Content } = Astro.props
 ---
 <BaseLayout>
     <section class="bg-darker min-h-screen">
         <div class="container mx-auto">
             <h1>{Title}</h1>
             <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
-            <Fragment set:html={marked.parse(Content)} />
+            <Fragment set:html={await marked.parse(Content)} />
         </div>
     </section>
 </BaseLayout>

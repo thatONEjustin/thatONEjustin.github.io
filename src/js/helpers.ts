@@ -14,5 +14,5 @@ export async function getData(endpoint: string) {
 }
 
 export function blogDate(date: Date): string {
-    return new Date(date).toLocaleDateString("en-GB")
+    return new Date(date).toLocaleDateString("en-US")
 }

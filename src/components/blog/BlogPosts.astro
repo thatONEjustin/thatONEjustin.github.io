@@ -4,8 +4,10 @@ export const prerender = true
 import BlogCard from './BlogCard.astro'
 import { getData } from '@js/helpers'
 
-const data = await getData('blog-posts')
-const blog_posts = await data.data
+const data = await getData('blog-posts?&pagination[page]=1&pagination[pageSize]=3')
+// const blog_posts = await data.json()
+
+const { data:blog_posts } = await data.json()
 ---
 
 <section class="blog-posts">
