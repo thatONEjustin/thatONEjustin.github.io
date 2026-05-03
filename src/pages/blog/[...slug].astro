@@ -32,9 +32,8 @@ export async function getStaticPaths() {
 
     // console.log(blog_data)
     const paths = blog_data.map(({...post}: any) => {
-        const { slug } = post.data
         return {
-            params: { slug: slug },
+            params: { slug: post.data.slug },
             props:{...post.data} 
         }
     })
@@ -51,9 +50,10 @@ const { title, publishedAt, content } = Astro.props
             <div class="container mx-auto">
                 <h2 class="text-7xl text-purple text-right" itemprop="headline">{title}</h2>
                 <div class="flex ml-auto w-fit text-right">
-                    <div itemprop="author" itemscope  itemtype="https://schema.org/Person" class="ml-16">
-                        <h6 class="text-purple-300" ><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span>
-                    </h6>
+                    <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="ml-16">
+                        <h6 class="text-purple-300" ><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span></h6>
+                    </div>
+
                     <h6 class="text-purple-300 opacity-50" itemprop="datePublished"><em>published: {blogDate(publishedAt)}</em></h6>
                 </div>
             </div>
