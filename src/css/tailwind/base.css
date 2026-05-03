@@ -28,11 +28,7 @@
         @apply text-darker-100;
 
         + p {
-            @apply my-8;
-
-            &:last-of-type {
-                @apply mb-0;
-            }
+            @apply mt-8;
         }
     }
 
