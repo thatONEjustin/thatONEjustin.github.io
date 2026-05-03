@@ -26,6 +26,12 @@ const { slug, publishedAt, title, preview } = data
 
     @apply transition-all ease-in-out duration-400;
     @apply origin-center scale-100;
+
+    @apply mb-8;
+
+    @variant lg {
+        @apply mb-0;
+    }
     
     &:after {
         @apply absolute w-64 h-128 right-full top-1/2 -translate-1/2;

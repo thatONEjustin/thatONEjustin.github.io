@@ -24,7 +24,11 @@ const blog_posts = await getCollection('blog')
     @apply relative overflow-hidden;
 
     .blog-posts-container {
-        @apply relative container mx-auto grid grid-cols-3 gap-x-32 z-30;
+        @apply relative container mx-auto grid grid-cols-1 gap-x-32 z-30;
+
+        @variant lg {
+            @apply grid-cols-3;
+        }
     }
 
     &:before {
