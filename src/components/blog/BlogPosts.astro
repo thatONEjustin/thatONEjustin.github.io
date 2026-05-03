@@ -1,19 +1,16 @@
 ---
 export const prerender = true
+import { getCollection } from 'astro:content'
 
 import BlogCard from './BlogCard.astro'
-import { getData } from '@js/helpers'
 
-const data = await getData('blog-posts?&pagination[page]=1&pagination[pageSize]=3')
-// const blog_posts = await data.json()
-
-const { data:blog_posts } = await data.json()
+const blog_posts = await getCollection('blog')
 ---
 
 <section class="blog-posts">
     <div class="blog-posts-container">
         {await blog_posts.map((post: any) =>
-            <BlogCard data={post} />
+            <BlogCard data={post.data} />
         )}
     </div>
 </section>

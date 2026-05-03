@@ -1,30 +1,19 @@
 ---
-import { blogDate } from '@js/helpers'
-import { truncateWords } from '@shahid19/stringjs'
-import { marked } from 'marked'
+import { blogDate, chop } from '@js/helpers'
 
 const { data } = Astro.props
 
-const { slug, publishedAt, Content, Title } = data
+const { slug, publishedAt, title, preview } = data
 
-async function preview(text: string, truncate:number = 0) {
-    if(truncate >= 1 && truncate != null) {
-        text = truncateWords(text, truncate)
-    }
-
-    const marked_down_text = await marked.parse(text)
-    const cleaned_text = marked_down_text.replace(/<\/?[^>]+(>|$)/g, "")
-
-    return cleaned_text
-}
+// console.log(data)
 ---
 
 <article class="blog-post-card">
     <a href=`/blog/${slug}` class="no-underline">
-        <h3 class="title" set:html={preview(Title, 7)}></h3>
+        <h3 class="title" set:html={chop(title, 7)}></h3>
         <h6 class="date"><em>published: {blogDate(publishedAt)}</em></h6>
 
-        <p class="preview" set:html={preview(Content, 15)}></p>
+        <p class="preview" set:html={preview}></p>
         <span class="read-more">read more</span>
     </a>
 </article>

@@ -22,34 +22,35 @@
  */
 export const prerender = true
 
+import { getCollection } from 'astro:content';
 import { marked } from 'marked';
-import { getData, blogDate } from '@js/helpers'
+import { blogDate } from '@js/helpers'
 import BaseLayout from "@layouts/base.astro"
 
 export async function getStaticPaths() {
-    const data = await getData('blog-posts').then(r => r.json())
+    const blog_data = await getCollection('blog');
 
-    const posts = data.data.map(({slug, Title, publishedAt, Content}: any) => {
-        console.log(slug)
+    // console.log(blog_data)
+    const paths = blog_data.map(({...post}: any) => {
+        const { slug } = post.data
         return {
-            params: { slug },
-
-            props: { Title, publishedAt, Content },
+            params: { slug: slug },
+            props:{...post.data} 
         }
     })
 
-    return posts
+    return paths
 }
 
-const { slug } = Astro.params
-const { Title, publishedAt, Content } = Astro.props
+// const { slug } = Astro.params
+const { title, publishedAt, content } = Astro.props
 ---
 <BaseLayout>
     <section class="bg-darker min-h-screen">
         <div class="container mx-auto">
-            <h1>{Title}</h1>
+            <h1>{title}</h1>
             <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
-            <Fragment set:html={await marked.parse(Content)} />
+            <Fragment set:html={marked.parse(content)} />
         </div>
     </section>
 </BaseLayout>
