@@ -10,13 +10,14 @@ import NerdFontIcon from "@components/NerdFontIcon.astro";
 import me from "@images/me.jpeg"
 
 import BlogPosts from "@components/blog/BlogPosts.astro";
+import SocialMediaList from "@components/SocialMediaList.astro";
 ---
 <BaseLayout>
     <section id="intro" class="py-5 border-b fancy-border">
-        <div class="container flex flex-col md:flex-row z-20 py-8 items-center mx-auto">
+        <div class="container relative flex flex-col md:flex-row z-50 py-8 items-center mx-auto">
             <div class="order-2 md:order-1">
                 <h2 class="text-green border-b border-green lg:mb-2">about me</h2>
-                <p class="text-dark-600 text-3xl leading-relaxed">I am a huge nerd about <NerdFontIcon classes="text-cyan" icon="nf-md-web" /><span class="text-cyan">web development,</span><NerdFontIcon classes="text-cyan" icon="nf-dev-terminal"/><span class="text-cyan">tooling,</span> <NerdFontIcon classes="text-cyan" icon="nf-md-git"/> <span class="text-cyan">CI/CD,</span><br/>and <NerdFontIcon classes="text-cyan" icon="nf-md-remote_desktop" /> <span class="text-cyan">server administration</span>.</p>
+                <p class="text-dark-600 text-3xl leading-relaxed">I am a huge nerd about <NerdFontIcon classes="text-cyan" icon="nf-md-web" /><span class="text-cyan">web development,</span> <NerdFontIcon classes="text-cyan" icon="nf-dev-terminal"/><span class="text-cyan">tooling,</span> <NerdFontIcon classes="text-cyan" icon="nf-md-git"/> <span class="text-cyan">CI/CD,</span> and <NerdFontIcon classes="text-cyan" icon="nf-md-remote_desktop" /> <span class="text-cyan">server administration</span>.</p>
                 <p class="text-dark-600 text-3xl leading-relaxed"><span class="font-semibold fancy-border fancy-text">I do my best work</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
                 <p class="text-dark-200 text-sm leading-relaxed my-6">
                     i use <NerdFontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-1.5 text-cyan">rch</span>btw.
@@ -35,6 +36,13 @@ import BlogPosts from "@components/blog/BlogPosts.astro";
     </section>
 
     <BlogPosts />
+
+    <section id="social" class="bg-dark-700 mix-blend-multiply py-8">
+        <div class="justin-container flex flex-col items-center justify-center">
+            <h2 class="text-darker-50">social media</h2>
+            <SocialMediaList />
+        </div>
+    </section>
 </BaseLayout>
 
 <style>
@@ -45,7 +53,7 @@ import BlogPosts from "@components/blog/BlogPosts.astro";
     &:before {
         @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
         @apply pointer-events-none;
-        @apply opacity-30;
+        @apply opacity-30 z-30;
 
         content: ' ';
         background: rgb(83,89,124);
@@ -54,6 +62,7 @@ import BlogPosts from "@components/blog/BlogPosts.astro";
 
     &:after {
         @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+        @apply z-20;
         @apply pointer-events-none;
 
         content: ' ';
