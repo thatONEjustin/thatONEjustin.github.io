@@ -11,7 +11,7 @@ import BaseLayout from "@layouts/base.astro"
 const { slug } = Astro.params
 
 const data = await getData(`blog-posts?filters[slug][$eq]=${slug}`)
-const post = await data.data[0]
+const post = await data.json()
 
 const { Title, publishedAt, Content } = post
 
@@ -39,6 +39,7 @@ const { Title, publishedAt, Content } = post
     const { slug } = Astro.params
     const { Title, publishedAt, Content } = Astro.props
  */
+// Basic usage with direct Strapi Content API fetch
 ---
 <BaseLayout>
     <section class="bg-darker min-h-screen">

@@ -29,7 +29,8 @@ import BlogPosts from "@components/blog/BlogPosts.astro";
             <Image
                 src={me}
                 alt="Hi! I'm Justin Paelmo!"
-                class="order-1 z-40 md:order-2 mx-auto md:mx-unset h-full w-auto rounded-full max-w-2xl mb-8 md:mb-0 md:ml-12 border border-yellow"/>
+                class="portrait"
+                />
         </div>
     </section>
 
@@ -39,28 +40,38 @@ import BlogPosts from "@components/blog/BlogPosts.astro";
 <style>
 @reference '@css/main.css';
 #intro {
-  @apply relative;
+    @apply relative;
 
-  &:before {
-    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-    @apply pointer-events-none;
-    @apply opacity-30;
+    &:before {
+        @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+        @apply pointer-events-none;
+        @apply opacity-30;
 
-    content: ' ';
-    background: rgb(83,89,124);
-    background: radial-gradient(circle,#53597c,#0e0d11);
-  }
+        content: ' ';
+        background: rgb(83,89,124);
+        background: radial-gradient(circle,#53597c,#0e0d11);
+    }
 
-  &:after {
-    @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-    @apply pointer-events-none;
+    &:after {
+        @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+        @apply pointer-events-none;
 
-    content: ' ';
+        content: ' ';
 
-    background-size: 16px 16px;
-    background-image:
-      linear-gradient(to right, rgba(248, 248, 242, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(248, 248, 242, 0.05) 1px, transparent 1px);
-  }
+        background-size: 16px 16px;
+        background-image:
+        linear-gradient(to right, rgba(248, 248, 242, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(248, 248, 242, 0.05) 1px, transparent 1px);
+    }
 }
+
+.portrait {
+    @apply order-1 z-40 mx-auto h-full w-auto max-w-2xl;
+    @apply mb-8;
+    @apply rounded-full border-4 border-yellow;
+
+    @variant md {
+        @apply order-2 mx-unset mb-0 ml-12;
+    }
+} 
 </style>

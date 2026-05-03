@@ -11,8 +11,6 @@ export async function getData(endpoint: string) {
                 "Authorization": BEARER_TOKEN,
             },
         })
-            .then(response => response.json())
-            .catch(error => console.log(error))
 }
 
 export function blogDate(date: Date): string {
