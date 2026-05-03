@@ -1,15 +1,40 @@
 ---
-// import type { MenuItem as MenuItemType } from "@js/data/menu";
-//
 import MenuItem from "@components/menu/MenuItem.astro";
 
-// import _ToggleMode from "@components/toggleMode.astro";
+type MenuItem = {
+  label: string,
+  href: string,
+  icon: string,
+  scrollTo?: string
+}
 
-const { items } = Astro.props;
+const menu: MenuItem[] = [
+    {
+        label: 'home',
+        href: '/',
+        icon: 'nf-custom-home',
+    },
+    {
+        label: 'about',
+        href: '/about-me',
+        icon: 'nf-dev-terminal',
+    },
+    // {
+    //     label: 'skills',
+    //     href: '#skills',
+    //     icon: 'nf-md-keyboard',
+    //     scrollTo: 'skills'
+    // },
+    // {
+    //   'label': 'blog',
+    //   'href': '/blog',
+    //   'icon': 'nf-md-pen'
+    // },
+]
 ---
 
 <ul class="flex flex-row items-start py-4 md:py-0">
-  {items.map((item: any) => <MenuItem {item} />)}
+  {menu.map((item: any) => <MenuItem {item} />)}
 
   <!--
   <li>

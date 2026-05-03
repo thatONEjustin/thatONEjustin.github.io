@@ -1,13 +1,34 @@
 ---
-import { social_media } from "@js/data/social"
+// import { social_media } from "@js/data/social"
+export type SocialMedia = {
+    label: string,
+    url: string,
+    icon: string,
+    classes: string
+}
+
+export const social_media: SocialMedia[] = [
+    {
+        label: 'github',
+        url: 'https://github.com/thatONEjustin',
+        icon: 'nf-dev-github',
+        classes: 'text-light'
+    },
+    {
+        label: 'linkedin',
+        url: 'https://www.linkedin.com/in/justinlikescode/',
+        icon: 'nf-md-linkedin',
+        classes: 'text-cyan'
+    },
+]
 ---
 <ul class="flex flex-row">
-{social_media.map((item) =>
-  <li class="mr-4 last:mr-0 text-4xl">
-    <a href={item.url} target="_blank" class="no-underline">
-      <i class=`nf ${item.icon} ${item.classes}`></i>
-      <span class="sr-only">{item.label}</span>
-    </a>
-  </li>
-)}
+    {social_media.map((item) =>
+    <li class="mr-4 last:mr-0 text-4xl">
+        <a href={item.url} target="_blank" class="no-underline">
+            <i class=`nf ${item.icon} ${item.classes}`></i>
+            <span class="sr-only">{item.label}</span>
+        </a>
+    </li>
+    )}
 </ul>

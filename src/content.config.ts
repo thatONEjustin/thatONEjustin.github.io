@@ -21,11 +21,12 @@ const blog_posts = defineCollection({
         const posts = data.data
 
         return posts.map(({ ...post }: any) => {
-            const { documentId, slug, Content, Title } = post
+            const { documentId, slug, publishedAt, Content, Title } = post
             return {
                 id: documentId,
                 slug: slug,
                 content: Content,
+                publishedAt: publishedAt,
                 preview: preview(Content, 15),
                 title: Title
             }

@@ -1,37 +1,6 @@
 ---
 import Menu from "@components/menu/Menu.astro";
-type MenuItem = {
-  label: string,
-  href: string,
-  icon: string,
-  scrollTo?: string
-}
 
-const menu_data: MenuItem[] = [
-  {
-    label: 'home',
-    href: '#',
-    icon: 'nf-custom-home',
-    scrollTo: 'top'
-  },
-  {
-    label: 'about',
-    href: '#about-me',
-    icon: 'nf-dev-terminal',
-    scrollTo: 'about-me'
-  },
-  {
-    label: 'skills',
-    href: '#skills',
-    icon: 'nf-md-keyboard',
-    scrollTo: 'skills'
-  },
-  // {
-  //   'label': 'blog',
-  //   'href': '/blog',
-  //   'icon': 'nf-md-pen'
-  // },
-]
 ---
 
 <header class="xl:sticky xl:top-0 z-50">
@@ -42,7 +11,7 @@ const menu_data: MenuItem[] = [
                 <h1>i'm justin a<div class="text-green">&nbsp;full stack <i class="text-2xl sm:text-3xl nf nf-oct-stack"></i>&nbsp;</div>developer</h1>
                 <span class="sr-only">I'm Justin Paelmo, a full stack developer</span>
             </a>
-            <Menu transition:persist items={menu_data} />
+            <Menu transition:persist />
         </div>
     </div>
 </header>
