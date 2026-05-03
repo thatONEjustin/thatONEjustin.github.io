@@ -1,0 +1,219 @@
+---
+import BaseLayout from "@layouts/base.astro";
+// import SkillsList from '@components/'
+
+import resume from './resume.pdf'
+
+/*
+export type Skill = {
+    label: string,
+    icon: string,
+    color: string,
+    experience: {
+        years: number,
+        moreThan: boolean
+    },
+    categories: Array<string>
+}
+
+export const skills_data: Skill[] = [
+    {
+        'label': 'javascript (vanilla)',
+        'icon': 'nf-dev-javascript_badge',
+        'color': 'yellow',
+        'experience': {
+            'years': 20,
+            'moreThan': true
+        },
+        'categories': [
+            'all',
+            'front-end',
+            'back-end'
+        ]
+    },
+    {
+        'label': 'bootstrap',
+        'icon': 'nf-md-bootstrap',
+        'color': 'purple',
+        'experience': {
+            'years': 10,
+            'moreThan': true
+        },
+        'categories': [
+            'front-end',
+        ]
+    },
+    {
+        'label': 'php',
+        'icon': 'nf-md-language_php',
+        'color': 'purple',
+        'experience': {
+            'years': 15,
+            'moreThan': true
+        },
+        'categories': [
+            'back-end',
+        ]
+    },
+    {
+        'label': 'css',
+        'icon': 'nf-dev-css3',
+        'color': 'blue',
+        'experience': {
+            'years': 15,
+            'moreThan': true
+        },
+        'categories': [
+            'front-end'
+        ]
+    },
+    {
+        'label': 'twig',
+        'icon': 'nf-seti-twig',
+        'color': 'green',
+        'experience': {
+            'years': 6,
+            'moreThan': false
+        },
+        'categories': [
+            'front-end'
+        ]
+    },
+    {
+        'label': 'laravel',
+        'icon': 'nf-fa-laravel',
+        'color': 'red',
+        'experience': {
+            'years': 5,
+            'moreThan': true
+        },
+        'categories': [
+            'front-end',
+            'back-end'
+        ]
+    },
+    {
+        'label': 'bash',
+        'icon': 'nf-md-bash',
+        'color': 'green',
+        'experience': {
+            'years': 3,
+            'moreThan': false
+        },
+        'categories': [
+            'back-end'
+        ]
+    },
+    {
+        'label': 'TypeScript',
+        'icon': 'nf-md-language_typescript',
+        'color': 'blue',
+        'experience': {
+            'years': 4,
+            'moreThan': true
+        },
+        'categories': [
+            'front-end',
+            'back-end'
+        ]
+    },
+    {
+        'label': 'sass',
+        'icon': 'nf-dev-sass',
+        'color': 'pink',
+        'experience': {
+            'years': 5,
+            'moreThan': true
+        },
+        'categories': [
+            'front-end'
+        ]
+    },
+    {
+        'label': 'lua',
+        'icon': 'nf-md-language_lua',
+        'color': 'pink',
+        'experience': {
+            'years': 3,
+            'moreThan': true
+        },
+        'categories': [
+            'back-end'
+        ]
+    },
+    {
+        'label': 'rust',
+        'icon': 'nf-dev-rust',
+        'color': 'red',
+        'experience': {
+            'years': 1,
+            'moreThan': false
+        },
+        'categories': [
+            'back-end'
+        ]
+    },
+    {
+        'label': 'tailwindcss',
+        'icon': 'nf-md-tailwind',
+        'color': 'blue',
+        'experience': {
+            'years': 5,
+            'moreThan': true
+        },
+        'categories': [
+            'front-end'
+        ]
+    }
+]
+*/
+---
+
+<BaseLayout>
+    <section id="about-me" class="py-16">
+        <div class="justin-container">
+            <h2 class="text-green text-center max-w-fit mx-auto border-b border-green lg:mb-2">work history</h2>
+
+            <div class="about-timeframe">
+                <h3 class="text-pink">2009 - 2016</h3>
+                <h3><a class="text-cyan no-underline" href="https://advantageservices.net" target="_blank">AdvantageServices</a></h3>
+            </div>
+
+            <p>I started professional web development in 2009 back in the SFTP, jQuery, and early PHP days. I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
+            <p>During this time I had already picked up working in a lot of LEGACY web technologies. My first few frameworks were Wordpress and Drupal respectively. Eventually I really got a taste of backend UI development through a combination of ColdFusion/ActionScript and XML parsing.</p>
+            <p>I built control panel UI/UX frameworks for every use case in several global scale niche hiring firms <a href={resume} class="fancy-link">(ask me about it!)</a>.</p>
+
+            <div class="about-timeframe mt-8">
+                <h3 class="text-pink">2016 - 2026</h3>
+                <h3><a class="text-cyan no-underline" href="https://wojodesign.com" target="_blank">WojoDesign</a></h3>
+            </div>
+
+            <p>This was a big move for me both in going from Florida to Chicago, and finally moving towards more modern tech stacks in web development.</p>
+            <p>I wrote my first JS to mobile application for a client, that involved allowing users to purchase native in-app subscriptions for both the apple AppStore and google's Play Store.</p>
+            <p>About 2016 - 2018 was a lot of me learning tools like yarn, npm, node, liquid/handlebars. I also started delving into more backend CMS development.</p>
+            <p>This was also the time period where I really leaned into more systems administration and automation workflows.</p>
+            <p>From 2018 onwards I put a bigger focus on deepening my relationship with programming and web development.</p>
+            <p>I continue to build and/or integrate user management systems and login front ends. I also developed a few internal plugins for the Craft CMS platform.</p>
+            <p>I've been incorporating more and more workflows that involve CI/CD practices for code deployment and environment management.</p>
+        </div>
+    </section>
+
+
+</BaseLayout>
+
+<style>
+@reference '@css/main.css';
+
+#about-me {
+    .justin-container {
+        p {
+            @apply text-2xl;
+        }
+    }
+
+    .about-timeframe {
+        @apply fancy-border pb-1 mb-3 mt-12 text-pink;
+        @apply flex flex-row items-center justify-between;
+    }
+}
+</style>
