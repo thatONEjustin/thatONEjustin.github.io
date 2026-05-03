@@ -46,11 +46,83 @@ export async function getStaticPaths() {
 const { title, publishedAt, content } = Astro.props
 ---
 <BaseLayout>
-    <section class="bg-darker min-h-screen">
-        <div class="container mx-auto">
-            <h1>{title}</h1>
-            <h6 class="text-darker-50 opacity-30 text-xs"><em>published: {blogDate(publishedAt)}</em></h6>
-            <Fragment set:html={marked.parse(content)} />
-        </div>
-    </section>
+    <article class="min-h-screen" itemscope itemtype="https://schema.org/BlogPosting">
+        <section class="px-8 py-6 grid-bg">
+            <h2 class="text-7xl text-purple text-right" itemprop="headline">{title}</h2>
+            <div class="flex ml-auto w-fit text-right">
+                <div itemscope itemprop="author" itemtype="https://schema.org/Person" class="ml-16"><h6 class="text-purple-300" ><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span></h6>
+                <h6 class="text-purple-300 opacity-50" itemprop="datePublished"><em>published: {blogDate(publishedAt)}</em></h6>
+            </div>
+        </section>
+        <section class="blog-article">
+            <div class="justin-container mx-auto" itemprop="articleBody">
+                <Fragment set:html={marked.parse(content)} />
+            </div>
+        </section>
+    </article>
 </BaseLayout>
+
+<style>
+@reference '@css/main.css';
+
+section.blog-article {
+    h3 {
+        @apply text-cyan;
+    }
+
+    h4 {
+        @apply text-green;
+    }
+
+    h5 {
+        @apply text-yellow;
+    }
+
+    h6 {
+        @apply text-orange;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        + p {
+            @apply mt-2;
+        }
+    }
+
+    strong {
+        @apply text-orange;
+    }
+
+    &.italic, em, strong > em {
+        @apply text-yellow;
+    }
+
+    blockquote {
+        @apply text-yellow;
+        @apply ml-4 pl-4;
+
+        &:before {
+            content: '|';
+        }
+    }
+
+    ul {
+        @apply text-darker-100;
+        @apply list-disc;
+        @apply pl-4;
+        @apply py-2;
+
+        li {
+            > ul {
+                @apply list-[circle];
+                @apply ml-4;
+                @apply mb-2;
+                @apply py-0;
+            }
+        }
+    }
+
+    img {
+        @apply my-8;
+    }
+}
+</style>
