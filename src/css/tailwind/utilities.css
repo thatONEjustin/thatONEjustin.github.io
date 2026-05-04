@@ -3,13 +3,12 @@
 
     &:after {
       @apply absolute h-0.5 w-full bg-linear-to-r from-pink to-cyan bottom-0 left-0;
-      /*@apply opacity-30;*/
       content: ' ';
     }
 }
 
 @utility fancy-border-thin {
-   @apply fancy-border;
+    @apply fancy-border;
 
     &:after {
         @apply h-px;
@@ -32,8 +31,8 @@
 }
 
 @utility read-more {
-    @apply text-purple underline underline-offset-[6px];
-    @apply underline underline-offset-[6px];
+    @apply text-purple underline underline-offset-6;
+    @apply underline underline-offset-6;
     @apply decoration-dashed;
 }
 
@@ -43,28 +42,28 @@
 
 @utility grid-bg {
     @apply relative;
-    @apply border-b-2 border-lincoln-300/35;
+    @apply border-b-2 border-lincoln-300/35 bg-black;
 
     &:before {
-        @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
+        @apply absolute w-full h-full top-0 left-0;
         @apply pointer-events-none;
-        @apply opacity-30 z-30;
 
         content: ' ';
-        background: rgb(83,89,124);
-        background: radial-gradient(circle,#53597c,#0e0d11);
+        /* background: var(--color-darker-800); */
+        background: radial-gradient(circle,var(--color-darker-900),var(--color-black));
     }
 
     &:after {
+        --square-size: 16px;
         @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
         @apply z-20;
         @apply pointer-events-none;
 
         content: ' ';
 
-        background-size: 16px 16px;
+        background-size: var(--square-size) var(--square-size);
         background-image:
-        linear-gradient(to right, rgba(248, 248, 242, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(248, 248, 242, 0.05) 1px, transparent 1px);
+            linear-gradient(to right, --alpha(var(--color-light-50) / 5%) 1px, transparent 1px),
+            linear-gradient(to bottom, --alpha(var(--color-light-50) / 5%) 1px, transparent 1px);
     }
 }

@@ -50,20 +50,19 @@ export async function getStaticPaths() {
 const { title, publishedAt, content } = Astro.props
 ---
 <BaseLayout>
-    <article class="min-h-screen" itemscope itemtype="https://schema.org/BlogPosting">
+    <article class="min-h-screen relative" itemscope itemtype="https://schema.org/BlogPosting">
         <section class="px-8 py-6 grid-bg">
-            <div class="container mx-auto">
+            <div class="container mx-auto relative z-50">
                 <h2 class="text-7xl text-purple text-right" itemprop="headline">{title}</h2>
                 <div class="flex ml-auto w-fit text-right">
                     <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="ml-16">
-                        <h6 class="text-purple-300" ><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span></h6>
+                        <h6 class="text-purple-300 mr-2"><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span></h6>
                     </div>
-
-                    <h6 class="text-purple-300 opacity-50" itemprop="datePublished"><em>published: {blogDate(publishedAt)}</em></h6>
+                    <h6 class="text-purple-300/50" itemprop="datePublished"><em>published: {blogDate(publishedAt)}</em></h6>
                 </div>
             </div>
         </section>
-        <section class="blog-article">
+        <section class="blog-article overflow-hidden">
             <div class="justin-container mx-auto" itemprop="articleBody">
                 <Fragment set:html={marked.parse(content)} />
             </div>
