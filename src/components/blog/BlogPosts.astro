@@ -4,12 +4,12 @@ import { getCollection } from 'astro:content'
 
 import BlogCard from './BlogCard.astro'
 
-const blog_posts = await getCollection('blog')
+const blog_posts = (await getCollection('blog')).slice(0,3)
 ---
 
 <section class="blog-posts">
     <div class="blog-posts-container">
-        {blog_posts.slice(0,3).map((post: any) =>
+        {blog_posts.map((post: any) =>
             <BlogCard data={post.data} />
         )}
     </div>
