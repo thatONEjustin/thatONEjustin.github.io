@@ -13,7 +13,7 @@
 // const data = await getData(`blog-posts?filters[slug][$eq]=${slug}`)
 // const post = await data.json()
 //
-// const { Title, publishedAt, Content } = await post.data[0]
+// const { Title:title, publishedAt, Content:content } = await post.data[0]
 
 /*
  * FIXED: SSG was causing problems but I'm going to assume its two things:
@@ -24,6 +24,7 @@ export const prerender = true
 
 import { getCollection } from 'astro:content';
 import { marked } from 'marked';
+
 import { blogDate } from '@js/helpers'
 import BaseLayout from "@layouts/base.astro"
 
@@ -41,7 +42,11 @@ export async function getStaticPaths() {
     return paths
 }
 
-// const { slug } = Astro.params
+/*
+ * NOTE: we don't need ${slug} currently because getStaticPaths() will generate
+ * routes for us based on the params attribute passed.
+ * const { slug } = Astro.params
+ */
 const { title, publishedAt, content } = Astro.props
 ---
 <BaseLayout>
