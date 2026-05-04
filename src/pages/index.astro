@@ -19,9 +19,9 @@ import SocialMediaList from "@components/SocialMediaList.astro";
                 <h2 class="text-green border-b border-green lg:mb-2">about me</h2>
                 <p class="text-dark-600 text-3xl leading-relaxed">I am a huge nerd about <NerdFontIcon classes="text-cyan" icon="nf-md-web" /><span class="text-cyan">web development,</span> <NerdFontIcon classes="text-cyan" icon="nf-dev-terminal"/><span class="text-cyan">tooling,</span> <NerdFontIcon classes="text-cyan" icon="nf-md-git"/> <span class="text-cyan">CI/CD,</span> and <NerdFontIcon classes="text-cyan" icon="nf-md-remote_desktop" /> <span class="text-cyan">server administration</span>.</p>
                 <p class="text-dark-600 text-3xl leading-relaxed"><span class="font-semibold fancy-border fancy-text">I do my best work</span> when working with tight knit teams on finding elegant solutions for any full stack deployment.</p>
-                <p class="text-dark-200 text-sm leading-relaxed my-6">
+                <a href="https://archlinux.org" target="_blank" class="text-dark-600 text-sm leading-relaxed my-6 opacity-60 block w-fit hover:text-cyan hover:opacity-100">
                     i use <NerdFontIcon icon="nf-md-arch" classes="text-cyan" /><span class="relative -left-1.5 text-cyan">rch</span>btw.
-                </p>
+                </a>
                 <PillButton class="text-3xl green" url="/resume.pdf" target="_blank">
                     <NerdFontIcon icon="nf-md-file_document" />&nbsp;resume
                 </PillButton>
@@ -56,8 +56,9 @@ import SocialMediaList from "@components/SocialMediaList.astro";
         @apply opacity-30 z-30;
 
         content: ' ';
-        background: rgb(83,89,124);
-        background: radial-gradient(circle,#53597c,#0e0d11);
+        background: var(--color-darker-600);
+        background: radial-gradient(circle,var(--color-darker-600),var(--color-black));
+
     }
 
     &:after {
