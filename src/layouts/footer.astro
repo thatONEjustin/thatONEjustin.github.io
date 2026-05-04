@@ -22,27 +22,26 @@ const tech_stacks = [
         icon: "nf-md-cloud_tags",
         text_color: "text-cyan"
     },
-];
-
+]
 ---
 
 <footer class="bg-darker-800 mt-8 lg:mt-0 relative lg:fixed lg:top-full lg:-translate-y-full w-full py-2 lg:py-0">
-  <div class="relative container w-11/12 lg:w-full mx-auto flex flex-row items-center justify-between">
-    <ul class="flex flex-col lg:flex-row py-1">
-      {tech_stacks.map((technology, _index) => (
-      <li class="mr-2 last:mr-0">
-        {technology.tagline != "" && (
-          <span class="font-normal text-yellow">{technology.tagline}</span>
-        )}
-        <a href={technology.url} target="_blank" class=`${technology.text_color} font-semibold no-underline`>
-          {technology.icon && <i class=`nf ${technology.icon} ${technology.text_color}`> </i>}
-          {technology.label}
-        </a>
-      </li>
-      ))}
-    </ul>
-    <div class="copyright">
-      <p class="font-semibold text-darker-300 text-sm italic"><span class="font-normal">copyright</span> {moment().year()}</p>
+    <div class="relative container w-11/12 lg:w-full mx-auto flex flex-row items-center justify-between">
+        <ul class="flex flex-col lg:flex-row py-1">
+            {tech_stacks.map((technology, _index) => (
+            <li class="mr-2 last:mr-0">
+                {technology.tagline != "" && (
+                <span class="font-normal text-yellow">{technology.tagline}</span>
+                )}
+                <a href={technology.url} target="_blank" class=`${technology.text_color} font-semibold no-underline`>
+                {technology.icon && <i class=`nf ${technology.icon} ${technology.text_color}`> </i>}
+                {technology.label}
+                </a>
+            </li>
+            ))}
+        </ul>
+        <div class="copyright">
+            <p class="font-semibold text-darker-300 text-sm italic"><span class="font-normal">copyright</span> {moment().year()}</p>
+        </div>
     </div>
-  </div>
 </footer>
