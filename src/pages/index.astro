@@ -47,32 +47,6 @@ import SocialMediaList from "@components/SocialMediaList.astro";
 
 <style>
 @reference '@css/main.css';
-#intro {
-    @apply relative;
-
-    &:before {
-        @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-        @apply pointer-events-none;
-        @apply opacity-30 z-30;
-
-        content: ' ';
-        background: rgb(83,89,124);
-        background: radial-gradient(circle,#53597c,#0e0d11);
-    }
-
-    &:after {
-        @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
-        @apply z-20;
-        @apply pointer-events-none;
-
-        content: ' ';
-
-        background-size: 16px 16px;
-        background-image:
-        linear-gradient(to right, rgba(248, 248, 242, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(248, 248, 242, 0.05) 1px, transparent 1px);
-    }
-}
 
 .portrait {
     @apply order-1 z-40 mx-auto h-full w-auto max-w-2xl;

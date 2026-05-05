@@ -62,7 +62,7 @@ const { title, publishedAt, content } = Astro.props
                 </div>
             </div>
         </section>
-        <section class="blog-article overflow-hidden">
+        <section class="blog-article overflow-hidden pt-8">
             <div class="justin-container mx-auto" itemprop="articleBody">
                 <Fragment set:html={marked.parse(content)} />
             </div>
@@ -73,7 +73,7 @@ const { title, publishedAt, content } = Astro.props
 <style>
 @reference '@css/main.css';
 
-section.blog-article {
+.blog-article {
     h3 {
         @apply text-cyan;
     }
