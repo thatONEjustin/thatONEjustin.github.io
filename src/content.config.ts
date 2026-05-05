@@ -10,7 +10,7 @@ function preview(text: string, truncate: number = 0) {
     }
 
     const marked_down_text = marked.parse(text)
-    const cleaned_text = marked_down_text?.replace(/<\/?[^>]+(>|$)/g, "")
+    const cleaned_text = marked_down_text.replace(/<\/?[^>]+(>|$)/g, "")
 
     return cleaned_text
 }
