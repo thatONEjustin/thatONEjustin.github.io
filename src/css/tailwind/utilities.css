@@ -42,7 +42,7 @@
 
 @utility grid-bg {
     @apply relative;
-    @apply border-b-2 border-lincoln-300/35 bg-black;
+    @apply border-b-2 border-lincoln-300/35;
 
     &:before {
         @apply absolute w-full h-full top-0 left-0;

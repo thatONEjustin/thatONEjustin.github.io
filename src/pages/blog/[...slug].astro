@@ -51,18 +51,19 @@ const { title, publishedAt, content } = Astro.props
 ---
 <BaseLayout>
     <article class="min-h-screen relative" itemscope itemtype="https://schema.org/BlogPosting">
-        <section class="px-8 py-6 grid-bg">
+        <section class="blog-post-title">
             <div class="container mx-auto relative z-50">
-                <h2 class="text-7xl text-purple text-right" itemprop="headline">{title}</h2>
-                <div class="flex ml-auto w-fit text-right">
-                    <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="ml-16">
+                <h2 class="text-7xl text-purple text-left" itemprop="headline">{title}</h2>
+                <div class="flex mx-auto w-fit text-left">
+                    <!--
+                    <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="">
                         <h6 class="text-purple-300 mr-2"><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span></h6>
-                    </div>
-                    <h6 class="text-purple-300/50" itemprop="datePublished"><em>published: {blogDate(publishedAt)}</em></h6>
+                    </div> -->
+                    <h6 class="text-purple-300/50" itemprop="datePublished"><em>published {blogDate(publishedAt)}</em></h6>
                 </div>
             </div>
         </section>
-        <section class="blog-article overflow-hidden pt-8">
+        <section class="blog-post-content overflow-hidden pt-8 z-10">
             <div class="justin-container mx-auto" itemprop="articleBody">
                 <Fragment set:html={marked.parse(content)} />
             </div>
@@ -73,7 +74,15 @@ const { title, publishedAt, content } = Astro.props
 <style>
 @reference '@css/main.css';
 
-.blog-article {
+.blog-post-title {
+    @apply px-8 py-6 grid-bg sticky top-15 z-40 shadow-2xl;
+
+    &:before {
+        @apply opacity-85;
+    }
+}
+
+.blog-post-content {
     h3 {
         @apply text-cyan;
     }
