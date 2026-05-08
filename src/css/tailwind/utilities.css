@@ -26,7 +26,7 @@
     @apply relative;
 
     @variant xl {
-      @apply max-w-4xl px-0;
+        @apply max-w-4xl px-0;
     }
 }
 
