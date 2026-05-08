@@ -44,16 +44,8 @@
     @apply relative;
     @apply border-b-2 border-lincoln-300/35;
 
+
     &:before {
-        @apply absolute w-full h-full top-0 left-0;
-        @apply pointer-events-none;
-
-        content: ' ';
-        /* background: var(--color-darker-800); */
-        background: radial-gradient(circle,var(--color-darker-900),var(--color-black));
-    }
-
-    &:after {
         --square-size: 16px;
         @apply absolute w-full h-full top-0 left-0 transition-all ease-linear;
         @apply z-20;
@@ -65,5 +57,15 @@
         background-image:
             linear-gradient(to right, --alpha(var(--color-light-50) / 5%) 1px, transparent 1px),
             linear-gradient(to bottom, --alpha(var(--color-light-50) / 5%) 1px, transparent 1px);
+    }
+
+    &:after {
+        @apply absolute w-full h-full top-0 left-0;
+        @apply z-10;
+        @apply pointer-events-none;
+
+        content: ' ';
+        /* background: var(--color-darker-800); */
+        background: radial-gradient(circle,var(--color-darker-900),var(--color-black));
     }
 }
