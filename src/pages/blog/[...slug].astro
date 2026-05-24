@@ -55,10 +55,7 @@ const { title, publishedAt, content } = Astro.props
             <div class="container mx-auto relative z-50">
                 <h2 class="text-7xl text-purple text-left" itemprop="headline">{title}</h2>
                 <div class="flex mx-auto w-fit text-left">
-                    <!--
-                    <div itemprop="author" itemscope itemtype="https://schema.org/Person" class="">
-                        <h6 class="text-purple-300 mr-2"><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span></h6>
-                    </div> -->
+                    <h6 itemprop="author" itemscope itemtype="https://schema.org/Person" class="text-purple-300 mr-2"><em>written by</em> <span class="text-cyan" itemprop="givenName">Justin</span> <span class="text-cyan" itemprop="familyName">Paelmo</span></h6>
                     <h6 class="text-purple-300/50" itemprop="datePublished"><em>published {blogDate(publishedAt)}</em></h6>
                 </div>
             </div>
@@ -79,6 +76,10 @@ const { title, publishedAt, content } = Astro.props
 
     &:before {
         @apply opacity-85;
+    }
+
+    @variant lg {
+        @apply top-0;
     }
 }
 
@@ -101,7 +102,13 @@ const { title, publishedAt, content } = Astro.props
 
     h1, h2, h3, h4, h5, h6 {
         + p {
-            @apply mt-2;
+            @apply mt-4;
+        }
+    }
+
+    p {
+        + h1, + h2, + h3, + h4, + h5, + h6 {
+            @apply my-4;
         }
     }
 
@@ -114,11 +121,13 @@ const { title, publishedAt, content } = Astro.props
     }
 
     blockquote {
-        @apply text-yellow;
-        @apply ml-4 pl-4;
+        @apply flex;
+        @apply my-4;
 
         &:before {
-            content: '|';
+            @apply block mx-4;
+            @apply w-0.5 h-6 bg-yellow;
+            content: ' ';
         }
     }
 

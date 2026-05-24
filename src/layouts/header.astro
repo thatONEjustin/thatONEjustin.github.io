@@ -5,7 +5,7 @@ import Menu from "@components/menu/Menu.astro";
 <header class="xl:sticky xl:top-0 z-100">
     <div class="fancy-border bg-black">
         <div class="container mx-auto w-11/12 md:w-full flex flex-col sm:flex-row justify-between items-center py-3">
-            <a href="/" class="text-3xl flex items-baseline no-underline w-1/2 md:w-auto">
+            <a href="/" class="text-3xl flex items-baseline no-underline">
                 <i class="text-3xl sm:text-4xl nf nf-dev-terminal text-pink mr-2"> </i>
                 <h1>i'm justin a<div class="text-green">&nbsp;full stack <i class="text-2xl sm:text-3xl nf nf-oct-stack"></i>&nbsp;</div>developer</h1>
                 <span class="sr-only">I'm Justin Paelmo, a full stack developer</span>
@@ -22,17 +22,19 @@ import Menu from "@components/menu/Menu.astro";
             @apply relative items-start justify-center -mt-1 text-2xl;
             @apply text-yellow;
             @apply transition-all;
+            @apply flex flex-col;
 
             @variant sm {
-                @apply flex text-3xl flex-col;
+                @apply text-3xl;
             }
 
             @variant md {
                 @apply text-4xl;
+                @apply flex-row;
             }
 
             @variant lg {
-                @apply flex-col;
+                @apply flex-row;
             }
 
             @variant xl {
