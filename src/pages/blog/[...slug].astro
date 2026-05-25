@@ -33,6 +33,8 @@ export async function getStaticPaths() {
 
     // console.log(blog_data)
     const paths = blog_data.map(({...post}: any) => {
+        // console.log(post.data.slug)
+        if (post == null) return {}
         return {
             params: { slug: post.data.slug },
             props:{...post.data} 
@@ -45,8 +47,9 @@ export async function getStaticPaths() {
 /*
  * NOTE: we don't need ${slug} currently because getStaticPaths() will generate
  * routes for us based on the params attribute passed.
- * const { slug } = Astro.params
  */
+
+const { slug } = Astro.params
 const { title, publishedAt, content } = Astro.props
 ---
 <BaseLayout>
