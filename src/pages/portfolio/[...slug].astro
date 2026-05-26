@@ -26,6 +26,15 @@ export async function getStaticPaths() {
 
 const { title, show_url = true, url, screenshots, description } = Astro.props
 
+const widest = screenshots.sort((a: any, b: any) => {
+    if(a.width < b.width) {
+        return 1
+    }
+
+    return -1
+})
+
+console.log(widest)
 ---
 <BaseLayout>
     <section class="container mx-auto py-16">
@@ -48,13 +57,13 @@ const { title, show_url = true, url, screenshots, description } = Astro.props
         {screenshots.length &&
         <Slider class="my-8">
             <Fragment slot="slides">
-                {screenshots.map((screenshot: any) => 
-                <Slide class="flex flex-row justify-center">
+                {widest.map((screenshot: any) => 
+                <Slide class="flex flex-row justify-center overflow-hidden object-fit">
                     <Image
                         src={screenshot.url}
                         inferSize={true}
                         alt={screenshot.alternativeText ? screenshot.alternativeText : title}
-                        class="mx-auto rounded-lg"
+                        class="mx-auto rounded-lg object-contain h-225"
                         />
                 </Slide>
                 )}

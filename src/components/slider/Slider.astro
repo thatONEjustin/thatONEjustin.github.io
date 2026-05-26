@@ -1,7 +1,7 @@
 ---
 import NerdFontIcon from '@components/NerdFontIcon.astro'
 
-import 'swiper/css' // @ts-nocheck
+import 'swiper/css/bundle' // @ts-nocheck
 
 const { class:classList = "" } = Astro.props
 ---
@@ -10,6 +10,7 @@ const { class:classList = "" } = Astro.props
     class={`swiper ${classList}`}
     x-data="{
         swiperOptions: {
+            effect: 'cards',
             autoHeight: true,
             navigation: {
                 enabled: true,
@@ -18,7 +19,7 @@ const { class:classList = "" } = Astro.props
             }
         }
     }"
-    x-swiper="swiperOptions">
+    x-swiper.cards="swiperOptions">
     <div class="swiper-wrapper">
         <slot name="slides"></slot>
     </div>
@@ -36,12 +37,20 @@ const { class:classList = "" } = Astro.props
 @reference '@css/main.css';
 
 .swiper {
+    .swiper-wrapper {
+        @apply cursor-grab;
+
+        .is-dragging {
+            @apply cursor-grabbing;
+        }
+    }
+
     .justin-prev, .justin-next {
         @apply max-w-fit min-w-fit w-fit;
         @apply cursor-pointer;
         @apply origin-center transition-all;
         @apply text-vanHelsing-500 
-            text-lg;
+            text-2xl;
 
         &:hover {
             @apply scale-125;
@@ -52,8 +61,12 @@ const { class:classList = "" } = Astro.props
         }
     }
 
-    /* .justin-prev {
-        @apply mr-2;
-    } */
+    .justin-prev {
+        @apply mr-1;
+    }
+
+    .justin-next {
+        @apply ml-1;
+    }
 }
 </style>
