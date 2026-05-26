@@ -26,8 +26,7 @@ export async function getStaticPaths() {
 
 const { title, show_url = true, url, screenshots, description } = Astro.props
 
-// console.log(screenshots.length)
-console.log(screenshots)
+console.log(screenshots.length)
 ---
 <BaseLayout>
     <section class="container mx-auto pt-16">
@@ -41,18 +40,11 @@ console.log(screenshots)
             </PillButton>
         }
 
-        {screenshots.map(({...slide}) => {
-            <h2>{slide.url}</h2>
-        })}
 
-        <Slider>
-            <Fragment slot="slides">
-                {screenshots && screenshots.map(({...slide}) => {
-                    const { url } = slide;
-                    <h2>{url}</h2>
-                })}
-            </Fragment>
-        </Slider>
+        <!-- <Slider> -->
+        <!--     <Fragment> -->
+        <!--     </Fragment> -->
+        <!-- </Slider> -->
         <!-- <Slider>
             <Fragment slot="slides">
                 Word

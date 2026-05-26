@@ -1,36 +1,36 @@
 ---
-import 'swiper/css';
-import 'swiper/css/navigation';
+import NerdFontIcon from '@components/NerdFontIcon.astro'
+import _Slide from './Slide.astro'
+import 'swiper/css'
+import 'swiper/css/navigation'
 
-const { items } = Astro.props
-
-console.log(items)
+// const { items } = Astro.props
 ---
 
 <div
-  class="swiper"
-  x-data="{
-    swiperOptions: {
-      navigation: {
-        enabled: true,
-        nextEl: '.justin-next',
-        prevEl: '.justin-prev',
-      }
-    }
-  }"
-  x-swiper="swiperOptions">
+    class="swiper"
+    x-data="{
+        swiperOptions: {
+            navigation: {
+                enabled: true,
+                nextEl: '.justin-next',
+                prevEl: '.justin-prev',
+            }
+        }
+    }"
+    x-swiper="swiperOptions">
     <div class="swiper-wrapper">
-        <slot name="slides" />
+        <slot></slot>
     </div>
-  <div class="flex flex-row">
-    <div class="justin-prev">
-      <i class="nf nf-cod-arrow_left"></i>
-    </div>
+    <div class="flex flex-row">
+        <div class="justin-prev">
+            <NerdFontIcon icon="nf-cod-arrow_left" />
+        </div>
 
-    <div class="justin-next">
-      <i class="nf nf-cod-arrow_right"></i>
+        <div class="justin-next">
+            <NerdFontIcon icon="nf-cod-arrow_right" />
+        </div>
     </div>
-  </div>
 </div>
 
 <style>
