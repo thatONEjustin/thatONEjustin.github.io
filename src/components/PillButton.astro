@@ -2,7 +2,7 @@
 const { url:href = "#", target, class:className  } = Astro.props
 ---
 
-<a class={className} {href} {target}>
+<a class=`${className}` {href} {target}>
     <slot>Button Text</slot>
 </a>
 
@@ -29,8 +29,9 @@ const { url:href = "#", target, class:className  } = Astro.props
 }
 
 a {
-    @apply relative flex items-center;
+    @apply relative flex flex-row items-center flex-0;
     @apply px-8 py-4 text-center text-darker font-bold transition-all;
+    @apply border-2 rounded-md;
     @apply min-w-35 max-w-min w-full;
     @apply no-underline;
 
