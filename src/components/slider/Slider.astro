@@ -1,16 +1,16 @@
 ---
 import NerdFontIcon from '@components/NerdFontIcon.astro'
-import _Slide from './Slide.astro'
-import 'swiper/css'
-import 'swiper/css/navigation'
 
-// const { items } = Astro.props
+import 'swiper/css' // @ts-nocheck
+
+const { class:classList = "" } = Astro.props
 ---
 
 <div
-    class="swiper"
+    class={`swiper ${classList}`}
     x-data="{
         swiperOptions: {
+            autoHeight: true,
             navigation: {
                 enabled: true,
                 nextEl: '.justin-next',
@@ -20,15 +20,14 @@ import 'swiper/css/navigation'
     }"
     x-swiper="swiperOptions">
     <div class="swiper-wrapper">
-        <slot></slot>
+        <slot name="slides"></slot>
     </div>
-    <div class="flex flex-row">
+    <div class="flex flex-row w-full justify-center">
         <div class="justin-prev">
-            <NerdFontIcon icon="nf-cod-arrow_left" />
+            <NerdFontIcon icon="nf-cod-arrow_left" class="text-vanHelsing-500" />
         </div>
-
         <div class="justin-next">
-            <NerdFontIcon icon="nf-cod-arrow_right" />
+            <NerdFontIcon icon="nf-cod-arrow_right" class="text-vanHelsing-500" />
         </div>
     </div>
 </div>
@@ -37,37 +36,24 @@ import 'swiper/css/navigation'
 @reference '@css/main.css';
 
 .swiper {
-    h2 {
-        @apply text-4xl mb-4;
-    }
+    .justin-prev, .justin-next {
+        @apply max-w-fit min-w-fit w-fit;
+        @apply cursor-pointer;
+        @apply origin-center transition-all;
+        @apply text-vanHelsing-500 
+            text-lg;
 
-    h3 {
-        @apply text-3xl lowercase italic mb-4;
-    }
-
-    p {
-        @apply text-2xl mb-8;
-    }
-
-    .justin {
-        &-next, &-prev {
-            @apply cursor-pointer;
-            @apply origin-center transition-all;
-            @apply text-darker;
-
-            &:hover {
-                @apply scale-125;
-            }
-
-            &.swiper-button-disabled {
-                @apply pointer-events-none;
-                /* @apply text-opacity-30 pointer-events-none; */
-            }
+        &:hover {
+            @apply scale-125;
         }
 
-        &-prev {
-            @apply mr-2;
+        &.swiper-button-disabled {
+            @apply text-vanHelsing-900/60 pointer-events-none;
         }
     }
+
+    /* .justin-prev {
+        @apply mr-2;
+    } */
 }
 </style>

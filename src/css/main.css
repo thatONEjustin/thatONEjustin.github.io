@@ -1,8 +1,8 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
 /*
  * NOTE: local fonts
  */
 @import './fonts/fonts.css';
-@import './fonts/nf-icons.css';
 
 /*
  * NOTE: tailwind orgainzation!

@@ -11,7 +11,7 @@ const { url:href = "#", target, class:className  } = Astro.props
 
 @keyframes grow-in {
     from {
-        height: 2px;
+        height: 0px;
     }
     to {
         height: 100%;
@@ -24,7 +24,7 @@ const { url:href = "#", target, class:className  } = Astro.props
         height: 100%;
     }
     to {
-        height: var(2px);
+        height: var(0px);
     }
 }
 
@@ -35,7 +35,7 @@ a {
     @apply no-underline;
 
     &:after {
-        @apply absolute bottom-0 left-0 w-full h-0.5 transition-all;
+        @apply absolute bottom-0 left-0 w-full h-0 transition-all;
         @apply -z-10;
         transform-origin: bottom center;
         content: ' ';
@@ -48,7 +48,7 @@ a {
         @apply rounded-lg;
 
         &:after {
-        animation: grow-in 175ms ease-in forwards;
+            animation: grow-in 175ms ease-in forwards;
         }
     }
 

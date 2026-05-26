@@ -8,7 +8,7 @@ import BaseLayout from "@layouts/base.astro"
 import PillButton from '@components/PillButton.astro'
 import NerdFontIcon from '@components/NerdFontIcon.astro'
 import Slider from '@components/slider/Slider.astro'
-import SwiperSlide from '@components/slider/Slide.astro'
+import Slide from '@components/slider/Slide.astro'
 import { Image } from 'astro:assets'
 
 export async function getStaticPaths() {
@@ -26,40 +26,39 @@ export async function getStaticPaths() {
 
 const { title, show_url = true, url, screenshots, description } = Astro.props
 
-console.log(screenshots.length)
+console.log(screenshots[Math.floor(Math.random() * 2 - 0 + 1) + 0].url)
 ---
 <BaseLayout>
-    <section class="container mx-auto pt-16">
-        <h2 class="text-purple">{title}</h2>
-        {show_url &&
-            <PillButton
-                class="cyan border-2 rounded-md items-center py-3!"
-                {url}
-                target="_blank">
-                <NerdFontIcon icon="nf-md-web" /> visit
-            </PillButton>
-        }
-
-
-        <!-- <Slider> -->
-        <!--     <Fragment> -->
-        <!--     </Fragment> -->
-        <!-- </Slider> -->
-        <!-- <Slider>
-            <Fragment slot="slides">
-                Word
-            </Fragment>
-        </Slider>
-
-        <section>
-            {screenshots && screenshots.map(({slide}: any) => {
-                <SwiperSlide>
-                    {slide.url}
-                </SwiperSlide>
-                })}
-        </section>  -->
-        <div class="flex flex-row md:flex-col markdown-content">
+    <section class="container mx-auto py-16">
+        <div class="flex flex-row justify-between items-center pb-8">
+            <h2 class="text-purple">{title}</h2>
+            {show_url &&
+                <PillButton
+                    class="cyan border-2 rounded-md items-center py-3!"
+                    {url}
+                    target="_blank">
+                    <NerdFontIcon icon="nf-md-web" /> visit
+                </PillButton>
+            }
+        </div>
+        <div class="flex flex-row md:flex-col markdown-content mb-8">
             <Fragment set:html={marked.parse(description)} />
         </div>
+
+
+        <Slider class="my-8">
+            <Fragment slot="slides">
+                {screenshots && screenshots.map((screenshot: any) => 
+                <Slide class="flex flex-row justify-center">
+                    <Image
+                        src={screenshot.url}
+                        inferSize={true}
+                        alt={screenshot.alternativeText ? screenshot.alternativeText : title}
+                        class="mx-auto rounded-lg"
+                        />
+                </Slide>
+                )}
+            </Fragment>
+        </Slider>
     </section>
 </BaseLayout>

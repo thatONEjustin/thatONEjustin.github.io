@@ -1,7 +1,7 @@
 ---
-const { id, class:className } = Astro.props 
+const { id, class:classList = "" } = Astro.props 
 ---
 
-<div class=`swiper-slide ${className}` {id}>
+<div class=`swiper-slide ${classList}` {id}>
   <slot />
-</div>
+</div> 
