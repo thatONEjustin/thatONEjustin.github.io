@@ -1,0 +1,38 @@
+---
+export const prerender = true
+
+import BaseLayout from "@layouts/base.astro";
+import ProjectCard from "@components/projects/ProjectCard.astro";
+import { getCollection } from 'astro:content';
+
+const projects = await getCollection('projects');
+
+// console.log(projects)
+---
+<BaseLayout>
+    <h2 class="px-16 py-6">Previous Work</h2>
+    <section class="project-cards">
+        {projects.map((post: any) =>
+            <ProjectCard data={post.data} />
+        )}
+    </section>
+</BaseLayout>
+
+<style>
+@reference "@css/main.css";
+.project-cards {
+    @apply mx-auto grid grid-cols-1 auto-rows-auto;
+
+    &:before {
+        @apply absolute w-full h-screen top-0 left-0 transition-all ease-linear;
+        @apply pointer-events-none;
+        @apply opacity-30;
+
+        content: ' ';
+        background: var(--color-black);
+        background: radial-gradient(circle,var(--color-darker-600),var(--color-black));
+
+        @apply z-10;
+    }
+}
+</style>

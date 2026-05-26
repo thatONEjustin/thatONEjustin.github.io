@@ -1,0 +1,73 @@
+---
+export const prerender = true
+
+import { getCollection } from 'astro:content'
+import { marked } from 'marked'
+
+import BaseLayout from "@layouts/base.astro"
+import PillButton from '@components/PillButton.astro'
+import NerdFontIcon from '@components/NerdFontIcon.astro'
+import Slider from '@components/slider/Slider.astro'
+import SwiperSlide from '@components/slider/Slide.astro'
+import { Image } from 'astro:assets'
+
+export async function getStaticPaths() {
+    const data = await getCollection('projects')
+
+    const paths = data.map(({...item}: any) => {
+        return {
+            params: { slug: item.data.slug },
+            props:{...item.data} 
+        }
+    })
+
+    return paths
+}
+
+const { title, show_url = true, url, screenshots, description } = Astro.props
+
+// console.log(screenshots.length)
+console.log(screenshots)
+---
+<BaseLayout>
+    <section class="container mx-auto pt-16">
+        <h2 class="text-purple">{title}</h2>
+        {show_url &&
+            <PillButton
+                class="cyan border-2 rounded-md items-center py-3!"
+                {url}
+                target="_blank">
+                <NerdFontIcon icon="nf-md-web" /> visit
+            </PillButton>
+        }
+
+        {screenshots.map(({...slide}) => {
+            <h2>{slide.url}</h2>
+        })}
+
+        <Slider>
+            <Fragment slot="slides">
+                {screenshots && screenshots.map(({...slide}) => {
+                    const { url } = slide;
+                    <h2>{url}</h2>
+                })}
+            </Fragment>
+        </Slider>
+        <!-- <Slider>
+            <Fragment slot="slides">
+                Word
+            </Fragment>
+        </Slider>
+
+        <section>
+            {screenshots && screenshots.map(({slide}: any) => {
+                <SwiperSlide>
+                    {slide.url}
+                </SwiperSlide>
+                })}
+        </section>  -->
+        <div class="flex flex-row md:flex-col markdown-content">
+            <Fragment set:html={marked.parse(description)} />
+        </div>
+    </section>
+</BaseLayout>

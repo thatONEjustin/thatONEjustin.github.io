@@ -9,7 +9,7 @@ function preview(text: string, truncate: number = 0) {
         text = truncateWords(text, truncate)
     }
 
-    const marked_down_text = marked.parse(text)
+    const marked_down_text = marked.parse(text) as string
     const cleaned_text = marked_down_text.replace(/<\/?[^>]+(>|$)/g, "")
 
     return cleaned_text
@@ -18,6 +18,9 @@ function preview(text: string, truncate: number = 0) {
 const blog_posts = defineCollection({
     loader: async () => {
         const data = await getData('blog-posts').then(r => r.json())
+
+        if (data.data == null) return {} // if no data then return empty
+
         const posts = data.data
 
         return posts.map(({ ...post }: any) => {
@@ -34,4 +37,33 @@ const blog_posts = defineCollection({
     },
 });
 
-export const collections = { "blog": blog_posts };
+const projects = defineCollection({
+    loader: async () => {
+        const data = await getData('projects?populate=screenshots').then(response => response.json())
+        if (data.data == null) return {}
+
+        const projects = data.data
+
+        return projects.map(({ ...project }: any) => {
+            // NOTE: this will probably return weird data for now
+            const { slug, description, external_url, Title, } = project
+
+            let screenshots = (project.screenshots != null) ? project.screenshots : [];
+
+            return {
+                id: project.documentId,
+                slug: slug,
+                title: Title,
+                url: external_url,
+                preview: preview(description, 15),
+                description: description,
+                screenshots: screenshots
+            }
+        })
+    },
+})
+
+export const collections = {
+    "blog": blog_posts,
+    "projects": projects
+};

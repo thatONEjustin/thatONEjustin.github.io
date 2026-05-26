@@ -69,3 +69,73 @@
         background: radial-gradient(circle,var(--color-darker-900),var(--color-black));
     }
 }
+
+
+@utility markdown-content {
+    h3 {
+        @apply text-cyan;
+    }
+
+    h4 {
+        @apply text-green;
+    }
+
+    h5 {
+        @apply text-yellow;
+    }
+
+    h6 {
+        @apply text-orange;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        + p {
+            @apply mt-4;
+        }
+    }
+
+    p {
+        + h1, + h2, + h3, + h4, + h5, + h6 {
+            @apply my-4;
+        }
+    }
+
+    strong {
+        @apply text-orange;
+    }
+
+    &.italic, em, strong > em {
+        @apply text-yellow;
+    }
+
+    blockquote {
+        @apply flex;
+        @apply my-4;
+
+        &:before {
+            @apply block mx-4;
+            @apply w-0.5 h-6 bg-yellow;
+            content: ' ';
+        }
+    }
+
+    ul {
+        @apply text-darker-100;
+        @apply list-disc;
+        @apply pl-4;
+        @apply py-2;
+
+        li {
+            > ul {
+                @apply list-[circle];
+                @apply ml-4;
+                @apply mb-2;
+                @apply py-0;
+            }
+        }
+    }
+
+    img {
+        @apply my-8;
+    }
+}
