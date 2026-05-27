@@ -34,8 +34,8 @@ const widest = screenshots.sort((a: any, b: any) => {
     return -1
 })
 
-console.log(widest)
 ---
+
 <BaseLayout>
     <section class="container mx-auto py-16">
         <div class="flex flex-row justify-between items-center pb-8">
@@ -45,14 +45,14 @@ console.log(widest)
                     class="cyan py-3!"
                     {url}
                     target="_blank">
-                <NerdFontIcon icon="nf-md-web mr-2!" />&nbsp;visit
+                    <NerdFontIcon icon="nf-md-web mr-2!" />&nbsp;visit
                 </PillButton>
             }
         </div>
-        <div class="flex flex-row md:flex-col markdown-content mb-8">
-            <Fragment set:html={marked.parse(description)} />
-        </div>
 
+        <div class="flex flex-row md:flex-col markdown-content mb-8">
+            <Fragment set:html={await marked.parse(description)} />
+        </div>
 
         {screenshots.length &&
         <Slider class="my-8">

@@ -6,9 +6,8 @@ import ProjectCard from "@components/projects/ProjectCard.astro";
 import { getCollection } from 'astro:content';
 
 const projects = await getCollection('projects');
-
-// console.log(projects)
 ---
+
 <BaseLayout>
     <h2 class="px-16 py-6">Previous Work</h2>
     <section class="project-cards">
