@@ -1,5 +1,7 @@
 ---
+import { marked } from 'marked'
 import { Image } from "astro:assets"
+
 const { title, slug, preview, screenshots } = Astro.props.data
 const preview_image = screenshots.sort((a: any, b: any) => {
     if(a.width < b.width) {
@@ -13,14 +15,14 @@ const preview_image = screenshots.sort((a: any, b: any) => {
 <a href={`/portfolio/${slug}`} class="project-card">
     <h3 class="text-vanHelsing-500 z-20">{title}</h3>
     <div class="text-vanHelsing-100 z-20">
-        {preview}
+        <Fragment set:html={await marked.parse(preview)} />
     </div>
 
     {preview_image &&
         <Image
             src={preview_image.url}
             inferSize={true}
-            class="absolute opacity-25 top-0 left-0 z-10"
+            class="project-banner-image"
             alt={preview} />
     }
 </a>
@@ -46,6 +48,8 @@ const preview_image = screenshots.sort((a: any, b: any) => {
         @apply border-t;
     }
 
+
+
     &:after {
         /* @apply absolute w-64 h-128 right-full top-1/2 -translate-1/2; */
         @apply absolute w-64 h-128 top-1/2 -translate-y-1/2 translate-x-[100vw];
@@ -57,11 +61,25 @@ const preview_image = screenshots.sort((a: any, b: any) => {
         content: ' ';
     }
 
+    > .project-banner-image {
+        @apply absolute
+            opacity-5
+            top-0
+            left-0
+            z-10
+            transition-opacity;
+    }
+
     @variant hover {
         &:after {
             /* @apply -right-full; */
             @apply -translate-x-[200%];
         }
+
+        > .project-banner-image {
+            @apply opacity-20;
+        }
     }
 }
+
 </style>

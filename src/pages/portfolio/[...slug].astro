@@ -55,20 +55,22 @@ const widest = screenshots.sort((a: any, b: any) => {
         </div>
 
         {screenshots.length &&
-        <Slider class="my-8">
-            <Fragment slot="slides">
-                {widest.map((screenshot: any) => 
-                <Slide class="flex flex-row justify-center overflow-hidden object-fit">
-                    <Image
-                        src={screenshot.url}
-                        inferSize={true}
-                        alt={screenshot.alternativeText ? screenshot.alternativeText : title}
-                        class="mx-auto rounded-lg object-contain h-225"
-                        />
-                </Slide>
-                )}
-            </Fragment>
-        </Slider>
+        <div class="container mx-auto">
+            <Slider class="my-8">
+                <Fragment slot="slides">
+                    {widest.map((screenshot: any) => 
+                    <Slide class="flex flex-row justify-center overflow-hidden object-fit">
+                        <Image
+                            src={screenshot.url}
+                            inferSize={true}
+                            alt={screenshot.alternativeText ? screenshot.alternativeText : title}
+                            class="mx-auto rounded-lg object-contain h-225"
+                            />
+                    </Slide>
+                    )}
+                </Fragment>
+            </Slider>
+        </div>
         }
     </section>
 </BaseLayout>
