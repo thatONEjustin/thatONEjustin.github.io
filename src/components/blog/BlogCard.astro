@@ -36,7 +36,8 @@ const { slug, publishedAt, title, preview } = data
     }
     
     &:after {
-        @apply absolute w-64 h-128 right-full top-1/2 -translate-1/2;
+        /* @apply absolute w-64 h-128 right-full top-1/2 -translate-1/2; */
+        @apply absolute w-64 h-128 top-1/2 -translate-y-1/2 translate-x-[100vw];
         @apply transition-all ease-in-out duration-500;
         @apply bg-linear-to-r from-transparent via-white/10 to-transparent;
         @apply blur-lg;
@@ -48,8 +49,8 @@ const { slug, publishedAt, title, preview } = data
         @apply scale-105;
 
         &:after {
-            @apply -right-full;
-            /* @apply right-1/2; */
+            /* @apply -right-full; */
+            @apply -translate-x-[400%];
         }
     }
 
