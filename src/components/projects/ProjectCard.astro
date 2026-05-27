@@ -51,7 +51,6 @@ const preview_image = screenshots.sort((a: any, b: any) => {
 
 
     &:after {
-        /* @apply absolute w-64 h-128 right-full top-1/2 -translate-1/2; */
         @apply absolute w-64 h-128 top-1/2 -translate-y-1/2 translate-x-[100vw];
         @apply transition-all ease-in-out duration-400;
         @apply bg-linear-to-r from-transparent via-white/10 to-transparent;
@@ -67,13 +66,13 @@ const preview_image = screenshots.sort((a: any, b: any) => {
             top-0
             left-0
             z-10
+            object-cover
             transition-opacity;
     }
 
     @variant hover {
         &:after {
-            /* @apply -right-full; */
-            @apply -translate-x-[200%];
+            @apply translate-x-[-200%];
         }
 
         > .project-banner-image {
