@@ -13,17 +13,24 @@ const { href } = item;
 function isActive(url: string) {
     const clean_url = new URL(url)
     console.log(clean_url.pathname, window.location.pathname, (clean_url.pathname == window.location.pathname))
-    return clean_url.pathname == window.location.pathname
+    return clean_url.pathname == window.location.pathname.substring(0, window.location.pathname.length - 1)
 }
 
 const buttons = document.getElementsByClassName('menu-item')
 
+console.log(buttons)
+
 for(var button of buttons) {
     // console.log(button.href)
-    if(isActive(button.href) || window.location.pathname.includes(button.href)) {
+    // if(isActive(button.href)) {
+    //     button.classList.add('active')
+    // } else {
+    //     button.classList.remove('active')
+    // }
+    //
+    // console.log(isActive(button.href))
+    if(isActive(button.href)) {
         button.classList.add('active')
-    } else {
-        button.classList.remove('active')
     }
 }
 </script>
