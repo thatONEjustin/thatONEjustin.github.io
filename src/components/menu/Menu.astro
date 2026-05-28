@@ -24,26 +24,32 @@ const menu: MenuItem[] = [
         href: '/portfolio',
         icon: 'nf-dev-terminal'
     },
-    // {
-    //     label: 'skills',
-    //     href: '#skills',
-    //     icon: 'nf-md-keyboard',
-    //     scrollTo: 'skills'
-    // },
-    // {
-    //   'label': 'blog',
-    //   'href': '/blog',
-    //   'icon': 'nf-md-pen'
-    // },
 ]
 ---
 
-<ul class="flex flex-row items-start py-4 md:py-0">
-  {menu.map((item: any) => <MenuItem {item} />)}
+<!-- <script>
+const header = document.getElementsByClassName('header-menu')[0]
+const menu = header.getElementsByClassName('menu')[0];
+const mobile_hamburger = menu.getElementsByClassName('hamburger')[0];
+const menu_items = menu.getElementsByClassName('menu-items')[0];
 
-  <!--
-  <li>
-    <ToggleMode />
-  </li>
-  -->
+mobile_hamburger.addEventListener('click', click => {
+    click.preventDefault();
+    if(click.currentTarget == null) return;
+
+    const button = click.currentTarget as HTMLElement; 
+    button.classList.toggle('active');
+
+    menu_items.classList.toggle('active');
+})
+</script> -->
+
+<ul class="flex flex-row items-start py-4 md:py-0">
+    {menu.map((item: any) => 
+        <MenuItem {item} />
+    )}
+  
+    <!-- <li>
+        <ToggleMode />
+    </li> -->
 </ul>
