@@ -44,6 +44,27 @@ mobile_hamburger.addEventListener('click', click => {
 })
 </script> -->
 
+<script>
+function init() {
+    var items = document.querySelectorAll(".menu-item");
+    if(!items.length) {
+        // clean up ...
+        return;
+    }
+
+    for(var button of items) {
+        // console.log(new URL(button.href).pathname == window.location.pathname)
+
+        if(new URL(button.href).pathname == window.location.pathname) {
+            button.classList.add('active')
+        } else {
+            button.classList.remove('active')
+        }
+    }
+}
+document.addEventListener("astro:page-load", init);
+
+</script>
 <ul class="flex flex-row items-start py-4 md:py-0">
     {menu.map((item: any) => 
         <MenuItem {item} />
