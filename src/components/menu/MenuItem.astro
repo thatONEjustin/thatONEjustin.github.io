@@ -2,12 +2,32 @@
 const { item } = Astro.props;
 const { href } = item;
 
-
 const active = (url_test:string) => {
+    console.log(`url_test: ${url_test}`)
     return url_test == Astro.url.pathname
 } 
 
 ---
+
+<script>
+function isActive(url: string) {
+    const clean_url = new URL(url)
+    console.log(clean_url.pathname)
+    return clean_url.pathname == window.location.pathname
+}
+
+const buttons = document.getElementsByClassName('menu-item')
+
+for(var button of buttons) {
+    console.log(button.href)
+    if(isActive(button.href) || window.location.pathname.includes(button.href)) {
+        button.classList.add('active')
+    } else {
+        button.classList.remove('active')
+    }
+}
+</script>
+<!--
 <script>
 const options:ScrollIntoViewOptions = {
     behavior: 'smooth',
@@ -44,6 +64,7 @@ document.addEventListener('astro:page-load', () => {
     }
 })
 </script>
+-->
 <li>
     <a 
         href={href} 
