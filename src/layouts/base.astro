@@ -25,7 +25,7 @@ const { title = 'justin, a dev' } = Astro.props
     </head>
     <body>
         <span id="top"></span>
-        <Header transition:persist="header"/>
+        <Header transition:persist-props />
         <main transition:animate="slide">
             <slot />
         </main>

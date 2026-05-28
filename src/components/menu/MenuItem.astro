@@ -2,13 +2,34 @@
 const { item } = Astro.props;
 const { href } = item;
 
-// const active = (url_test:string) => {
-//     console.log(`url_test: ${url_test}`)
-//     return url_test == Astro.url.pathname
-// } 
+const active = (url_test:string) => {
+    // console.log(`url_test: ${url_test}`)
+    return url_test == Astro.url.pathname
+} 
 
 ---
 
+<script>
+function init() {
+    var items = document.querySelectorAll(".menu-item");
+    if(!items.length) {
+        // clean up ...
+        return;
+    }
+
+    for(var button of items) {
+        // console.log(new URL(button.href).pathname == window.location.pathname)
+        if(new URL(button.href).pathname == window.location.pathname) {
+            button.classList.add('active')
+        } else {
+            button.classList.remove('active')
+        }
+    }
+}
+document.addEventListener("astro:page-load", init);
+
+</script>
+<!--
 <script>
 function isActive(url: string) {
     const clean_url = new URL(url)
@@ -34,7 +55,6 @@ for(var button of buttons) {
     }
 }
 </script>
-<!--
 <script>
 const options:ScrollIntoViewOptions = {
     behavior: 'smooth',
@@ -74,10 +94,9 @@ document.addEventListener('astro:page-load', () => {
 -->
 <li>
 
-    <!-- class=`menu-item ${(active(href)) ? 'active' : ''}` -->
     <a 
         href={href} 
-        class="menu-item"
+        class=`menu-item ${(active(href)) ? 'active' : ''}`
         data-scroll={item.scrollTo}
     >
         <i class={`text-lg nf ${item.icon} pr-1`}></i>
