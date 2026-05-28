@@ -47,7 +47,7 @@ document.addEventListener('astro:page-load', () => {
 <li>
     <a 
         href={href} 
-        class=`menu-item ${(href == Astro.url.pathname) ? 'active' : ''}`
+        class=`menu-item ${(active(href)) ? 'active' : ''}`
         data-scroll={item.scrollTo}
     >
         <i class={`text-lg nf ${item.icon} pr-1`}></i>
