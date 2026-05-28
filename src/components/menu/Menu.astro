@@ -53,7 +53,8 @@ function init() {
     }
 
     for(var button of items) {
-        // console.log(new URL(button.href).pathname == window.location.pathname)
+        console.log(new URL(button.href).pathname == window.location.pathname)
+        console.log(new URL(button.href), button.href, window.location.pathname)
 
         if(new URL(button.href).pathname == window.location.pathname) {
             button.classList.add('active')
