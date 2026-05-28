@@ -2,12 +2,12 @@
 import Menu from "@components/menu/Menu.astro";
 ---
 
-<header class="xl:sticky xl:top-0 z-100">
+<header>
     <div class="fancy-border bg-black">
         <div class="container mx-auto w-11/12 md:w-full flex flex-col sm:flex-row justify-between items-center py-3">
             <a href="/" class="text-3xl flex items-baseline no-underline">
                 <i class="text-3xl sm:text-4xl nf nf-dev-terminal text-pink mr-2"> </i>
-                <h1>i'm justin a<div class="text-green">&nbsp;full stack <i class="text-2xl sm:text-3xl nf nf-oct-stack"></i>&nbsp;</div>developer</h1>
+                <h1>i'm justin a<span class="text-green">&nbsp;full stack <i class="text-2xl sm:text-3xl nf nf-oct-stack"></i>&nbsp;</span>developer</h1>
                 <span class="sr-only">I'm Justin Paelmo, a full stack developer</span>
             </a>
             <Menu transition:persist />
@@ -16,30 +16,37 @@ import Menu from "@components/menu/Menu.astro";
 </header>
 
 <style>
-    @reference "../css/main.css";
-    header {
-        h1 {
-            @apply relative items-start justify-center -mt-1 text-2xl;
-            @apply text-yellow;
-            @apply transition-all;
-            @apply flex flex-col;
+@reference "../css/main.css";
+header {
+    @apply  z-100;
 
-            @variant sm {
-                @apply text-3xl;
-            }
+    @variant xl {
+        @apply sticky top-0;
+    }
 
-            @variant md {
-                @apply text-4xl;
-                @apply flex-row;
-            }
+    h1 {
+        @apply relative items-start justify-center -mt-1 text-2xl;
+        @apply text-yellow;
+        @apply transition-all;
+        @apply flex;
+        /* @apply flex-col; */
 
-            @variant lg {
-                @apply flex-row;
-            }
+        @variant sm {
+            @apply text-3xl;
+        }
 
-            @variant xl {
-                @apply flex-row;
-            }
+        @variant md {
+            @apply text-4xl;
+            @apply flex-row;
+        }
+
+        @variant lg {
+            @apply flex-row;
+        }
+
+        @variant xl {
+            @apply flex-row;
         }
     }
+}
 </style>
