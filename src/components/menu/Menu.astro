@@ -45,22 +45,28 @@ mobile_hamburger.addEventListener('click', click => {
 </script> -->
 
 <script>
+
+function clean_path(path:string) {
+    if(path == '/') {
+        return path
+    }
+
+    return path.replace(/\/$/, "")
+}
+
 function init() {
     let current_path = window.location.pathname
     if(current_path != '/') {
-        current_path = current_path.replace(/\/$/, "")
+        current_path = clean_path(current_path)
     }
-    console.log(current_path)
+    console.log(`current_path: ${current_path}`)
+
     var items = document.querySelectorAll(".menu-item");
-    if(!items.length) {
-        // clean up ...
-        return;
-    }
 
     for(var button of items) {
-        let clean_path = new URL(button.href)
+        let button_path = new URL(button.href)
 
-        if(clean_path.pathname == window.location.pathname) {
+        if(clean_path(button_path.pathname) == clean_path(window.location.pathname)) {
             button.classList.add('active')
         } else {
             button.classList.remove('active')
