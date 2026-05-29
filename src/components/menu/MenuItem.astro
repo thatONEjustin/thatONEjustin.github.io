@@ -2,103 +2,23 @@
 const { item } = Astro.props;
 const { href } = item;
 
-// const active = (url_test:string) => {
-//     // console.log(`url_test: ${url_test}`)
-//     return url_test == Astro.url.pathname
-// } 
-
+const active = (url_test:string) => {
+    return url_test == Astro.url.pathname
+}
 ---
 
-<!--
-<script>
-function isActive(url: string) {
-    const clean_url = new URL(url)
-    console.log(clean_url.pathname, window.location.pathname, (clean_url.pathname == window.location.pathname))
-    return clean_url.pathname == window.location.pathname.substring(0, window.location.pathname.length - 1)
-}
-
-const buttons = document.getElementsByClassName('menu-item')
-
-console.log(buttons)
-
-for(var button of buttons) {
-    // console.log(button.href)
-    // if(isActive(button.href)) {
-    //     button.classList.add('active')
-    // } else {
-    //     button.classList.remove('active')
-    // }
-    //
-    // console.log(isActive(button.href))
-    if(isActive(button.href)) {
-        button.classList.add('active')
-    }
-}
-</script>
-<script>
-const options:ScrollIntoViewOptions = {
-    behavior: 'smooth',
-    block: 'start'
-}
-
-document.addEventListener('astro:page-load', () => {
-    const buttons = document.getElementsByClassName('menu-item')
-
-    const cleaner = () => {
-        for(var button of buttons) {
-            button.classList.remove('active')
-        }
-    }
-
-    const scroll_click = (event:Event) => {
-        event.preventDefault()
-        if(!event.currentTarget) return
-
-        const current = event.currentTarget as HTMLElement
-
-        if(!current.dataset.scroll) return
-
-        cleaner()
-
-        document.getElementById(current.dataset.scroll)!.scrollIntoView(options)
-        current.classList.add('active')
-    }
-
-    for(var button of buttons) {
-        if(!button.classList.contains('scrollTo')) continue
-
-        button.addEventListener('click', scroll_click, false)
-    }
-})
-</script>
--->
 <li>
 
     <a 
         href={href} 
-        class=`menu-item`
+        class=`menu-item ${active(href) ? 'active' : ''}`
         data-scroll={item.scrollTo}
     >
         <i class={`text-lg nf ${item.icon} pr-1`}></i>
         {item.label}
     </a>
 </li>
-<!-- <li> 
-    {item.scrollTo == null ? 
-        <a {href} class=`menu-item ${}`>
-            <i class={`text-lg nf ${item.icon} pr-1`}></i>
-            {item.label}
-        </a>
-    :
-        <a data-scroll={item.scrollTo} 
-            {href}
-            class="cursor-pointer menu-item scrollTo">
-            <i class={`text-lg nf ${item.icon} pr-1`}></i>
-            {item.label}
-        </a>
-    }
-</li>
--->
+
 <style>
 @reference "@css/main.css";
 li {
