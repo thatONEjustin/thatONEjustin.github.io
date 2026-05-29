@@ -14,7 +14,7 @@ import SocialMediaList from "@components/SocialMediaList.astro";
 ---
 <BaseLayout>
     <section class="py-5 grid-bg">
-        <div class="w-11/12 lg:w-full container relative flex flex-col md:flex-row z-50 py-8 items-center mx-auto">
+        <div class="w-11/12 lg:w-full container relative flex flex-col lg:flex-row z-50 py-8 items-center mx-auto">
             <div class="order-1 w-full lg:w-1/2">
                 <h2 class="text-green border-b border-green lg:mb-2">About Me</h2>
                 <p class="text-dark-600 text-3xl leading-relaxed">I am a huge nerd about <NerdFontIcon class="text-cyan" icon="nf-md-web" /><span class="text-cyan">web development,</span> <NerdFontIcon class="text-cyan" icon="nf-dev-terminal"/><span class="text-cyan">tooling,</span> <NerdFontIcon class="text-cyan" icon="nf-md-git"/> <span class="text-cyan">CI/CD,</span> and <NerdFontIcon class="text-cyan" icon="nf-md-remote_desktop" /> <span class="text-cyan">server administration</span>.</p>
@@ -56,7 +56,7 @@ import SocialMediaList from "@components/SocialMediaList.astro";
     @apply mb-8;
     @apply rounded-full border-4 border-yellow;
 
-    @variant md {
+    @variant lg {
         @apply mx-unset mb-0;
     }
 } 
