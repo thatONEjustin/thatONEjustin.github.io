@@ -46,33 +46,31 @@ mobile_hamburger.addEventListener('click', click => {
 
 <script>
 
-function clean_path(path:string) {
-    if(path == '/') {
-        return path
-    }
+function clean_path (path:string) {
+    if(path == '/') return path
 
     return path.replace(/\/$/, "")
 }
 
-function init() {
-    let current_path = window.location.pathname
-    if(current_path != '/') {
-        current_path = clean_path(current_path)
-    }
-    console.log(`current_path: ${current_path}`)
-
-    var items = document.querySelectorAll(".menu-item");
+function init () {
+    const items = document.querySelectorAll(".menu-item");
 
     for(var button of items) {
-        let button_path = new URL(button.href)
+        // let button_url = new URL(button.href)
 
-        if(clean_path(button_path.pathname) == clean_path(window.location.pathname)) {
+        const button_path = new URL(button.href).pathname
+        const window_path = window.location.pathname
+
+        if(button_path == window_path) {
+            button.classList.add('active')
+        } else if(button_path != '/' && window_path != '/' && window_path.includes(button_path)) {
             button.classList.add('active')
         } else {
             button.classList.remove('active')
         }
     }
 }
+
 document.addEventListener("astro:page-load", init);
 
 </script>

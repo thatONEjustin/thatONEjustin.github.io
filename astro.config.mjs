@@ -11,6 +11,7 @@ export default defineConfig({
     output: 'static',
     prefetch: true,
     site: 'https://justinlikescode.netlify.app',
+    trailingSlash: 'never',
     integrations: [mdx(), alpinejs({ entrypoint: './src/alpine-entry' })],
     image: {
         remotePatterns: [{

@@ -2,16 +2,16 @@
 const { item } = Astro.props;
 const { href } = item;
 
-const active = (url_test:string) => {
-    return url_test == Astro.url.pathname
-}
+// const active = (url_test:string) => {
+//     return url_test == Astro.url.pathname
+// }
 ---
 
 <li>
-
+    <!-- ${active(href) ? 'active' : ''} -->
     <a 
         href={href} 
-        class=`menu-item ${active(href) ? 'active' : ''}`
+        class=`menu-item`
         data-scroll={item.scrollTo}
     >
         <i class={`text-lg nf ${item.icon} pr-1`}></i>
