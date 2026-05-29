@@ -56,8 +56,6 @@ function init () {
     const items = document.querySelectorAll(".menu-item");
 
     for(var button of items) {
-        // let button_url = new URL(button.href)
-
         const button_path = new URL(button.href).pathname
         const window_path = window.location.pathname
 
