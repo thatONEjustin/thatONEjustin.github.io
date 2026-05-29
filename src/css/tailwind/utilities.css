@@ -33,7 +33,7 @@
 @utility read-more {
     @apply text-purple underline underline-offset-6;
     @apply underline underline-offset-6;
-    @apply decoration-dashed;
+    @apply decoration-wavy;
 }
 
 @utility fancy-link {

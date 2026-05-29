@@ -3,7 +3,6 @@ import BaseLayout from "@layouts/base.astro";
 // import SkillsList from '@components/'
 
 import resume from "/resume.pdf"
-
 /*
 export type Skill = {
     label: string,
@@ -176,7 +175,7 @@ export const skills_data: Skill[] = [
 
             <div class="about-timeframe">
                 <h3 class="text-pink">2009 - 2016</h3>
-                <h3><a class="text-cyan no-underline" href="https://advantageservices.net" target="_blank">AdvantageServices</a></h3>
+                <h3><a class="previous-job" href="https://advantageservices.net" target="_blank">AdvantageServices</a></h3>
             </div>
 
             <p>I started professional web development in 2009 back in the SFTP, jQuery, and early PHP days. I worked at a small b2b agency that handled dozens of clients on a regular basis handling every portion of the stack.</p>
@@ -212,6 +211,15 @@ export const skills_data: Skill[] = [
     .about-timeframe {
         @apply fancy-border pb-1 mb-3 mt-12 text-pink;
         @apply flex flex-row items-center justify-between;
+    }
+}
+
+.previous-job {
+    @apply text-cyan no-underline;
+    @apply transition-all;
+
+    @variant hover {
+        @apply text-pink;
     }
 }
 </style>

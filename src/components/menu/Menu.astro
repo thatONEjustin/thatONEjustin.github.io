@@ -45,13 +45,6 @@ mobile_hamburger.addEventListener('click', click => {
 </script> -->
 
 <script>
-
-function clean_path (path:string) {
-    if(path == '/') return path
-
-    return path.replace(/\/$/, "")
-}
-
 function init () {
     const items = document.querySelectorAll(".menu-item");
 
