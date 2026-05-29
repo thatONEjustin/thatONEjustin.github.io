@@ -24,9 +24,11 @@ const blog_posts = (await getCollection('blog')).slice(0,3)
 
     .blog-posts-container {
         @apply relative container mx-auto grid grid-cols-1 z-30;
+        @apply px-4;
 
         @variant lg {
             @apply grid-cols-3 gap-x-8;
+            @apply px-unset;
         }
     }
 

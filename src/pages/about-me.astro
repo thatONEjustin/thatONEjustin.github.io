@@ -210,7 +210,11 @@ export const skills_data: Skill[] = [
 
     .about-timeframe {
         @apply fancy-border pb-1 mb-3 mt-12 text-pink;
-        @apply flex flex-row items-center justify-between;
+        @apply flex flex-col items-center justify-between;
+
+        @variant md {
+            @apply flex-row;
+        }
     }
 }
 

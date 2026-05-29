@@ -1,13 +1,14 @@
 ---
 import Menu from "@components/menu/Menu.astro";
+import NerdFontIcon from '@components/NerdFontIcon.astro'
 ---
 
 <header>
     <div class="fancy-border bg-black">
-        <div class="container mx-auto w-11/12 md:w-full flex flex-col sm:flex-row justify-between items-center py-3">
-            <a href="/" class="text-3xl flex items-baseline no-underline">
-                <i class="text-3xl sm:text-4xl nf nf-dev-terminal text-pink mr-2"> </i>
-                <h1>i'm justin a<span class="text-green">&nbsp;full stack <i class="text-2xl sm:text-3xl nf nf-oct-stack"></i>&nbsp;</span>developer</h1>
+        <div class="container mx-auto w-full flex flex-col sm:flex-row justify-between items-center py-3">
+            <a href="/" class="text-3xl flex items-baseline no-underline max-w-8/10">
+                <NerdFontIcon icon="nf-dev-terminal" class="text-3xl sm:text-4xl text-pink mr-2 hidden md:block" />
+                <h1 class="text-cyan">I'm Justin, a <span class="text-green">full stack <NerdFontIcon icon="nf-oct-stack" class="inline" />developer</span></h1>
                 <span class="sr-only">I'm Justin Paelmo, a full stack developer</span>
             </a>
             <Menu transition:persist />
@@ -25,11 +26,17 @@ header {
     }
 
     h1 {
+        @apply text-2xl;
+        @variant xl {
+            @apply text-6xl;
+        }
+    }
+/*
+    h1 {
         @apply relative items-start justify-center -mt-1 text-2xl;
         @apply text-yellow;
         @apply transition-all;
         @apply flex;
-        /* @apply flex-col; */
 
         @variant sm {
             @apply text-3xl;
@@ -48,5 +55,6 @@ header {
             @apply flex-row;
         }
     }
+*/
 }
 </style>
