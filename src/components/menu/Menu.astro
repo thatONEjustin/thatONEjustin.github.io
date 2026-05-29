@@ -48,7 +48,7 @@ mobile_hamburger.addEventListener('click', click => {
 function init() {
     let current_path = window.location.pathname
     if(current_path != '/') {
-        current_path.replace(/\/$/, "")
+        current_path = current_path.replace(/\/$/, "")
     }
     console.log(current_path)
     var items = document.querySelectorAll(".menu-item");
