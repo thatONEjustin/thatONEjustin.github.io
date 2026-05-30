@@ -1,10 +1,8 @@
 ---
+import NerdFontIcon from '@components/NerdFontIcon.astro'
+
 const { item } = Astro.props;
 const { href } = item;
-
-// const active = (url_test:string) => {
-//     return url_test == Astro.url.pathname
-// }
 ---
 
 <li>
@@ -14,7 +12,7 @@ const { href } = item;
         class=`menu-item`
         data-scroll={item.scrollTo}
     >
-        <i class={`text-lg nf ${item.icon} pr-1`}></i>
+        <NerdFontIcon class=`text-lg pr-1` icon={item.icon} />
         {item.label}
     </a>
 </li>
