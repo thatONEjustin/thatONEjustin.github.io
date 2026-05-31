@@ -34,6 +34,15 @@ const widest = screenshots.sort((a: any, b: any) => {
     return -1
 })
 
+console.log(widest[0].formats.medium)
+
+const swiperOptions = { 
+    effect: 'cards',
+    cardsEffect: {
+        centeredSlides: true,
+    },
+    autoHeight: false,
+}
 ---
 
 <BaseLayout>
@@ -55,17 +64,18 @@ const widest = screenshots.sort((a: any, b: any) => {
         </div>
 
         {screenshots.length &&
-        <div class="container mx-auto overflow-hidden md:overflow-[unset] px-4 lg:px-unset">
+        <div class="container mx-auto px-4 lg:px-unset overflow-hidden lg:overflow-auto">
             <Slider
+                swiperOptions={swiperOptions}
                 class="md:my-8">
                 <Fragment slot="slides">
                     {widest.map((screenshot: any) => 
-                    <Slide class="flex flex-row justify-center overflow-hidden object-fit">
+                    <Slide class="">
                         <Image
                             src={screenshot.url}
                             inferSize={true}
                             alt={screenshot.alternativeText ? screenshot.alternativeText : title}
-                            class="mx-auto rounded-lg object-contain lg:h-225"
+                            class="mx-auto object-contain rounded-lg"
                             />
                     </Slide>
                     )}

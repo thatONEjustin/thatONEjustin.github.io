@@ -3,23 +3,22 @@ import NerdFontIcon from '@components/NerdFontIcon.astro'
 
 import 'swiper/css/bundle' // @ts-nocheck
 
-const { class:classList = "" } = Astro.props
+const { class:classList = "", swiperOptions = {} } = Astro.props
+
+const swiperDefaults = {
+    navigation: {
+        enabled: true,
+        nextEl: '.justin-next',
+        prevEl: '.justin-prev',
+    }
+}
+const swiperConfig = { ...swiperDefaults, ...swiperOptions }
 ---
 
 <div
     class={`swiper ${classList}`}
-    x-data="{
-        swiperOptions: {
-            effect: 'cards',
-            autoHeight: true,
-            navigation: {
-                enabled: true,
-                nextEl: '.justin-next',
-                prevEl: '.justin-prev',
-            }
-        }
-    }"
-    x-swiper.cards="swiperOptions">
+    x-data
+    x-swiper.cards=`${JSON.stringify(swiperConfig)}`>
     <div class="swiper-wrapper">
         <slot name="slides"></slot>
     </div>
