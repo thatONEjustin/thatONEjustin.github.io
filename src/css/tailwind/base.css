@@ -36,9 +36,9 @@
         + section {
             @apply py-20;
 
-            &:last-of-type {
+            /* &:last-of-type {
                 @apply mb-8;
-            }
+            } */
         }
     }
 }
